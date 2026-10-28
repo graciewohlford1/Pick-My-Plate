@@ -1,0 +1,162 @@
+// ============================================================
+//  YOUR RESTAURANT LIST — this is the only file you need to edit
+// ============================================================
+//
+//  One line per restaurant. Fields:
+//    name     – restaurant name
+//    cuisine  – category ("Sushi", "BBQ"...). Use ["Bars", "Stockyards"] to put a place in two.
+//    price    – 1 = $, 2 = $$, 3 = $$$, 4 = $$$$, or null if you haven't set it yet
+//    meals    – any of "breakfast", "lunch", "dinner", "late night" (shortcuts below)
+//    area     – neighborhood (optional)
+//    note     – your own note, shows on the pick card (optional)
+//    dish     – what to order (optional)
+//    website  – full link starting with https:// (optional)
+//    menu     – full link to the menu (optional)
+//
+//  Every pick gets a "Directions" button automatically, even with no website.
+//  Don't forget the comma at the end of each line.
+
+// Meal shortcuts so you don't have to retype them
+const BAR    = ["dinner", "late night"];
+const MORN   = ["breakfast", "lunch"];
+const MEAL   = ["lunch", "dinner"];
+const COFFEE = ["breakfast", "lunch"];
+
+const restaurants = [
+  // ---------- Bars ----------
+  { name: "Broncs Bar", cuisine: ["Bars", "Stockyards"], price: null, meals: BAR, area: "Stockyards" },
+  { name: "The Henry McCarty Irish Pub", cuisine: "Bars", price: null, meals: BAR },
+  { name: "No Vacancy", cuisine: "Bars", price: null, meals: BAR },
+  { name: "Drinks and Such", cuisine: "Bars", price: null, meals: BAR },
+
+  // ---------- Breakfast ----------
+  { name: "Keke's", cuisine: "Breakfast", price: null, meals: MORN },
+  { name: "Yogi's", cuisine: "Breakfast", price: null, meals: MORN },
+  { name: "Press Café", cuisine: "Breakfast", price: null, meals: MORN },
+  { name: "Ascension", cuisine: "Breakfast", price: null, meals: MORN },
+  { name: "Hotel Drover Brunch", cuisine: "Breakfast", price: null, meals: MORN, area: "Stockyards" },
+
+  // ---------- Sushi ----------
+  { name: "Nikuya", cuisine: "Sushi", price: null, meals: MEAL },
+  { name: "Yoichi Omakase & Handroll", cuisine: "Sushi", price: null, meals: MEAL },
+  { name: "Oishii", cuisine: "Sushi", price: null, meals: MEAL },
+  { name: "Hatsuyuki Handroll Bar", cuisine: "Sushi", price: null, meals: MEAL },
+  { name: "Little Lilly Sushi", cuisine: "Sushi", price: null, meals: MEAL },
+  { name: "Tokyo Cafe", cuisine: "Sushi", price: null, meals: MEAL },
+  { name: "Hashi", cuisine: "Sushi", price: null, meals: MEAL, note: "By CorePower" },
+  { name: "Akarii Revolving Sushi", cuisine: "Sushi", price: null, meals: MEAL },
+  { name: "Ashims", cuisine: "Sushi", price: null, meals: MEAL, note: "Good poke bowl" },
+
+  // ---------- Asian ----------
+  { name: "Wabi House", cuisine: "Asian", price: null, meals: MEAL },
+  { name: "Teddy Wong's", cuisine: "Asian", price: null, meals: MEAL },
+  { name: "Zaap", cuisine: "Asian", price: null, meals: MEAL },
+  { name: "Ko Thai Restaurant", cuisine: "Asian", price: null, meals: MEAL },
+  { name: "Pho District", cuisine: "Asian", price: null, meals: MEAL },
+  { name: "Ichiro Izakaya", cuisine: "Asian", price: null, meals: MEAL },
+
+  // ---------- Mexican ----------
+  { name: "Polanco", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Don Artemio", cuisine: "Mexican", price: 3, meals: MEAL, note: "Nicer" },
+  { name: "Tacos Cortes", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Tacos Oasis", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Mi Ranchito", cuisine: "Mexican", price: null, meals: MEAL, area: "Crowley Road" },
+  { name: "Juanito's", cuisine: "Mexican", price: null, meals: MEAL, note: "So good" },
+  { name: "El Mil Tacos", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Cafecito", cuisine: "Mexican", price: null, meals: MORN },
+  { name: "Gloria's", cuisine: "Mexican", price: null, meals: MEAL, area: "Montgomery Plaza", note: "Very Mexican" },
+  { name: "Los Pastores", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Salsa Limón", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Juan Burrito Express", cuisine: "Mexican", price: null, meals: MORN, note: "Breakfast burritos" },
+  { name: "Tinie's", cuisine: "Mexican", price: null, meals: MEAL },
+
+  // ---------- American ----------
+  { name: "Clay Pigeon", cuisine: "American", price: null, meals: MEAL },
+  { name: "Gustos", cuisine: "American", price: null, meals: MEAL },
+  { name: "Bearded Lady", cuisine: "American", price: null, meals: MEAL },
+  { name: "Cook Shack", cuisine: "American", price: null, meals: MEAL },
+  { name: "Tavern", cuisine: "American", price: null, meals: MEAL },
+  { name: "Charley's", cuisine: "American", price: null, meals: MEAL, note: "Burgers" },
+  { name: "Chumley House", cuisine: "American", price: 3, meals: MEAL, note: "Nicer" },
+  { name: "Bricks and Horses", cuisine: "American", price: 3, meals: MEAL, note: "Nicer" },
+  { name: "Chicken Salad Chick", cuisine: "American", price: null, meals: MEAL },
+  { name: "Chop Shop", cuisine: "American", price: null, meals: MEAL },
+  { name: "Social House", cuisine: "American", price: null, meals: MEAL },
+  { name: "Hudson House", cuisine: "American", price: null, meals: MEAL, note: "Just Gracie" },
+  { name: "Taverna", cuisine: "American", price: null, meals: MEAL },
+  { name: "Kincaid's", cuisine: "American", price: null, meals: MEAL, note: "Burgers" },
+  { name: "Meatboard", cuisine: "American", price: null, meals: MEAL },
+  { name: "Lucile's", cuisine: "American", price: null, meals: MEAL },
+  { name: "JD's Hamburgers", cuisine: "American", price: null, meals: MEAL },
+  { name: "The Mont", cuisine: "American", price: null, meals: MEAL },
+
+  // ---------- BBQ ----------
+  { name: "Terry Black's", cuisine: "BBQ", price: null, meals: MEAL },
+  { name: "Goldee's", cuisine: "BBQ", price: null, meals: MEAL, note: "Michelin star!" },
+  { name: "Panther City BBQ", cuisine: "BBQ", price: null, meals: MEAL, note: "Michelin recommended" },
+  { name: "Railhead", cuisine: "BBQ", price: null, meals: MEAL },
+  { name: "Charleston", cuisine: "BBQ", price: null, meals: MEAL },
+  { name: "Heim", cuisine: "BBQ", price: null, meals: MEAL },
+
+  // ---------- Greek / Mediterranean ----------
+  { name: "Meraki", cuisine: "Greek/Mediterranean", price: null, meals: MEAL, note: "Pickleball" },
+
+  // ---------- Pizza ----------
+  { name: "One Trick Pony", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Pie Tap", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Olivella's", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Felina", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Mr. O1", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Maggie's R&R", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Mama's Pizza", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Zoli's", cuisine: "Pizza", price: null, meals: MEAL },
+
+  // ---------- Italian ----------
+  { name: "Bocca Osteria Romana", cuisine: "Italian", price: null, meals: MEAL },
+  { name: "Nonna Tata", cuisine: "Italian", price: null, meals: MEAL, note: "Cash only" },
+  { name: "Piattello", cuisine: "Italian", price: null, meals: MEAL },
+  { name: "Il Modo", cuisine: "Italian", price: null, meals: MEAL },
+  { name: "Osteria 61", cuisine: "Italian", price: null, meals: MEAL },
+  { name: "Caterina's", cuisine: "Italian", price: null, meals: MEAL },
+  { name: "Margie's Italian Gardens", cuisine: "Italian", price: null, meals: MEAL },
+
+  // ---------- Indian ----------
+  { name: "Silver Salt Indian Cuisine", cuisine: "Indian", price: null, meals: MEAL },
+
+  // ---------- French ----------
+  { name: "Paris 7th", cuisine: "French", price: null, meals: MEAL },
+  { name: "Le Margot", cuisine: "French", price: null, meals: MEAL },
+
+  // ---------- Stockyards (Senior Year) ----------
+  { name: "Filthy's", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Basement", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "RCKRS", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Boat House", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Second Rodeo", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Drover", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Billy Bob's", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "White Elephant", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Cowtown Winery", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Tannahill's Tavern", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Rhinestone", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Rodeo Exchange", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Booger Red's", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Cattleman's Club", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+
+  // ---------- Coffee & Tea ----------
+  { name: "Ivy Coffee Roasters", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Matchpoint", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Avoca", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "At the Oaks", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Crude", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Roots Coffee House", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Ostara", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Magnolia Nutrition", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Summer Moon", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Carter's", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Portico", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Pax and Beneficia Coffee", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Branch and Bean", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Cafe Momento", cuisine: "Coffee & Tea", price: null, meals: COFFEE },
+  { name: "Fort Worth Coffee Co", cuisine: "Coffee & Tea", price: null, meals: COFFEE }
+];

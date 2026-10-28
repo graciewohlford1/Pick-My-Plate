@@ -1,0 +1,394 @@
+// ============================================================
+//  Fort Worth Restaurant Picker — app logic
+//  (You shouldn't need to edit this file; edit restaurants.js)
+// ============================================================
+
+const MEALS = ["breakfast", "lunch", "dinner", "late night"];
+const PRICE_LABELS = { 1: "$", 2: "$$", 3: "$$$", 4: "$$$$" };
+const STORAGE_KEY = "fw-picker-visits";
+
+// Which filters are currently selected (empty set = "any")
+const selected = {
+  cuisine: new Set(),
+  price: new Set(),
+  meal: new Set()
+};
+
+let currentPick = null;
+let lastPickName = null;
+
+// ---------- Saved visits (stored in this browser) ----------
+// Shape: { "Restaurant Name": { visited: true, rating: 4, notes: "...", date: "2026-10-28" } }
+let visits = loadVisits();
+
+function loadVisits() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+  } catch {
+    return {};
+  }
+}
+function saveVisits() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(visits));
+  } catch {
+    /* storage blocked (e.g. private window) — app still works for this session */
+  }
+  updateBadge();
+}
+function getVisit(name) {
+  return visits[name] || { visited: false, rating: 0, notes: "", date: "" };
+}
+function setVisit(name, changes) {
+  visits[name] = { ...getVisit(name), ...changes };
+  saveVisits();
+}
+
+// ---------- Helpers ----------
+const $ = (id) => document.getElementById(id);
+
+function escapeHTML(str) {
+  return String(str ?? "").replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
+  );
+}
+// A restaurant can be in one category ("Sushi") or several (["Bars", "Stockyards"])
+function cats(r) {
+  return [].concat(r.cuisine || []);
+}
+function priceLabel(r) {
+  return PRICE_LABELS[r.price] || "";
+}
+function starsText(n) {
+  return n ? "★".repeat(n) + "☆".repeat(5 - n) : "";
+}
+
+// ============================================================
+//  PICKER PAGE
+// ============================================================
+
+function makeChip(label, group, value, container) {
+  const chip = document.createElement("button");
+  chip.className = "chip";
+  chip.textContent = label;
+  chip.type = "button";
+  chip.addEventListener("click", () => {
+    const set = selected[group];
+    set.has(value) ? set.delete(value) : set.add(value);
+    chip.classList.toggle("active");
+    updateMatches();
+  });
+  container.appendChild(chip);
+}
+
+function buildFilters() {
+  const cuisines = [...new Set(restaurants.flatMap(cats))].sort();
+  cuisines.forEach((c) => makeChip(c, "cuisine", c, $("cuisine-chips")));
+
+  [1, 2, 3, 4].forEach((p) => makeChip(PRICE_LABELS[p], "price", p, $("price-chips")));
+
+  MEALS.forEach((m) =>
+    makeChip(m[0].toUpperCase() + m.slice(1), "meal", m, $("meal-chips"))
+  );
+}
+
+function getMatches() {
+  const newOnly = $("new-only").checked;
+  return restaurants.filter((r) => {
+    const cuisineOK = selected.cuisine.size === 0 || cats(r).some((c) => selected.cuisine.has(c));
+    const priceOK = selected.price.size === 0 || selected.price.has(r.price);
+    const mealOK =
+      selected.meal.size === 0 || (r.meals || []).some((m) => selected.meal.has(m));
+    const newOK = !newOnly || !getVisit(r.name).visited;
+    return cuisineOK && priceOK && mealOK && newOK;
+  });
+}
+
+function updateMatches() {
+  const matches = getMatches();
+  const n = matches.length;
+
+  $("match-count").textContent =
+    n === 0
+      ? "No matches — try loosening a filter."
+      : `${n} restaurant${n === 1 ? "" : "s"} match your filters.`;
+  $("pick-btn").disabled = n === 0;
+
+  $("match-list").innerHTML = matches
+    .map((r) => {
+      const v = getVisit(r.name);
+      const name = r.website
+        ? `<a href="${escapeHTML(r.website)}" target="_blank" rel="noopener">${escapeHTML(r.name)}</a>`
+        : escapeHTML(r.name);
+      const check = v.visited ? " ✅" : "";
+      return `<li>${name}${check}<span>${escapeHTML(cats(r).join(", "))}${priceLabel(r) ? " · " + priceLabel(r) : ""}</span></li>`;
+    })
+    .join("");
+}
+
+function pickRandom() {
+  const matches = getMatches();
+  if (matches.length === 0) return;
+
+  // Avoid picking the same place twice in a row when possible
+  let pool = matches.length > 1 ? matches.filter((r) => r.name !== lastPickName) : matches;
+  const final = pool[Math.floor(Math.random() * pool.length)];
+
+  // Quick "slot machine" shuffle before landing on the pick
+  const result = $("result");
+  result.classList.remove("hidden");
+  result.classList.add("spinning");
+  $("pick-btn").disabled = true;
+
+  let ticks = 0;
+  const spin = setInterval(() => {
+    const temp = matches[Math.floor(Math.random() * matches.length)];
+    $("result-name").textContent = temp.name;
+    ticks++;
+    if (ticks >= 12) {
+      clearInterval(spin);
+      result.classList.remove("spinning");
+      $("pick-btn").disabled = false;
+      showResult(final);
+    }
+  }, 70);
+}
+
+function showResult(r) {
+  currentPick = r;
+  lastPickName = r.name;
+  $("result-name").textContent = r.name;
+
+  const tags = [...cats(r), priceLabel(r), r.area, ...(r.meals || [])].filter(Boolean);
+  $("result-meta").innerHTML = tags.map((t) => `<span class="tag">${escapeHTML(t)}</span>`).join("");
+
+  const lines = [];
+  if (r.note) lines.push(`📌 <strong>${escapeHTML(r.note)}</strong>`);
+  if (r.dish) lines.push(`Order the <strong>${escapeHTML(r.dish)}</strong>`);
+  $("result-dish").innerHTML = lines.join("<br>");
+
+  const links = [];
+  if (r.website) links.push(`<a class="link-btn" href="${escapeHTML(r.website)}" target="_blank" rel="noopener">Website</a>`);
+  if (r.menu) links.push(`<a class="link-btn secondary" href="${escapeHTML(r.menu)}" target="_blank" rel="noopener">View menu</a>`);
+  const mapsQuery = encodeURIComponent(`${r.name} Fort Worth TX`);
+  links.push(`<a class="link-btn secondary" href="https://www.google.com/maps/search/?api=1&query=${mapsQuery}" target="_blank" rel="noopener">Directions</a>`);
+  $("result-links").innerHTML = links.join("");
+
+  renderResultVisit();
+}
+
+function renderResultVisit() {
+  if (!currentPick) return;
+  const v = getVisit(currentPick.name);
+  $("result-visit").textContent = v.visited
+    ? `You've been here${v.rating ? " · " + starsText(v.rating) : ""}${v.notes ? " · “" + v.notes.slice(0, 60) + (v.notes.length > 60 ? "…”" : "”") : ""}`
+    : "🆕 You haven't tried this one yet";
+  $("mark-btn").textContent = v.visited ? "📝 Edit my notes" : "✅ We went here";
+}
+
+// ============================================================
+//  BEEN THERE PAGE
+// ============================================================
+
+function renderVisitList() {
+  const search = $("visit-search").value.trim().toLowerCase();
+  const filter = $("visit-filter").value;
+  const sort = $("visit-sort").value;
+
+  let list = restaurants.filter((r) => {
+    const v = getVisit(r.name);
+    if (filter === "visited" && !v.visited) return false;
+    if (filter === "unvisited" && v.visited) return false;
+    if (search && !`${r.name} ${cats(r).join(" ")} ${r.area || ""} ${r.note || ""}`.toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  list.sort((a, b) => {
+    const va = getVisit(a.name), vb = getVisit(b.name);
+    if (sort === "rating") return (vb.rating || 0) - (va.rating || 0) || a.name.localeCompare(b.name);
+    if (sort === "recent") return (vb.date || "").localeCompare(va.date || "") || a.name.localeCompare(b.name);
+    return a.name.localeCompare(b.name);
+  });
+
+  const visitedCount = restaurants.filter((r) => getVisit(r.name).visited).length;
+  const pct = restaurants.length ? Math.round((visitedCount / restaurants.length) * 100) : 0;
+  $("visit-stats").textContent = `You've been to ${visitedCount} of ${restaurants.length} (${pct}%).`;
+
+  const ul = $("visit-list");
+  ul.innerHTML = "";
+  if (list.length === 0) {
+    ul.innerHTML = `<li class="empty">Nothing here yet.</li>`;
+    return;
+  }
+  list.forEach((r) => ul.appendChild(buildVisitCard(r)));
+}
+
+function buildVisitCard(r) {
+  const v = getVisit(r.name);
+  const li = document.createElement("li");
+  li.className = "visit-card" + (v.visited ? " visited" : "");
+
+  li.innerHTML = `
+    <div class="visit-head">
+      <input type="checkbox" ${v.visited ? "checked" : ""} aria-label="Been to ${escapeHTML(r.name)}">
+      <div>
+        <div class="visit-name">${escapeHTML(r.name)}</div>
+        <div class="visit-sub">${escapeHTML(cats(r).join(", "))}${priceLabel(r) ? " · " + priceLabel(r) : ""}${r.area ? " · " + escapeHTML(r.area) : ""}${r.note ? " · " + escapeHTML(r.note) : ""}</div>
+      </div>
+    </div>
+    <div class="visit-body ${v.visited ? "" : "hidden"}">
+      <div class="visit-row">
+        <div class="stars" role="radiogroup" aria-label="Rating"></div>
+        <label>Visited on <input type="date" value="${escapeHTML(v.date)}"></label>
+        <span class="saved-msg">Saved ✓</span>
+      </div>
+      <textarea placeholder="Notes — what you ordered, who you went with, would you go back?">${escapeHTML(v.notes)}</textarea>
+    </div>
+  `;
+
+  const checkbox = li.querySelector('input[type="checkbox"]');
+  const body = li.querySelector(".visit-body");
+  const starsBox = li.querySelector(".stars");
+  const dateInput = li.querySelector('input[type="date"]');
+  const notes = li.querySelector("textarea");
+  const savedMsg = li.querySelector(".saved-msg");
+
+  const flashSaved = () => {
+    savedMsg.classList.add("show");
+    clearTimeout(savedMsg._t);
+    savedMsg._t = setTimeout(() => savedMsg.classList.remove("show"), 1200);
+  };
+
+  // Checkbox: mark visited / unvisited
+  checkbox.addEventListener("change", () => {
+    const changes = { visited: checkbox.checked };
+    if (checkbox.checked && !getVisit(r.name).date) {
+      changes.date = new Date().toISOString().slice(0, 10);
+      dateInput.value = changes.date;
+    }
+    setVisit(r.name, changes);
+    li.classList.toggle("visited", checkbox.checked);
+    body.classList.toggle("hidden", !checkbox.checked);
+    renderVisitStatsOnly();
+  });
+
+  // Stars (click the same star again to clear)
+  const drawStars = () => {
+    const rating = getVisit(r.name).rating;
+    starsBox.querySelectorAll(".star").forEach((s, i) => s.classList.toggle("on", i < rating));
+  };
+  for (let i = 1; i <= 5; i++) {
+    const s = document.createElement("button");
+    s.type = "button";
+    s.className = "star";
+    s.textContent = "★";
+    s.setAttribute("aria-label", `${i} star${i > 1 ? "s" : ""}`);
+    s.addEventListener("click", () => {
+      const current = getVisit(r.name).rating;
+      setVisit(r.name, { rating: current === i ? 0 : i });
+      drawStars();
+      flashSaved();
+    });
+    starsBox.appendChild(s);
+  }
+  drawStars();
+
+  dateInput.addEventListener("change", () => {
+    setVisit(r.name, { date: dateInput.value });
+    flashSaved();
+  });
+
+  // Notes autosave as you type (short delay)
+  let typingTimer;
+  notes.addEventListener("input", () => {
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(() => {
+      setVisit(r.name, { notes: notes.value });
+      flashSaved();
+    }, 400);
+  });
+
+  return li;
+}
+
+function renderVisitStatsOnly() {
+  const visitedCount = restaurants.filter((r) => getVisit(r.name).visited).length;
+  const pct = restaurants.length ? Math.round((visitedCount / restaurants.length) * 100) : 0;
+  $("visit-stats").textContent = `You've been to ${visitedCount} of ${restaurants.length} (${pct}%).`;
+}
+
+function updateBadge() {
+  $("visited-badge").textContent = Object.values(visits).filter((v) => v.visited).length;
+}
+
+// ---------- Backup: export / import ----------
+function exportVisits() {
+  const blob = new Blob([JSON.stringify(visits, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `restaurant-visits-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function importVisits(file) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      if (typeof data !== "object" || Array.isArray(data)) throw new Error();
+      visits = { ...visits, ...data };
+      saveVisits();
+      renderVisitList();
+      updateMatches();
+      alert("Backup imported!");
+    } catch {
+      alert("That file doesn't look like a valid backup.");
+    }
+  };
+  reader.readAsText(file);
+}
+
+// ============================================================
+//  TABS + STARTUP
+// ============================================================
+
+function showTab(id) {
+  document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t.dataset.tab === id));
+  document.querySelectorAll(".page").forEach((p) => p.classList.toggle("hidden", p.id !== id));
+  if (id === "visits-page") renderVisitList();
+  else { updateMatches(); renderResultVisit(); }
+}
+
+document.querySelectorAll(".tab").forEach((t) =>
+  t.addEventListener("click", () => showTab(t.dataset.tab))
+);
+
+$("pick-btn").addEventListener("click", pickRandom);
+$("reroll-btn").addEventListener("click", pickRandom);
+$("new-only").addEventListener("change", updateMatches);
+
+// "We went here" on the result card → jump to that restaurant on the Been There page
+$("mark-btn").addEventListener("click", () => {
+  if (!currentPick) return;
+  if (!getVisit(currentPick.name).visited) {
+    setVisit(currentPick.name, { visited: true, date: new Date().toISOString().slice(0, 10) });
+  }
+  $("visit-search").value = currentPick.name;
+  $("visit-filter").value = "all";
+  showTab("visits-page");
+});
+
+$("visit-search").addEventListener("input", renderVisitList);
+$("visit-filter").addEventListener("change", renderVisitList);
+$("visit-sort").addEventListener("change", renderVisitList);
+$("export-btn").addEventListener("click", exportVisits);
+$("import-input").addEventListener("change", (e) => {
+  if (e.target.files[0]) importVisits(e.target.files[0]);
+  e.target.value = "";
+});
+
+$("total-count").textContent = restaurants.length;
+buildFilters();
+updateMatches();
+updateBadge();
