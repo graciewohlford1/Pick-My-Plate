@@ -237,8 +237,13 @@ button { cursor: pointer; }
   margin-top: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow);
 }
 .passport-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 22px; align-items: center; }
-@media (max-width: 640px) { .passport-head { grid-template-columns: auto minmax(0, 1fr); } .passport-head .add-btn { grid-column: 1 / -1; } }
-.passport-head .add-btn { width: auto; }
+@media (max-width: 640px) { .passport-head { grid-template-columns: auto minmax(0, 1fr); } .passport-head .head-btns { grid-column: 1 / -1; } }
+.head-btns { display: grid; gap: 8px; }
+.add-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 380px) { .add-row { grid-template-columns: 1fr; } }
+.near-btn { border-color: var(--blue-2); }
+.near-btn:hover { background: var(--blue); border-color: var(--blue-2); }
+.nb-here { display: flex; justify-content: center; margin-top: 8px; }
 .ring { width: 88px; height: 88px; position: relative; }
 .ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
 .ring .num { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: 1.6rem; font-variant-numeric: tabular-nums; }
@@ -401,6 +406,92 @@ footer em { font-family: var(--display); font-size: 1.05rem; color: var(--ink); 
 .auth-fine { text-align: center; font-size: .78rem; color: var(--muted); margin-top: 8px; }
 .import-list { list-style: none; display: grid; gap: 4px; margin-top: 12px; text-align: left; background: var(--bg-2); border-radius: 14px; padding: 12px 14px; font-size: .92rem; }
 
+/* friends */
+.friends-head { margin-top: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); display: grid; gap: 18px; }
+.friends-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.7rem, 5vw, 2.2rem); line-height: 1.05; }
+.friends-head p { color: var(--muted); margin-top: 6px; font-size: .95rem; }
+.code-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; background: var(--pink); border-radius: 16px; padding: 14px 16px; }
+.my-code .lbl { display: block; font-weight: 700; font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--pink-ink); }
+.my-code strong { font-family: var(--display); font-weight: 400; font-size: 1.7rem; letter-spacing: .04em; color: var(--ink); }
+.code-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.code-btns .ghost { background: var(--surface); border-color: transparent; }
+.add-friend { display: flex; gap: 8px; flex-wrap: wrap; }
+.add-friend input { flex: 1 1 220px; min-width: 0; border: 1px solid var(--line); border-radius: 12px; padding: 11px 12px; background: white; color: var(--ink); text-transform: uppercase; letter-spacing: .04em; }
+.add-friend input::placeholder { text-transform: none; letter-spacing: 0; color: var(--soft); }
+.add-friend input:focus { outline: none; border-color: var(--blue-2); box-shadow: 0 0 0 3px rgba(159, 192, 220, .35); }
+.add-friend .btn { padding: 11px 18px; }
+.friend-msg { font-size: .9rem; font-weight: 600; color: var(--blue-ink); min-height: 1.2em; margin-top: -8px; }
+.friend-msg.bad { color: var(--pink-ink); }
+.friend-msg:empty { display: none; }
+.sec-title { font-family: var(--display); font-weight: 400; font-size: 1.5rem; margin: 30px 0 12px; }
+.req-list { display: grid; gap: 10px; margin-top: 18px; }
+.req { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; }
+.req.incoming { background: var(--yellow); border-color: transparent; }
+.req .txt { flex: 1 1 180px; min-width: 0; }
+.req .txt b { font-weight: 600; }
+.req .txt span { display: block; font-size: .8rem; color: var(--muted); }
+.req .btns { display: flex; gap: 8px; }
+.req .btn, .req .ghost { padding: 8px 14px; font-size: .88rem; }
+.fav { width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: var(--blue-ink); display: grid; place-items: center; font-family: var(--display); font-size: 1.15rem; flex-shrink: 0; }
+.friends-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.friend-card { display: flex; align-items: center; gap: 12px; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 18px; padding: 14px; transition: transform .15s, box-shadow .15s; width: 100%; }
+.friend-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.friend-card .fav { width: 46px; height: 46px; font-size: 1.5rem; background: var(--pink); color: var(--pink-ink); }
+.friend-card .nm { font-family: var(--display); font-size: 1.35rem; line-height: 1.1; overflow-wrap: anywhere; }
+.friend-card .st { font-size: .8rem; color: var(--muted); }
+.friend-revs { margin-top: 16px; text-align: left; background: var(--bg-2); border-radius: 16px; padding: 12px 14px; }
+.friend-revs .lbl { display: block; font-weight: 700; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.friend-revs ul { list-style: none; display: grid; gap: 10px; }
+.friend-revs li { display: flex; gap: 10px; align-items: flex-start; }
+.friend-revs li .fav { width: 28px; height: 28px; font-size: .95rem; }
+.friend-revs b { font-weight: 600; }
+.friend-revs .stars-txt { color: var(--yellow-2); letter-spacing: 1px; margin-left: 4px; }
+.friend-revs p { font-size: .9rem; color: var(--ink); margin-top: 1px; }
+.fp-list { list-style: none; display: grid; gap: 8px; margin-top: 16px; text-align: left; }
+.fp-row { display: flex; gap: 10px; align-items: flex-start; border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; background: white; }
+.fp-row .e { font-size: 1.3rem; line-height: 1.2; }
+.fp-row .body { flex: 1; min-width: 0; }
+.fp-row .nm { font-weight: 600; overflow-wrap: anywhere; }
+.fp-row .meta { font-size: .78rem; color: var(--muted); }
+.fp-row .stars-txt { color: var(--yellow-2); letter-spacing: 1px; }
+.fp-row p { font-size: .88rem; margin-top: 2px; }
+.fp-row .mini { padding: 7px 11px; font-size: .8rem; white-space: nowrap; }
+.fp-row .mini.light { background: var(--bg-2); color: var(--ink); }
+
+/* nearby search */
+.modal.nearby { width: min(540px, 100%); }
+.nb-bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; margin-top: 16px; font-size: .86rem; color: var(--muted); }
+.nb-bar .linkish { font-size: .84rem; }
+.nb-types { margin-top: 10px; }
+.nb-types .chip { font-size: .8rem; padding: 5px 10px; }
+.nb-list { max-height: min(46vh, 420px); overflow-y: auto; padding-right: 2px; margin-top: 12px; }
+.nb-row { padding: 0; }
+.nb-row.on { border-color: var(--pink-2); background: #fff7f9; }
+.nb-pick { display: flex; gap: 10px; align-items: center; width: 100%; padding: 10px 12px; cursor: pointer; }
+.nb-pick input { width: 18px; height: 18px; accent-color: var(--pink-ink); flex-shrink: 0; }
+.nb-pick .body { display: grid; min-width: 0; }
+.nb-foot { position: sticky; bottom: -24px; background: var(--surface); padding: 12px 0 2px; margin-top: 12px; }
+.nb-foot .btn:disabled { opacity: .55; cursor: default; }
+.loc-near { display: flex; align-items: center; gap: 8px; width: 100%; border: 0; background: var(--yellow); text-align: left; padding: 9px 10px; border-radius: 10px; font-weight: 600; }
+.loc-near:hover { background: #f8e39b; }
+
+/* phone header: logo + account on top, tabs in one even row underneath */
+@media (max-width: 680px) {
+  .top { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 14px 10px; }
+  .top-right { display: contents; }
+  .acct { grid-column: 2; grid-row: 1; }
+  .acct-btn .nm { max-width: 90px; }
+  .tabs { grid-column: 1 / -1; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; width: 100%; }
+  .tab { justify-content: center; padding: 9px 4px; font-size: .86rem; gap: 5px; }
+}
+.loc-btn { white-space: nowrap; }
+@media (max-width: 420px) {
+  .logo { font-size: 2.2rem; }
+  .loc-btn .tagline { display: none; }
+  .acct-btn { padding-right: 4px; }
+  .acct-btn .nm { display: none; }
+  .tab { font-size: .8rem; }
+}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 </style>
 </head>
@@ -419,6 +510,7 @@ footer em { font-family: var(--display); font-size: 1.05rem; color: var(--ink); 
       <button class="tab" role="tab" aria-selected="true" data-page="spin" id="tab-spin">Spin</button>
       <button class="tab" role="tab" aria-selected="false" data-page="passport" id="tab-passport">Passport <span class="count" id="visited-count">0</span></button>
       <button class="tab" role="tab" aria-selected="false" data-page="foryou" id="tab-foryou">For You</button>
+      <button class="tab" role="tab" aria-selected="false" data-page="friends" id="tab-friends" hidden>Friends <span class="count" id="req-count" hidden>0</span></button>
     </nav>
     <div class="acct" id="acct" hidden>
       <button class="acct-btn" id="acct-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="acct-menu">
@@ -460,7 +552,10 @@ footer em { font-family: var(--display); font-size: 1.05rem; color: var(--ink); 
           <span>Only places I haven't been</span>
           <button class="switch" id="new-only" role="switch" aria-checked="false" aria-label="Only places I haven't been"></button>
         </div>
-        <button class="add-btn" type="button" data-add>＋ Add a spot to the wheel</button>
+        <div class="add-row">
+          <button class="add-btn" type="button" data-add>＋ Add a spot</button>
+          <button class="add-btn near-btn" type="button" data-nearby>📍 Find spots near an address</button>
+        </div>
       </aside>
     </div>
   </section>
@@ -479,7 +574,10 @@ footer em { font-family: var(--display); font-size: 1.05rem; color: var(--ink); 
         <h2>My <span data-city-short>Fort Worth</span> Food Passport</h2>
         <p id="pass-stats"></p>
       </div>
-      <button class="add-btn" type="button" data-add>＋ Add a spot</button>
+      <div class="head-btns">
+        <button class="add-btn" type="button" data-add>＋ Add a spot</button>
+        <button class="add-btn near-btn" type="button" data-nearby>📍 Spots near an address</button>
+      </div>
     </div>
     <div class="pass-tools">
       <input type="search" id="pass-search" placeholder="Search spots or dishes…" aria-label="Search spots">
@@ -530,6 +628,38 @@ footer em { font-family: var(--display); font-size: 1.05rem; color: var(--ink); 
     </div>
     <div class="recs" id="recs"></div>
     <div class="more-wrap"><button class="ghost" id="more-recs" type="button" hidden>Show more</button></div>
+  </section>
+
+  <!-- ================= FRIENDS ================= -->
+  <section id="page-friends" hidden>
+    <div class="friends-head">
+      <div>
+        <h2>Friends</h2>
+        <p>See where your friends have been and what they thought. Friends you accept can see your stars, notes and the places you've been.</p>
+      </div>
+      <div id="friends-guest" hidden>
+        <div class="actions" style="margin-top:0"><button class="btn" type="button" id="friends-login">Log in to add friends</button></div>
+      </div>
+      <div id="friends-main" style="display:grid;gap:16px">
+        <div class="code-row">
+          <div class="my-code"><span class="lbl">Your friend code</span><strong id="my-code">······</strong></div>
+          <div class="code-btns">
+            <button class="ghost" type="button" id="copy-code">Copy code</button>
+            <button class="ghost" type="button" id="share-invite">Share invite link</button>
+          </div>
+        </div>
+        <form class="add-friend" id="add-friend" novalidate>
+          <input type="text" id="friend-code-in" placeholder="Enter a friend's code, like MADDIE-7K2Q" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Friend's code">
+          <button class="btn" type="submit">Add friend</button>
+        </form>
+        <p class="friend-msg" id="friend-msg" aria-live="polite"></p>
+      </div>
+    </div>
+    <div class="req-list" id="friend-requests"></div>
+    <h3 class="sec-title" id="favs-title" hidden>Friends' favorites you haven't tried</h3>
+    <div class="recs" id="friend-favs" style="margin-top:0"></div>
+    <h3 class="sec-title" id="flist-title">Your friends</h3>
+    <div class="friends-grid" id="friend-list"></div>
   </section>
 
   <footer><em>Pick my Plate</em> · made by Gracie · <span id="total"></span> <span id="spots-word">spots</span> in <span data-city-short>Fort Worth</span></footer>
@@ -1023,7 +1153,7 @@ function refresh() {
   const unpriced = sel.prices.size ? here().filter((r) => r.price == null).length : 0;
   $("status").innerHTML = m.length
     ? `<b>${m.length}</b> spot${m.length === 1 ? "" : "s"} on the wheel${unpriced ? ` · ${unpriced} have no price set yet` : ""}${m.length > PLACE_LIMIT ? `<br><span class="status-hint">Pick a food type or two to see restaurant names on the wheel</span>` : ""}`
-    : here().length ? "No spots match. Turn a filter off." : `No spots in ${cityShort()} yet. Add your first one below.`;
+    : here().length ? "No spots match. Turn a filter off." : `No spots in ${esc(cityShort())} yet. <button class="linkish" type="button" data-nearby>Find spots near an address</button> or add one below.`;
   $("spin-btn").disabled = m.length === 0 || spinning;
   updateCounts();
 }
@@ -1197,6 +1327,7 @@ function showWinner(r, cat) {
       <div class="tags">${tags}</div>
       ${r.note ? `<div class="note">📌 ${esc(r.note)}</div>` : ""}
       ${infoBlock(r)}
+      ${friendReviewsBlock(r.name)}
       <p class="been">${been}</p>
       <div class="actions">
         ${linksFor(r)}
@@ -1232,6 +1363,7 @@ function openSheet(name) {
       </div>
       ${r.note ? `<div class="note">📌 ${esc(r.note)}</div>` : ""}
       ${infoBlock(r)}
+      ${friendReviewsBlock(r.name)}
       <div class="actions">${linksFor(r)}</div>
       <div class="section-gap">
         <div class="field">
@@ -1619,7 +1751,7 @@ function renderPassport() {
     return a.name.localeCompare(b.name);
   });
   const box = $("stamps");
-  if (!list.length) { box.innerHTML = `<p class="empty">${here().length ? "No spots match." : `No spots in ${esc(cityShort())} yet. Tap “Add a spot” to start your list.`}</p>`; return; }
+  if (!list.length) { box.innerHTML = `<p class="empty">${here().length ? "No spots match." : `No spots in ${esc(cityShort())} yet. <button class="linkish" type="button" data-nearby>Find spots near an address</button> or tap “Add a spot”.`}</p>`; return; }
   box.innerHTML = list.map((r) => {
     const v = getV(r.name);
     return `<button class="stamp ${v.visited ? "visited" : ""}" data-name="${esc(r.name)}" type="button" style="--stamp:${catInfo(cats(r)[0]).c}">
@@ -1706,7 +1838,7 @@ function renderForYou() {
   const box = $("recs");
   if (noGuide) {
     $("foryou-sub").textContent = `Recommendations are only researched for Fort Worth so far.`;
-    box.innerHTML = `<p class="empty">No recommendations for ${esc(cityShort())} yet. Add the spots you love and they'll go straight on the wheel.</p>`;
+    box.innerHTML = `<p class="empty">No recommendations for ${esc(cityShort())} yet. <button class="linkish" type="button" data-nearby>Find spots near an address</button> to fill your wheel.</p>`;
     $("more-recs").hidden = true; return;
   }
   if (!pool.length && recSel.size) {
@@ -1795,6 +1927,7 @@ function renderLocMenu(msg = "") {
       <span class="ct">${counts[c.name] || 0} spot${counts[c.name] === 1 ? "" : "s"}</span>
       ${c.name !== DEFAULT_CITY && !counts[c.name] ? `<button class="rm" type="button" data-rm="${esc(c.name)}" aria-label="Remove ${esc(c.name)}">×</button>` : ""}
     </div>`).join("") + `
+    <button class="loc-near" type="button" data-nearby>📍 Find spots near an address in ${esc(cityShort())}</button>
     <div class="loc-sep"></div>
     <form class="loc-add" id="loc-add">
       <input type="text" id="loc-input" placeholder="Add a city, e.g. Dallas, TX" aria-label="Add a city" autocomplete="off">
@@ -1826,6 +1959,7 @@ function renderLocMenu(msg = "") {
     } catch {}
     cities.push({ name, box }); save(KEY_CITIES, cities);
     switchCity(name);
+    openNearby({ fresh: true });
     if (!box) toast(`Added ${cityShort(name)}. Live web lookup turns on once the site is published.`);
   });
 }
@@ -1845,16 +1979,18 @@ document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !locMenu
 let page = "spin";
 function showPage(p) {
   page = p;
-  ["spin", "passport", "foryou"].forEach((x) => {
+  ["spin", "passport", "foryou", "friends"].forEach((x) => {
     $("page-" + x).hidden = x !== p;
     $("tab-" + x).setAttribute("aria-selected", x === p);
   });
   rerenderCurrent();
   if (p === "spin") sizeWheel();
+  if (p === "friends" && user) loadFriends();
 }
 function rerenderCurrent() {
   if (page === "passport") renderPassport();
   else if (page === "foryou") renderForYou();
+  else if (page === "friends") renderFriends();
   else refresh();
 }
 document.querySelectorAll(".tab").forEach((t) => t.addEventListener("click", () => showPage(t.dataset.page)));
@@ -1955,6 +2091,7 @@ const displayName = (u) => (u && u.user_metadata && u.user_metadata.name) || (u 
 function renderAcct() {
   if (!CLOUD) return;
   $("acct").hidden = false;
+  $("tab-friends").hidden = false;
   const nm = user ? displayName(user) : "Guest";
   $("acct-name").textContent = user ? nm : "Guest · Log in";
   $("acct-av").textContent = user ? nm.trim().charAt(0).toUpperCase() : "?";
@@ -2083,6 +2220,8 @@ async function signedIn(u) {
   } catch {
     setSync("error", "Offline. Changes save on this device for now.");
   }
+  await loadFriends();
+  handleInvite();
 }
 function offerImport(guest) {
   const been = Object.values(guest.visits || {}).filter((v) => v && v.visited).length;
@@ -2116,23 +2255,525 @@ async function logOut() {
   const leaving = user;
   // clear this person's copy from the device, so the next person can't see it
   if (leaving) STATE_KEYS.forEach((k) => { try { localStorage.removeItem(`u:${leaving.id}:${k}`); } catch {} });
-  user = null;
+  user = null; resetFriends();
   try { await sb.auth.signOut(); } catch {}
   readState(); renderAcct(); rerenderAll();
   showAuth("login");
 }
 function signedOutElsewhere() {
   if (!user) return;
-  user = null; readState(); renderAcct(); rerenderAll(); showAuth("login");
+  user = null; resetFriends(); readState(); renderAcct(); rerenderAll(); showAuth("login");
 }
 
 // pick up changes made on your other devices when you come back to this tab
 document.addEventListener("visibilitychange", async () => {
   if (document.visibilityState !== "visible" || !user || syncBusy || lastSync.state === "saving") return;
   try { const cloud = await pullNow(); if (cloud) { writeBlob(cloud); rerenderAll(); } } catch {}
+  loadFriends();
 });
 
+/* =============================================================
+   FRIENDS
+   pmp_profiles holds each person's first name + friend code.
+   pmp_friendships holds requests; once accepted, the database lets
+   both people read each other's passport (never edit it).
+   ============================================================= */
+const KEY_INVITE = "pmp-invite";
+const CODE_CHARS = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+let me = null, friendRows = [], friendNames = {}, friendData = {}, friendsLoaded = false, friendsError = false, friendsBusy = false, friendsNotSetUp = false;
+
+function resetFriends() { me = null; friendRows = []; friendNames = {}; friendData = {}; friendsLoaded = false; friendsError = false; updateReqBadge(); }
+function makeCode(name) {
+  const base = String(name || "").normalize("NFD").replace(/[^A-Za-z]/g, "").toUpperCase().slice(0, 6) || "FRIEND";
+  let t = ""; for (let i = 0; i < 4; i++) t += CODE_CHARS[Math.floor(Math.random() * CODE_CHARS.length)];
+  return `${base}-${t}`;
+}
+const accepted = () => friendRows.filter((f) => f.status === "accepted");
+const fname = (id) => friendNames[id] || "Your friend";
+const initial = (n) => String(n || "?").trim().charAt(0).toUpperCase() || "?";
+const starStr = (n) => (n ? "★".repeat(n) + "☆".repeat(5 - n) : "");
+
+async function ensureProfile() {
+  const nm = displayName(user);
+  const { data, error } = await sb.from("pmp_profiles").select("id,name,friend_code").eq("id", user.id).maybeSingle();
+  if (error) throw error;
+  if (data) {
+    me = data;
+    if (user.user_metadata && user.user_metadata.name && data.name !== nm) { await sb.from("pmp_profiles").update({ name: nm }).eq("id", user.id); me.name = nm; }
+    return;
+  }
+  for (let i = 0; i < 5; i++) {
+    const row = { id: user.id, name: nm, friend_code: makeCode(nm) };
+    const { error: e2 } = await sb.from("pmp_profiles").insert(row);
+    if (!e2) { me = row; return; }
+    if (!/duplicate|unique|23505/i.test(`${e2.code} ${e2.message}`)) throw e2;
+  }
+  throw new Error("Couldn't make a friend code");
+}
+
+async function loadFriends() {
+  if (!CLOUD || !user || friendsBusy) return;
+  friendsBusy = true;
+  try {
+    if (!me) await ensureProfile();
+    const { data: rows, error } = await sb.from("pmp_friendships").select("id,requester,addressee,status");
+    if (error) throw error;
+    friendRows = (rows || []).map((r) => ({ fid: r.id, other: r.requester === user.id ? r.addressee : r.requester, status: r.status, incoming: r.addressee === user.id }));
+    const ids = [...new Set(friendRows.map((f) => f.other))];
+    const names = {}, datas = {};
+    if (ids.length) {
+      const { data: ps } = await sb.from("pmp_profiles").select("id,name").in("id", ids);
+      (ps || []).forEach((p) => (names[p.id] = p.name || "Friend"));
+      const acc = accepted().map((f) => f.other);
+      if (acc.length) {
+        const { data: ds } = await sb.from("pmp_user_data").select("user_id,data").in("user_id", acc);
+        (ds || []).forEach((d) => (datas[d.user_id] = d.data || {}));
+      }
+    }
+    friendNames = names; friendData = datas; friendsError = false;
+  } catch (e) {
+    friendsError = true;
+    // the friends tables haven't been created in Supabase yet (supabase-friends.sql)
+    friendsNotSetUp = /pmp_profiles|pmp_friendships|does not exist|schema cache|42P01|PGRST20/i.test(`${e && e.code} ${e && e.message}`);
+  } finally {
+    friendsLoaded = true; friendsBusy = false;
+  }
+  updateReqBadge();
+  if (page === "friends") renderFriends();
+}
+function updateReqBadge() {
+  const n = friendRows.filter((f) => f.status === "pending" && f.incoming).length;
+  const b = $("req-count"); if (!b) return;
+  b.hidden = n === 0; b.textContent = n;
+}
+
+// who among your friends has been to a place, best rating first
+function friendsWhoWent(placeName) {
+  return accepted().map((f) => {
+    const v = ((friendData[f.other] || {}).visits || {})[placeName];
+    return v && v.visited ? { id: f.other, name: fname(f.other), rating: v.rating || 0, notes: v.notes || "", date: v.date || "" } : null;
+  }).filter(Boolean).sort((a, b) => b.rating - a.rating);
+}
+function friendReviewsBlock(placeName) {
+  const went = friendsWhoWent(placeName);
+  if (!went.length) return "";
+  return `<div class="friend-revs"><span class="lbl">What your friends said</span><ul>${went.map((w) => `
+    <li><span class="fav" aria-hidden="true">${esc(initial(w.name))}</span><div>
+      <b>${esc(w.name)}</b>${w.rating ? `<span class="stars-txt" aria-label="${w.rating} stars">${starStr(w.rating)}</span>` : ` <span style="color:var(--muted);font-size:.85rem">has been here</span>`}
+      ${w.notes ? `<p>“${esc(w.notes.length > 140 ? w.notes.slice(0, 140) + "…" : w.notes)}”</p>` : ""}
+    </div></li>`).join("")}</ul></div>`;
+}
+
+// a friend's spot as one of your own (from your list, or the spot they added themselves)
+function spotFromFriend(friendId, placeName) {
+  const mine = all().find((r) => norm(r.name) === norm(placeName));
+  if (mine) return { spot: mine, onList: true };
+  const theirs = ((friendData[friendId] || {}).custom || []).find((c) => c && c.name === placeName);
+  const guide = suggestions.find((s) => s.name === placeName);
+  return { spot: theirs || guide || { name: placeName, cuisine: "Restaurant" }, onList: false };
+}
+function addFriendSpot(friendId, placeName) {
+  const { spot, onList } = spotFromFriend(friendId, placeName);
+  if (onList) { openSheet(spot.name); return; }
+  const c = { ...spot, added: today() };
+  delete c.mine; delete c._key;
+  if (!c.meals || !c.meals.length) c.meals = MEAL;
+  if (c.price === undefined) c.price = null;
+  custom.push(c); save(KEY_CUSTOM, custom);
+  refresh();
+  toast(`${c.name} is on your wheel${cityOf(c) !== city ? ` in ${cityShort(cityOf(c))}` : ""}!`);
+  confetti(catInfo(cats(c)[0]).c, 70);
+  if (page === "friends") renderFriends();
+}
+
+/* ---------- Friends tab ---------- */
+function renderFriends() {
+  const guest = !user;
+  $("friends-guest").hidden = !guest;
+  $("friends-main").style.display = guest ? "none" : "grid";
+  const req = $("friend-requests"), favs = $("friend-favs"), list = $("friend-list");
+  if (guest) { req.innerHTML = ""; favs.innerHTML = ""; $("favs-title").hidden = true; $("flist-title").hidden = true; list.innerHTML = ""; return; }
+  $("flist-title").hidden = false;
+  $("my-code").textContent = me ? me.friend_code : "······";
+
+  if (!friendsLoaded) { list.innerHTML = `<p class="empty">Loading your friends…</p>`; return; }
+  if (friendsError) {
+    list.innerHTML = friendsNotSetUp
+      ? `<p class="empty">Friends isn't switched on yet. Run <b>supabase-friends.sql</b> in Supabase's SQL Editor, then reopen this tab.</p>`
+      : `<p class="empty">Couldn't load friends. Check your connection, then open this tab again.</p>`;
+  }
+
+  // requests
+  const pend = friendRows.filter((f) => f.status === "pending");
+  req.innerHTML = pend.map((f) => f.incoming ? `
+    <div class="req incoming"><span class="fav">${esc(initial(fname(f.other)))}</span>
+      <div class="txt"><b>${esc(fname(f.other))}</b> wants to be friends<span>You'll see each other's stars and notes</span></div>
+      <div class="btns"><button class="btn" type="button" data-accept="${f.fid}">Accept</button><button class="ghost" type="button" data-decline="${f.fid}">Decline</button></div></div>` : `
+    <div class="req"><span class="fav">${esc(initial(fname(f.other)))}</span>
+      <div class="txt">Request sent to <b>${esc(fname(f.other))}</b><span>Waiting for them to accept</span></div>
+      <div class="btns"><button class="ghost" type="button" data-decline="${f.fid}">Cancel</button></div></div>`).join("");
+  req.querySelectorAll("[data-accept]").forEach((b) => b.addEventListener("click", () => acceptFriend(+b.dataset.accept)));
+  req.querySelectorAll("[data-decline]").forEach((b) => b.addEventListener("click", () => removeFriendship(+b.dataset.decline, b)));
+
+  // friends' favorites you haven't been to
+  const best = {};
+  accepted().forEach((f) => Object.entries((friendData[f.other] || {}).visits || {}).forEach(([place, v]) => {
+    if (!v || !v.visited || (v.rating || 0) < 4 || getV(place).visited) return;
+    if (!best[place] || v.rating > best[place].rating) best[place] = { place, friend: f.other, rating: v.rating, notes: v.notes || "" };
+  }));
+  const top = Object.values(best).sort((a, b) => b.rating - a.rating || a.place.localeCompare(b.place)).slice(0, 6);
+  $("favs-title").hidden = !top.length;
+  favs.innerHTML = top.map((t) => {
+    const { spot, onList } = spotFromFriend(t.friend, t.place);
+    const others = friendsWhoWent(t.place).length - 1;
+    return `<article class="rec" style="--rec:${catInfo(cats(spot)[0]).c}">
+      <div class="row1"><span class="e">${emojiFor(spot)}</span><div><h3>${esc(t.place)}</h3><div class="cat">${esc([...cats(spot), spot.area].filter(Boolean).join(" · "))}</div></div></div>
+      <div class="why">${esc(fname(t.friend))} gave it ${starStr(t.rating)}${others > 0 ? ` · +${others} more friend${others === 1 ? "" : "s"}` : ""}</div>
+      ${t.notes ? `<p>“${esc(t.notes.length > 120 ? t.notes.slice(0, 120) + "…" : t.notes)}”</p>` : spot.about ? `<p>${esc(spot.about)}</p>` : ""}
+      <div class="rec-actions"><button class="btn ${onList ? "light" : "pink"}" type="button" data-fav-friend="${esc(t.friend)}" data-fav-place="${esc(t.place)}">${onList ? "Open" : "＋ Add to my list"}</button></div>
+    </article>`;
+  }).join("");
+  favs.querySelectorAll("[data-fav-place]").forEach((b) => b.addEventListener("click", () => addFriendSpot(b.dataset.favFriend, b.dataset.favPlace)));
+
+  // friend list
+  const acc = accepted();
+  if (!friendsError) list.innerHTML = acc.length ? acc.map((f) => {
+    const vs = Object.values((friendData[f.other] || {}).visits || {}).filter((v) => v && v.visited);
+    const rated = vs.filter((v) => v.rating);
+    const avg = rated.length ? (rated.reduce((s, v) => s + v.rating, 0) / rated.length).toFixed(1) : null;
+    return `<button class="friend-card" type="button" data-friend="${esc(f.other)}"><span class="fav">${esc(initial(fname(f.other)))}</span>
+      <span><span class="nm">${esc(fname(f.other))}</span><br><span class="st">Been to ${vs.length} spot${vs.length === 1 ? "" : "s"}${avg ? ` · avg ★${avg}` : ""}</span></span></button>`;
+  }).join("") : `<p class="empty">No friends yet. Send your code or invite link to someone, or type their code above.</p>`;
+  list.querySelectorAll("[data-friend]").forEach((b) => b.addEventListener("click", () => openFriendPassport(b.dataset.friend)));
+}
+
+function openFriendPassport(id) {
+  const d = friendData[id] || {};
+  const rows = Object.entries(d.visits || {}).filter(([, v]) => v && v.visited)
+    .sort((a, b) => (b[1].rating || 0) - (a[1].rating || 0) || String(b[1].date || "").localeCompare(String(a[1].date || "")));
+  const f = friendRows.find((x) => x.other === id);
+  openOverlay(`
+    <div class="modal sheet" role="dialog" aria-modal="true" aria-labelledby="fp-name">
+      <button class="close" data-close aria-label="Close">×</button>
+      <div class="head"><span class="e" style="background:var(--pink);color:var(--pink-ink);font-family:var(--display)">${esc(initial(fname(id)))}</span>
+        <div><h3 id="fp-name">${esc(fname(id))}'s passport</h3><div class="sub">Been to ${rows.length} spot${rows.length === 1 ? "" : "s"}</div></div></div>
+      ${rows.length ? `<ul class="fp-list">${rows.map(([place, v]) => {
+        const { spot, onList } = spotFromFriend(id, place);
+        return `<li class="fp-row"><span class="e">${emojiFor(spot)}</span><div class="body">
+          <div class="nm">${esc(place)}</div>
+          <div class="meta">${v.rating ? `<span class="stars-txt">${starStr(v.rating)}</span> · ` : ""}${esc([...cats(spot)].join(", "))}${v.date ? ` · ${esc(v.date)}` : ""}${getV(place).visited ? " · you've been too" : ""}</div>
+          ${v.notes ? `<p>“${esc(v.notes)}”</p>` : ""}</div>
+          <button class="mini ${onList ? "light" : ""}" type="button" data-fp-place="${esc(place)}">${onList ? "Open" : "＋ Add"}</button></li>`;
+      }).join("")}</ul>` : `<p class="no-info">${esc(fname(id))} hasn't stamped any places yet.</p>`}
+      ${f ? `<div style="text-align:center;margin-top:16px"><button class="linkish danger" type="button" id="fp-remove">Remove ${esc(fname(id))} as a friend</button></div>` : ""}
+    </div>`, (ov) => {
+      ov.querySelectorAll("[data-fp-place]").forEach((b) => b.addEventListener("click", () => {
+        const { onList } = spotFromFriend(id, b.dataset.fpPlace);
+        addFriendSpot(id, b.dataset.fpPlace);
+        if (!onList) { b.textContent = "Open"; b.classList.add("light"); }
+      }));
+      const rm = ov.querySelector("#fp-remove");
+      if (rm) rm.addEventListener("click", () => removeFriendship(f.fid, rm, true));
+    });
+}
+
+/* ---------- actions ---------- */
+function friendMsg(text, bad) { const m = $("friend-msg"); m.textContent = text; m.classList.toggle("bad", !!bad); }
+async function addFriendByCode(raw) {
+  const code = String(raw || "").trim().toUpperCase().replace(/\s+/g, "");
+  if (!user) { showAuth("login"); return false; }
+  if (!code) { friendMsg("Type your friend's code first.", true); return false; }
+  if (me && code === me.friend_code) { friendMsg("That's your own code. Send it to a friend instead.", true); return false; }
+  friendMsg("Looking them up…");
+  const { data, error } = await sb.rpc("pmp_find_by_code", { code });
+  if (error) { friendMsg("Couldn't look that up. Check your connection and try again.", true); return false; }
+  const hit = Array.isArray(data) ? data[0] : data;
+  if (!hit) { friendMsg("No one has that code. Check for typos; it looks like NAME-AB12.", true); return false; }
+  friendNames[hit.id] = hit.name || "Friend";
+  const existing = friendRows.find((f) => f.other === hit.id);
+  if (existing && existing.status === "accepted") { friendMsg(`You're already friends with ${fname(hit.id)}.`); return true; }
+  if (existing && !existing.incoming) { friendMsg(`You already sent ${fname(hit.id)} a request.`); return true; }
+  if (existing && existing.incoming) { await acceptFriend(existing.fid); return true; }
+  const { error: e2 } = await sb.from("pmp_friendships").insert({ requester: user.id, addressee: hit.id });
+  if (e2) {
+    if (/duplicate|unique|23505/i.test(`${e2.code} ${e2.message}`)) { await loadFriends(); friendMsg(`You and ${fname(hit.id)} are already connected. Check your requests.`); return true; }
+    friendMsg("Couldn't send the request. Try again in a moment.", true); return false;
+  }
+  friendMsg(`Request sent to ${fname(hit.id)}. They'll see it in their Friends tab.`);
+  $("friend-code-in").value = "";
+  await loadFriends();
+  return true;
+}
+async function acceptFriend(fid) {
+  const f = friendRows.find((x) => x.fid === fid);
+  const { error } = await sb.from("pmp_friendships").update({ status: "accepted" }).eq("id", fid);
+  if (error) { toast("Couldn't accept. Try again."); return; }
+  await loadFriends();
+  if (f) { toast(`You and ${fname(f.other)} are friends now`); confetti("#f2b8c8", 80); }
+}
+async function removeFriendship(fid, btn, fromSheet) {
+  const f = friendRows.find((x) => x.fid === fid);
+  if (f && f.status === "accepted" && btn && !btn.dataset.armed) { btn.dataset.armed = "1"; btn.textContent = "Tap again to remove"; return; }
+  const { error } = await sb.from("pmp_friendships").delete().eq("id", fid);
+  if (error) { toast("Couldn't update. Try again."); return; }
+  if (fromSheet) closeOverlay();
+  if (f && f.status === "accepted") toast(`Removed ${fname(f.other)}`);
+  await loadFriends();
+}
+
+async function copyText(text, okMsg) {
+  try { await navigator.clipboard.writeText(text); toast(okMsg); }
+  catch {
+    const t = document.createElement("textarea"); t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    let ok = false; try { ok = document.execCommand("copy"); } catch {}
+    t.remove(); toast(ok ? okMsg : `Copy this: ${text}`);
+  }
+}
+const inviteUrl = () => `${location.origin}${location.pathname}?friend=${encodeURIComponent(me ? me.friend_code : "")}`;
+$("copy-code").addEventListener("click", () => me && copyText(me.friend_code, "Friend code copied"));
+$("share-invite").addEventListener("click", async () => {
+  if (!me) return;
+  const text = `Add me on Pick my Plate so we can see each other's restaurant ratings! My code is ${me.friend_code}`;
+  if (navigator.share) { try { await navigator.share({ title: "Pick my Plate", text, url: inviteUrl() }); return; } catch (e) { if (e && e.name === "AbortError") return; } }
+  copyText(`${text}\n${inviteUrl()}`, "Invite link copied. Paste it in a text!");
+});
+$("add-friend").addEventListener("submit", (e) => { e.preventDefault(); addFriendByCode($("friend-code-in").value); });
+$("friend-code-in").addEventListener("input", () => friendMsg(""));
+$("friends-login").addEventListener("click", () => showAuth("login"));
+
+/* ---------- invite links: ?friend=CODE ---------- */
+function pendingInvite() { try { return sessionStorage.getItem(KEY_INVITE); } catch { return null; } }
+function clearInvite() { try { sessionStorage.removeItem(KEY_INVITE); } catch {} }
+function showAuthForInvite() {
+  showAuth("login");
+  if (pendingInvite()) $("auth-ok").textContent = "A friend invited you! Log in or create an account to connect.";
+}
+async function handleInvite() {
+  const code = pendingInvite();
+  if (!code || !user) return;
+  clearInvite();
+  if (me && code === me.friend_code) return;
+  const { data } = await sb.rpc("pmp_find_by_code", { code });
+  const hit = Array.isArray(data) ? data[0] : data;
+  if (!hit) { toast("That invite link doesn't match anyone. Ask your friend to resend it."); return; }
+  if (friendRows.some((f) => f.other === hit.id && f.status === "accepted")) return;
+  openOverlay(`
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="inv-title">
+      <span class="win-badge">Friend invite</span>
+      <div class="win-emoji" style="font-family:var(--display);font-size:3rem">${esc(initial(hit.name))}</div>
+      <h3 id="inv-title">Add ${esc(hit.name || "your friend")}?</h3>
+      <p class="about" style="text-align:center">You'll see each other's stars, notes and the places you've been.</p>
+      <div class="actions">
+        <button class="btn" type="button" id="inv-yes">Yes, add ${esc(hit.name || "them")}</button>
+        <button class="btn light" type="button" data-close>Not now</button>
+      </div>
+    </div>`, (ov) => {
+      ov.querySelector("#inv-yes").addEventListener("click", async () => {
+        closeOverlay();
+        const ok = await addFriendByCode(code);
+        toast(ok ? `Friend request sent to ${hit.name || "your friend"}` : "Couldn't send the request. Try from the Friends tab.");
+      });
+    });
+}
+
+/* =============================================================
+   FIND SPOTS NEAR AN ADDRESS
+   Looks the address up on OpenStreetMap, then pulls named restaurants,
+   cafés and bars around it, widening the circle until there are plenty.
+   Picks a mix of food types and lets you choose which to add.
+   ============================================================= */
+const NEARBY_MIN = 25, NEARBY_PRESELECT = 30;
+const AMENITY_FALLBACK = { restaurant: "Restaurant", fast_food: "Quick Bites", cafe: "Coffee", bar: "Bars", pub: "Bars", biergarten: "Bars", nightclub: "Bars", ice_cream: "Dessert" };
+const milesBetween = (a, b, c, d) => {
+  const R = 3958.8, r = Math.PI / 180, dLat = (c - a) * r, dLon = (d - b) * r;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+};
+async function geocode(q) {
+  const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&addressdetails=0&q=${encodeURIComponent(q)}`, { headers: { "Accept-Language": "en" } });
+  if (!res.ok) throw new Error("geocode");
+  const hit = (await res.json())[0];
+  return hit ? { lat: +hit.lat, lon: +hit.lon, label: hit.display_name, bbox: hit.boundingbox } : null;
+}
+async function overpassAround(lat, lon, meters) {
+  const ql = `[out:json][timeout:25];nwr(around:${Math.round(meters)},${lat},${lon})["amenity"~"^(restaurant|cafe|bar|pub|fast_food|biergarten|ice_cream|nightclub)$"]["name"];out tags center 400;`;
+  const res = await fetch("https://overpass-api.de/api/interpreter", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: "data=" + encodeURIComponent(ql) });
+  if (!res.ok) throw new Error("overpass");
+  return (await res.json()).elements || [];
+}
+function nearbyToSpot(el, lat, lon) {
+  const t = el.tags || {};
+  const s = osmToSpot(t);
+  if (!s.cuisine.length) {
+    const first = String(t.cuisine || "").split(/[;,]/)[0].trim().replace(/_/g, " ");
+    s.cuisine = [first ? first.replace(/\b\w/g, (m) => m.toUpperCase()) : (AMENITY_FALLBACK[t.amenity] || "Restaurant")];
+  }
+  const plat = el.lat ?? (el.center && el.center.lat), plon = el.lon ?? (el.center && el.center.lon);
+  s.dist = plat != null ? milesBetween(lat, lon, plat, plon) : 99;
+  s.fast = t.amenity === "fast_food" || !!t.brand;
+  s.id = `${el.type}/${el.id}`;
+  return s;
+}
+// a varied pick: take turns across food types, closest independent places first
+function diversify(list) {
+  const groups = {};
+  list.forEach((s) => (groups[s.cuisine[0]] = groups[s.cuisine[0]] || []).push(s));
+  Object.values(groups).forEach((g) => g.sort((a, b) => (a.fast - b.fast) || a.dist - b.dist));
+  const order = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length);
+  const out = [];
+  for (let round = 0; out.length < list.length; round++) {
+    let took = false;
+    order.forEach((k) => { if (groups[k][round]) { out.push(groups[k][round]); took = true; } });
+    if (!took) break;
+  }
+  return out;
+}
+
+function openNearby(opts = {}) {
+  const forCity = city;
+  openOverlay(`
+    <div class="modal sheet nearby" role="dialog" aria-modal="true" aria-labelledby="nb-title">
+      <button class="close" type="button" data-close aria-label="Close">×</button>
+      <div class="head"><span class="e">📍</span><div>
+        <h3 id="nb-title">Find spots near you</h3>
+        <div class="sub">${opts.fresh ? `Fill your new ${esc(cityShort(forCity))} wheel. ` : ""}Type an address and I'll find at least ${NEARBY_MIN} places around it.</div>
+      </div></div>
+      <form class="add-friend" id="nb-form" style="margin-top:16px" novalidate>
+        <input type="text" id="nb-addr" placeholder="Street address or neighborhood in ${esc(cityShort(forCity))}" autocomplete="street-address" style="text-transform:none;letter-spacing:0" aria-label="Address">
+        <button class="btn" type="submit" id="nb-go">Search</button>
+      </form>
+      <div class="nb-here"><button class="linkish" type="button" id="nb-gps">📍 Use my current location instead</button></div>
+      <p class="ac-status" id="nb-status" aria-live="polite"></p>
+      <div id="nb-results" hidden>
+        <div class="nb-bar">
+          <span id="nb-count"></span>
+          <span><button class="linkish" type="button" id="nb-all">Select all</button> · <button class="linkish" type="button" id="nb-none">None</button></span>
+        </div>
+        <div class="chips nb-types" id="nb-types"></div>
+        <ul class="fp-list nb-list" id="nb-list"></ul>
+        <div class="actions nb-foot"><button class="btn pink" type="button" id="nb-add">Add spots</button></div>
+      </div>
+    </div>`, (ov) => {
+      const q = (x) => ov.querySelector(x);
+      let found = [], picked = new Set(), typeFilter = null;
+      const status = (t) => (q("#nb-status").textContent = t);
+
+      const draw = () => {
+        const types = {};
+        found.forEach((s) => (types[s.cuisine[0]] = (types[s.cuisine[0]] || 0) + 1));
+        const tb = q("#nb-types"); tb.innerHTML = "";
+        chip(tb, "All types", typeFilter === null, () => { typeFilter = null; draw(); });
+        Object.entries(types).sort((a, b) => b[1] - a[1]).forEach(([c, n]) =>
+          chip(tb, `${catInfo(c).e} ${esc(c)}<span class="n">${n}</span>`, typeFilter === c, () => { typeFilter = typeFilter === c ? null : c; draw(); }, catInfo(c).c));
+        const shown = found.filter((s) => !typeFilter || s.cuisine[0] === typeFilter);
+        q("#nb-list").innerHTML = shown.map((s) => `
+          <li class="fp-row nb-row ${picked.has(s.id) ? "on" : ""}">
+            <label class="nb-pick"><input type="checkbox" data-id="${esc(s.id)}" ${picked.has(s.id) ? "checked" : ""}>
+              <span class="e">${catInfo(s.cuisine[0]).e}</span>
+              <span class="body"><span class="nm">${esc(s.name)}</span>
+                <span class="meta">${esc(s.cuisine.join(", "))}${s.area ? ` · ${esc(s.area)}` : ""} · ${s.dist < 0.1 ? "nearby" : s.dist.toFixed(1) + " mi"}</span></span>
+            </label></li>`).join("");
+        q("#nb-list").querySelectorAll("input[type=checkbox]").forEach((cb) => cb.addEventListener("change", () => {
+          cb.checked ? picked.add(cb.dataset.id) : picked.delete(cb.dataset.id);
+          cb.closest(".nb-row").classList.toggle("on", cb.checked); counts();
+        }));
+        counts();
+      };
+      const counts = () => {
+        const typesPicked = new Set(found.filter((s) => picked.has(s.id)).map((s) => s.cuisine[0])).size;
+        q("#nb-count").textContent = `${picked.size} of ${found.length} selected · ${typesPicked} food type${typesPicked === 1 ? "" : "s"}`;
+        q("#nb-add").textContent = picked.size ? `Add ${picked.size} spot${picked.size === 1 ? "" : "s"} to ${cityShort(forCity)}` : "Pick some spots to add";
+        q("#nb-add").disabled = !picked.size;
+      };
+      q("#nb-all").addEventListener("click", () => { found.forEach((s) => (!typeFilter || s.cuisine[0] === typeFilter) && picked.add(s.id)); draw(); });
+      q("#nb-none").addEventListener("click", () => { found.forEach((s) => (!typeFilter || s.cuisine[0] === typeFilter) && picked.delete(s.id)); draw(); });
+
+      const busy = (on) => { q("#nb-go").disabled = on; q("#nb-gps").disabled = on; };
+      q("#nb-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const raw = q("#nb-addr").value.trim();
+        if (!raw) { status("Type an address, a cross street, or a neighborhood."); q("#nb-addr").focus(); return; }
+        const query = norm(raw).includes(norm(cityShort(forCity))) ? raw : `${raw}, ${forCity}`;
+        search(async () => {
+          status("Finding that address on the map…");
+          const pt = await geocode(query) || await geocode(raw);
+          if (!pt) status("Couldn't find that address. Try adding the street number, or a nearby cross street.");
+          return pt;
+        });
+      });
+      q("#nb-gps").addEventListener("click", () => {
+        if (!navigator.geolocation) { status("This browser can't share your location. Type an address instead."); return; }
+        search(() => new Promise((resolve) => {
+          status("Getting your location… (allow location access if your browser asks)");
+          navigator.geolocation.getCurrentPosition(
+            (pos) => resolve({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
+            (err) => { status(err && err.code === 1 ? "Location access was blocked. Allow it in your browser settings, or type an address." : "Couldn't get your location. Type an address instead."); resolve(null); },
+            { enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 });
+        }));
+      });
+      async function search(getPoint) {
+        busy(true); q("#nb-results").hidden = true;
+        try {
+          const pt = await getPoint();
+          if (!pt) return;
+          // give a city its map area the first time, so the live lookup in the add form works there
+          const c = cities.find((x) => x.name === forCity);
+          if (c && !c.box) { c.box = `${(pt.lat - .25).toFixed(3)},${(pt.lon - .3).toFixed(3)},${(pt.lat + .25).toFixed(3)},${(pt.lon + .3).toFixed(3)}`; save(KEY_CITIES, cities); }
+          const onList = new Set(all().filter((r) => cityOf(r) === forCity).map((r) => norm(r.name)));
+          let results = [], skipped = 0;
+          for (const m of [1600, 3200, 6400, 12800]) {
+            status(`Searching within ${(m / 1609).toFixed(m < 3000 ? 1 : 0)} miles…`);
+            const els = await overpassAround(pt.lat, pt.lon, m);
+            const seen = new Set();
+            const all_ = els.map((el) => nearbyToSpot(el, pt.lat, pt.lon)).filter((s) => s.name && !seen.has(norm(s.name)) && seen.add(norm(s.name)));
+            results = all_.filter((s) => !onList.has(norm(s.name)));
+            skipped = all_.length - results.length;
+            if (results.length >= NEARBY_MIN + 15) break;
+          }
+          if (!results.length) { status(skipped ? `Every spot on the map around there is already on your list (${skipped}). Try a different address.` : "No restaurants on the map around there. Try a busier address or a nearby neighborhood."); return; }
+          found = diversify(results).slice(0, 80);
+          picked = new Set(found.slice(0, Math.max(NEARBY_MIN, Math.min(NEARBY_PRESELECT, found.length))).map((s) => s.id));
+          typeFilter = null;
+          const types = new Set(found.map((s) => s.cuisine[0])).size;
+          const skipNote = skipped ? ` Skipped ${skipped} already on your list.` : "";
+          status(found.length >= NEARBY_MIN
+            ? `Found ${found.length} new spots across ${types} food types. The top ${picked.size} are picked for a good mix. Uncheck any you don't want.${skipNote}`
+            : `Only ${found.length} new spots are on the map around there, all picked.${skipNote} You can add more by hand anytime.`);
+          q("#nb-results").hidden = false;
+          draw();
+        } catch {
+          status("Map search isn't reachable right now. Check your connection, or try again in a minute. (It won't work in Claude's preview, only on your live site.)");
+        } finally {
+          busy(false);
+        }
+      }
+
+      q("#nb-add").addEventListener("click", () => {
+        const adding = found.filter((s) => picked.has(s.id));
+        adding.forEach((s) => {
+          custom.push({
+            name: s.name, cuisine: s.cuisine.length === 1 ? s.cuisine[0] : s.cuisine, price: null, meals: s.meals,
+            area: s.area, about: s.about, known: [], website: s.website, menu: s.menu,
+            city: forCity === DEFAULT_CITY ? undefined : forCity, added: today()
+          });
+        });
+        save(KEY_CUSTOM, custom);
+        closeOverlay(); refresh();
+        toast(`Added ${adding.length} spots to ${cityShort(forCity)}. Spin away!`);
+        confetti("#f2b8c8", 120);
+      });
+      setTimeout(() => q("#nb-addr").focus(), 60);
+    });
+}
+document.addEventListener("click", (e) => { const b = e.target.closest("[data-nearby]"); if (b) { e.preventDefault(); closeLoc(); openNearby(); } });
+
+
 /* ---------- start ---------- */
+try {
+  const inv = new URLSearchParams(location.search).get("friend");
+  if (inv) { sessionStorage.setItem(KEY_INVITE, inv.trim().toUpperCase()); history.replaceState(null, "", location.pathname + location.hash); }
+} catch {}
 refresh();
 sizeWheel();
 document.fonts && document.fonts.ready.then(drawWheel);
@@ -2148,7 +2789,7 @@ if (CLOUD) {
       if (event === "PASSWORD_RECOVERY") { if (session) signedIn(session.user); showAuth("reset"); return; }
       if (session && session.user) { signedIn(session.user); if (location.hash.includes("access_token")) history.replaceState(null, "", location.pathname); }
       else if (event === "SIGNED_OUT") signedOutElsewhere();
-      else if (event === "INITIAL_SESSION") { let ok = false; try { ok = localStorage.getItem(KEY_GUEST_OK) === "1"; } catch {} if (!ok) showAuth("login"); }
+      else if (event === "INITIAL_SESSION") { let ok = false; try { ok = localStorage.getItem(KEY_GUEST_OK) === "1"; } catch {} if (!ok || pendingInvite()) showAuthForInvite(); }
     }, 0);
   });
   // older library versions don't send INITIAL_SESSION
@@ -2156,7 +2797,7 @@ if (CLOUD) {
     if (resolved) return;
     const { data } = await sb.auth.getSession();
     if (data && data.session) signedIn(data.session.user);
-    else { let ok = false; try { ok = localStorage.getItem(KEY_GUEST_OK) === "1"; } catch {} if (!ok) showAuth("login"); }
+    else { let ok = false; try { ok = localStorage.getItem(KEY_GUEST_OK) === "1"; } catch {} if (!ok || pendingInvite()) showAuthForInvite(); }
   }, 1500);
 }
 </script>

@@ -17,6 +17,12 @@ any device. It's free and takes about 10 minutes.
 2. Open `supabase-setup.sql`, copy everything, paste it in, and click **Run**.
    You should see "Success. No rows returned."
 
+## 2b. Turn on friends
+Open a **New query** again, paste everything from `supabase-friends.sql`, and
+click **Run**. This adds friend codes and friend requests. It also sets the
+rule that only people who've accepted each other as friends can see each
+other's stars and notes. Emails are never shared.
+
 ## 3. Tell Supabase where your site lives
 1. Left sidebar: **Authentication** → **URL Configuration**.
 2. Set **Site URL** to `https://graciewohlford1.github.io/Pick-My-Plate/`
