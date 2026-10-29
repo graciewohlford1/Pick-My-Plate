@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pick My Plate</title>
+<meta name="description" content="Can't decide where to eat in Fort Worth? Spin the wheel.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+IDxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE0IiBmaWxsPSIjZjZlZmU1Ii8+IDxnIGZpbGw9IiMzZDMyMmMiPiA8cmVjdCB4PSI1LjIiIHk9IjkiIHdpZHRoPSIxLjciIGhlaWdodD0iMTEiIHJ4PSIuODUiLz4gPHJlY3QgeD0iOC4yNSIgeT0iOSIgd2lkdGg9IjEuNyIgaGVpZ2h0PSIxMSIgcng9Ii44NSIvPiA8cmVjdCB4PSIxMS4zIiB5PSI5IiB3aWR0aD0iMS43IiBoZWlnaHQ9IjExIiByeD0iLjg1Ii8+IDxwYXRoIGQ9Ik01LjIgMTguNSBIMTMgVjIxIEMxMyAyNC4yIDExLjQgMjYgOS4xIDI2IEM2LjggMjYgNS4yIDI0LjIgNS4yIDIxIFoiLz4gPHJlY3QgeD0iNy43NSIgeT0iMjQiIHdpZHRoPSIyLjciIGhlaWdodD0iMzEiIHJ4PSIxLjM1Ii8+IDxwYXRoIGQ9Ik01NC4yIDkgQzU4LjYgMTIuNSA1OS40IDIxLjUgNTggMjkuNSBMNTQuMiAyOS41IFoiLz4gPHJlY3QgeD0iNTMuOSIgeT0iMjguNSIgd2lkdGg9IjIuOSIgaGVpZ2h0PSIyNi41IiByeD0iMS40NSIvPiA8L2c+IDxjaXJjbGUgY3g9IjMyIiBjeT0iMzQiIHI9IjE5IiBmaWxsPSIjZmZmY2Y3Ii8+IDxwYXRoIGQ9Ik0zMiAzNCBMMzIgMTYuNSBBMTcuNSAxNy41IDAgMCAxIDQ5LjUgMzQgWiIgZmlsbD0iI2YyYjhjOCIvPiA8cGF0aCBkPSJNMzIgMzQgTDQ5LjUgMzQgQTE3LjUgMTcuNSAwIDAgMSAzMiA1MS41IFoiIGZpbGw9IiNiOWQ0ZWEiLz4gPHBhdGggZD0iTTMyIDM0IEwzMiA1MS41IEExNy41IDE3LjUgMCAwIDEgMTQuNSAzNCBaIiBmaWxsPSIjZjVkOTg3Ii8+IDxwYXRoIGQ9Ik0zMiAzNCBMMTQuNSAzNCBBMTcuNSAxNy41IDAgMCAxIDMyIDE2LjUgWiIgZmlsbD0iI2RmY2JiMCIvPiA8cGF0aCBkPSJNMzIgMTYgVjUyIE0xNCAzNCBINTAiIHN0cm9rZT0iI2ZmZmNmNyIgc3Ryb2tlLXdpZHRoPSIyIi8+IDxjaXJjbGUgY3g9IjMyIiBjeT0iMzQiIHI9IjYiIGZpbGw9IiNmZmZjZjciLz4gPHBhdGggZD0iTTMyIDIxIEwyNi44IDEwLjUgUTMyIDcuNiAzNy4yIDEwLjUgWiIgZmlsbD0iIzNkMzIyYyIvPiA8L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="theme-color" content="#f6efe5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* Soft pastel tasting room: warm beige paper, blush / powder blue / butter
+   accents, thin hairlines and gentle shadows. Elegant serif for names and
+   headings, clean sans for everything you read or tap. */
+:root {
+  color-scheme: light;
+  --bg: #f6efe5;        /* beige paper */
+  --bg-2: #efe5d6;
+  --surface: #fffcf7;
+  --line: #e6dbcb;
+  --ink: #3d322c;       /* warm espresso text */
+  --muted: #8b7c70;
+  --soft: #b5a698;
+  --pink: #f7d3dc;      /* blush */
+  --pink-2: #e9a9bb;
+  --pink-ink: #9a4862;
+  --blue: #d4e5f3;      /* powder blue */
+  --blue-2: #9fc0dc;
+  --blue-ink: #3f6688;
+  --yellow: #fbebb5;    /* butter */
+  --yellow-2: #ecc964;
+  --beige: #eadfcd;
+  --display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --body: "DM Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --shadow: 0 1px 2px rgba(61, 50, 44, .05), 0 8px 24px rgba(61, 50, 44, .06);
+  --radius: 20px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--bg); }
+body {
+  font-family: var(--body);
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(247, 211, 220, .55), transparent 60%),
+    radial-gradient(800px 500px at 100% 0%, rgba(212, 229, 243, .6), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.5;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--blue-ink); outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+}
+
+/* ---------- top bar ---------- */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.brand { display: grid; gap: 6px; }
+.logo { font-family: var(--display); font-weight: 400; font-size: clamp(2.3rem, 7vw, 3.2rem); line-height: .95; letter-spacing: -.01em; }
+.logo em { font-style: italic; color: var(--pink-ink); }
+.loc { position: relative; justify-self: start; }
+.loc-btn {
+  display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); background: var(--surface);
+  border-radius: 999px; padding: 5px 12px 5px 10px; font-size: .82rem; font-weight: 600; letter-spacing: .02em; color: var(--ink);
+  box-shadow: 0 1px 2px rgba(61, 50, 44, .05);
+}
+.loc-btn:hover { border-color: var(--soft); }
+.loc-btn .caret { font-size: .7rem; color: var(--muted); transition: transform .15s; }
+.loc-btn[aria-expanded="true"] .caret { transform: rotate(180deg); }
+.loc-btn .tagline { color: var(--muted); font-weight: 500; }
+.loc-menu {
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 40; width: min(300px, calc(100vw - 32px));
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 16px 40px rgba(61, 50, 44, .14);
+  padding: 8px; display: grid; gap: 2px; animation: fade .15s ease-out;
+}
+.loc-item { display: flex; align-items: center; gap: 8px; width: 100%; border: 0; background: none; text-align: left; padding: 9px 10px; border-radius: 10px; font-weight: 500; }
+.loc-item:hover { background: var(--bg-2); }
+.loc-item .ck { width: 1.1em; color: var(--pink-ink); font-weight: 700; }
+.loc-item .ct { margin-left: auto; font-size: .78rem; color: var(--muted); }
+.loc-item .rm { margin-left: 6px; border: 0; background: none; color: var(--soft); font-size: 1rem; padding: 0 4px; }
+.loc-item .rm:hover { color: var(--pink-ink); }
+.loc-sep { height: 1px; background: var(--line); margin: 6px 4px; }
+.loc-add { display: flex; gap: 6px; padding: 4px; }
+.loc-add input { flex: 1; min-width: 0; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; background: white; }
+.loc-msg { font-size: .78rem; color: var(--muted); padding: 2px 8px 4px; min-height: 1em; }
+.loc-msg:empty { display: none; }
+
+.tabs { display: flex; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px; gap: 2px; flex-wrap: wrap; box-shadow: 0 1px 2px rgba(61, 50, 44, .04); }
+.tab { border: 0; background: none; font-weight: 600; font-size: .9rem; padding: 8px 16px; border-radius: 999px; color: var(--muted); display: flex; align-items: center; gap: 7px; transition: background .15s, color .15s; }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { background: var(--ink); color: var(--surface); }
+.count { font-size: .72rem; background: var(--pink); color: var(--pink-ink); border-radius: 999px; padding: 1px 7px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tab[aria-selected="true"] .count { background: var(--pink-2); color: var(--ink); }
+
+/* ---------- spin page ---------- */
+.spin-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; margin-top: 32px; align-items: start; }
+@media (max-width: 820px) { .spin-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
+.wheel-zone { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.wheel-box { position: relative; width: min(440px, 100%); aspect-ratio: 1; }
+.wheel-box::before {
+  content: ""; position: absolute; inset: -14px; border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--pink), var(--blue), var(--yellow), var(--beige), var(--pink));
+  opacity: .7; filter: blur(.2px);
+}
+#wheel { position: relative; width: 100%; height: 100%; display: block; border-radius: 50%; box-shadow: 0 0 0 6px var(--surface), 0 24px 50px rgba(61, 50, 44, .14); }
+.pointer { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 34px; height: 44px; filter: drop-shadow(0 3px 6px rgba(61, 50, 44, .25)); z-index: 2; }
+.pointer.tick { animation: tick .12s ease-out; }
+@keyframes tick { 50% { transform: translateX(-50%) rotate(-12deg); } }
+.hub {
+  position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%);
+  width: 26%; aspect-ratio: 1; border-radius: 50%; border: 0;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--line), 0 10px 24px rgba(61, 50, 44, .18);
+  font-family: var(--display); font-style: italic; font-size: clamp(1.3rem, 5.5vw, 2rem); color: var(--ink); line-height: 1;
+  transition: transform .15s, box-shadow .15s;
+}
+.hub:hover { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 0 1px var(--pink-2), 0 12px 28px rgba(61, 50, 44, .22); }
+.hub:active { transform: translate(-50%, -50%) scale(.97); }
+.hub:disabled { cursor: wait; color: var(--soft); }
+.status { font-weight: 500; color: var(--muted); text-align: center; min-height: 1.5em; font-size: .95rem; }
+.status b { color: var(--ink); font-weight: 700; }
+.status-hint { font-size: .82rem; color: var(--soft); }
+
+.controls { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: grid; gap: 20px; box-shadow: var(--shadow); }
+.ctrl h2 { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline; }
+.ctrl h2 button { border: 0; background: none; color: var(--blue-ink); font-size: .78rem; font-weight: 600; letter-spacing: 0; text-transform: none; }
+.ctrl h2 button:hover { text-decoration: underline; }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 12px; font-weight: 500; font-size: .86rem; transition: background .12s, border-color .12s; }
+.chip:hover { border-color: var(--soft); }
+.chip[aria-pressed="true"] { background: var(--chip-color, var(--pink)); border-color: transparent; color: var(--ink); font-weight: 600; box-shadow: inset 0 0 0 1px rgba(61, 50, 44, .08); }
+.chip .n { color: var(--muted); font-size: .78em; margin-left: 4px; font-variant-numeric: tabular-nums; }
+.switch-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-weight: 500; border-top: 1px solid var(--line); padding-top: 18px; }
+.switch { position: relative; width: 46px; height: 26px; border-radius: 999px; border: 0; background: var(--bg-2); box-shadow: inset 0 0 0 1px var(--line); flex-shrink: 0; transition: background .15s; }
+.switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: white; box-shadow: 0 1px 3px rgba(61, 50, 44, .25); transition: transform .15s; }
+.switch[aria-checked="true"] { background: var(--blue-2); box-shadow: none; }
+.switch[aria-checked="true"]::after { transform: translateX(20px); }
+
+.add-btn {
+  border: 1px dashed var(--soft); background: transparent; color: var(--ink);
+  border-radius: 14px; padding: 11px 16px; font-weight: 600; font-size: .92rem; width: 100%;
+  transition: background .15s, border-color .15s;
+}
+.add-btn:hover { background: var(--yellow); border-color: var(--yellow-2); border-style: solid; }
+
+/* ---------- popups ---------- */
+.overlay {
+  position: fixed; inset: 0; background: rgba(61, 50, 44, .28); backdrop-filter: blur(6px);
+  display: grid; place-items: center; z-index: 50; animation: fade .2s ease-out;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+}
+@keyframes fade { from { opacity: 0; } }
+.modal {
+  width: min(460px, 100%); max-height: 100%; overflow-y: auto;
+  background: var(--surface); color: var(--ink); border-radius: 24px; padding: 28px 24px 24px;
+  text-align: center; position: relative; animation: rise .3s cubic-bezier(.2, .9, .3, 1);
+  box-shadow: 0 30px 80px rgba(61, 50, 44, .25); border: 1px solid var(--line);
+}
+@keyframes rise { from { transform: translateY(14px) scale(.97); opacity: 0; } }
+.close { position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: var(--bg-2); font-size: 1.1rem; color: var(--muted); }
+.close:hover { color: var(--ink); }
+.win-badge { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--pink-ink); background: var(--pink); border-radius: 999px; padding: 5px 12px; }
+.win-emoji { font-size: 3.4rem; line-height: 1; margin: 16px 0 6px; }
+.modal h3 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 8vw, 2.6rem); line-height: 1.02; letter-spacing: -.01em; text-wrap: balance; overflow-wrap: anywhere; }
+.tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 12px; }
+.tag { font-size: .76rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--bg-2); color: var(--muted); text-transform: capitalize; }
+.note { margin-top: 14px; background: var(--yellow); border-radius: 10px; padding: 7px 12px; font-weight: 600; font-size: .9rem; display: inline-block; }
+.about { margin-top: 14px; font-size: .98rem; color: var(--ink); text-align: left; }
+.known { margin-top: 12px; text-align: left; }
+.known .lbl, .field label, .field .lbl { display: block; font-weight: 700; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
+.known ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.known li { background: var(--blue); color: var(--blue-ink); font-weight: 600; font-size: .84rem; border-radius: 999px; padding: 4px 11px; }
+.no-info { margin-top: 14px; font-size: .9rem; color: var(--muted); }
+.been { margin-top: 14px; font-weight: 500; color: var(--muted); font-size: .92rem; }
+.actions { display: grid; gap: 10px; margin-top: 20px; }
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 14px;
+  padding: 13px 16px; font-weight: 600; font-size: .96rem; text-decoration: none;
+  background: var(--ink); color: var(--surface); transition: transform .1s, background .15s, box-shadow .15s;
+  box-shadow: 0 1px 2px rgba(61, 50, 44, .12);
+}
+.btn:hover { box-shadow: 0 6px 16px rgba(61, 50, 44, .14); }
+.btn:active { transform: translateY(1px); }
+.btn.pink { background: var(--pink); color: var(--pink-ink); }
+.btn.pink:hover { background: #f3c3d0; }
+.btn.light { background: var(--bg-2); color: var(--ink); }
+.btn.light:hover { background: var(--beige); }
+.btn.mint { background: var(--blue); color: var(--blue-ink); }
+.btn.small { padding: 10px 12px; font-size: .88rem; }
+.btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+/* forms */
+.sheet { text-align: left; }
+.sheet .head { display: flex; gap: 14px; align-items: center; padding-right: 40px; }
+.sheet .head .e { font-size: 2.2rem; width: 56px; height: 56px; border-radius: 16px; background: var(--bg-2); display: grid; place-items: center; flex-shrink: 0; }
+.sheet h3 { font-size: 1.9rem; }
+.sheet .sub { color: var(--muted); font-weight: 500; font-size: .88rem; margin-top: 2px; }
+.field { margin-top: 16px; }
+.field input[type="text"], .field input[type="password"], .field input[type="date"], .field textarea, .field select {
+  width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 11px 12px; background: white; color: var(--ink); transition: border-color .15s, box-shadow .15s;
+}
+.field input:focus, .field textarea:focus, .field select:focus, .tag-add input:focus, .loc-add input:focus { outline: none; border-color: var(--blue-2); box-shadow: 0 0 0 3px rgba(159, 192, 220, .35); }
+.field textarea { min-height: 84px; resize: vertical; }
+.field .hint { font-size: .8rem; color: var(--muted); margin-top: 4px; }
+.pick-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.pick-row button { border: 1px solid var(--line); background: white; color: var(--ink); border-radius: 999px; padding: 6px 12px; font-weight: 500; font-size: .86rem; transition: background .12s; }
+.pick-row button:hover { border-color: var(--soft); }
+.pick-row button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.been-toggle { width: 100%; border: 1px solid var(--line); background: white; border-radius: 14px; padding: 13px; font-weight: 600; font-size: .98rem; color: var(--ink); transition: background .15s; }
+.been-toggle:hover { border-color: var(--soft); }
+.been-toggle[aria-pressed="true"] { background: var(--blue); border-color: var(--blue-2); color: var(--blue-ink); }
+.stars { display: flex; gap: 4px; }
+.star { border: 0; background: none; font-size: 1.9rem; line-height: 1; color: var(--line); padding: 0; transition: transform .1s, color .1s; }
+.star:hover { transform: scale(1.12); }
+.star.on { color: var(--yellow-2); }
+.saved { color: var(--blue-ink); font-weight: 600; font-size: .85rem; min-height: 1.2em; margin-top: 8px; }
+.form-error { color: var(--pink-ink); font-weight: 600; font-size: .9rem; margin-top: 10px; min-height: 1.2em; }
+.linkish { border: 0; background: none; color: var(--muted); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; font-size: .88rem; padding: 4px 0; }
+.danger { color: var(--pink-ink); }
+.section-gap { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 4px; }
+
+/* ---------- section headers (passport + for you) ---------- */
+.passport-head, .foryou-head {
+  margin-top: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow);
+}
+.passport-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 22px; align-items: center; }
+@media (max-width: 640px) { .passport-head { grid-template-columns: auto minmax(0, 1fr); } .passport-head .add-btn { grid-column: 1 / -1; } }
+.passport-head .add-btn { width: auto; }
+.ring { width: 88px; height: 88px; position: relative; }
+.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring .num { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-size: 1.6rem; font-variant-numeric: tabular-nums; }
+.passport-head h2, .foryou-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(1.7rem, 5vw, 2.2rem); line-height: 1.05; letter-spacing: -.01em; }
+.passport-head p, .foryou-head p { color: var(--muted); margin-top: 6px; font-size: .95rem; }
+.pass-tools { margin-top: 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
+@media (max-width: 560px) { .pass-tools { grid-template-columns: 1fr 1fr; } .pass-tools input { grid-column: 1 / -1; } }
+.pass-tools input, .pass-tools select { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; font-weight: 500; min-width: 0; }
+.pass-tools input::placeholder { color: var(--soft); }
+.pass-cats { margin-top: 12px; }
+
+.stamps { margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+.stamp {
+  position: relative; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 18px;
+  padding: 16px 14px 14px; min-height: 132px; display: flex; flex-direction: column; gap: 4px; overflow: hidden;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.stamp:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--soft); }
+.stamp .e { font-size: 1.6rem; line-height: 1; margin-bottom: 4px; }
+.stamp .nm { font-family: var(--display); font-size: 1.28rem; line-height: 1.08; overflow-wrap: anywhere; }
+.stamp .ct { font-size: .76rem; color: var(--muted); font-weight: 500; }
+.stamp .st { margin-top: auto; color: var(--yellow-2); letter-spacing: 1px; font-size: .9rem; }
+.stamp .mine { font-size: .64rem; font-weight: 700; color: var(--blue-ink); letter-spacing: .14em; text-transform: uppercase; }
+.stamp.visited { background: linear-gradient(160deg, var(--stamp, var(--pink)) 0%, var(--surface) 75%); border-color: transparent; box-shadow: inset 0 0 0 1px rgba(61, 50, 44, .06); }
+.stamp.visited::after {
+  content: "Been here"; position: absolute; right: 10px; top: 12px; font-family: var(--display); font-style: italic; font-size: .92rem;
+  color: var(--ink); border: 1px solid rgba(61, 50, 44, .35); border-radius: 999px; padding: 1px 9px; transform: rotate(6deg); background: rgba(255, 252, 247, .6);
+}
+.empty { grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 44px 0; }
+
+/* ---------- for you ---------- */
+.foryou-head { display: grid; gap: 18px; }
+.flavors-box { display: grid; gap: 10px; }
+.flavors-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.flavors-lbl { font-weight: 700; font-size: .7rem; letter-spacing: .16em; color: var(--muted); }
+.flavors-hint { font-size: .86rem; color: var(--muted); }
+.linkish-dark { border: 0; background: none; color: var(--blue-ink); font-weight: 600; font-size: .85rem; margin-left: auto; }
+.linkish-dark:hover { text-decoration: underline; }
+.flavors { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.flavor {
+  display: inline-flex; align-items: center; gap: 7px; font-weight: 500; font-size: .88rem; border-radius: 999px; padding: 6px 13px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); transition: background .12s, border-color .12s;
+}
+.flavor:hover { border-color: var(--soft); }
+.flavor[aria-pressed="true"] { background: var(--fl); border-color: transparent; font-weight: 600; box-shadow: inset 0 0 0 1px rgba(61, 50, 44, .08); }
+.flavor .bar { display: inline-block; height: 5px; border-radius: 99px; background: var(--fl); filter: saturate(1.4) brightness(.9); }
+.flavor[aria-pressed="true"] .bar { background: rgba(61, 50, 44, .3); filter: none; }
+.flavor .n { font-size: .74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.flavor .chk { width: 1.05em; text-align: center; }
+.foryou-tools { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 14px; }
+.recs-count { font-weight: 500; color: var(--muted); font-size: .9rem; }
+.ghost { border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 8px 14px; font-weight: 600; font-size: .88rem; color: var(--ink); transition: border-color .12s, background .12s; }
+.ghost:hover { border-color: var(--soft); background: white; }
+.recs { margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; }
+.rec {
+  position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 18px 16px;
+  display: flex; flex-direction: column; gap: 9px; overflow: hidden; transition: box-shadow .15s, transform .15s;
+}
+.rec::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; background: var(--rec, var(--pink)); }
+.rec:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.rec .row1 { display: flex; gap: 12px; align-items: center; }
+.rec .e { font-size: 1.5rem; line-height: 1; width: 44px; height: 44px; border-radius: 14px; background: var(--rec, var(--pink)); display: grid; place-items: center; flex-shrink: 0; }
+.rec h3 { font-family: var(--display); font-weight: 400; font-size: 1.5rem; line-height: 1.05; overflow-wrap: anywhere; }
+.rec .cat { font-size: .76rem; font-weight: 500; color: var(--muted); }
+.rec .why { font-size: .8rem; font-weight: 600; color: var(--pink-ink); }
+.rec p { font-size: .92rem; color: var(--ink); }
+.rec ul { list-style: none; display: flex; flex-wrap: wrap; gap: 5px; }
+.rec li { font-size: .76rem; font-weight: 500; background: var(--bg-2); color: var(--ink); border-radius: 999px; padding: 3px 9px; }
+.rec .rec-actions { margin-top: auto; padding-top: 8px; display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.rec .rec-actions .btn { padding: 10px 12px; font-size: .9rem; }
+.rec .rec-actions .ghost { font-size: .84rem; }
+.more-wrap { text-align: center; margin-top: 18px; }
+
+.backup { margin-top: 32px; border-top: 1px solid var(--line); padding-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; color: var(--muted); font-size: .88rem; }
+.backup .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+#backup-msg { width: 100%; color: var(--blue-ink); font-weight: 600; }
+#backup-msg:empty { display: none; }
+footer { text-align: center; color: var(--muted); font-size: .84rem; margin-top: 44px; }
+footer em { font-family: var(--display); font-size: 1.05rem; color: var(--ink); }
+#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 60; width: 100%; height: 100%; }
+.toast {
+  position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
+  background: var(--ink); color: var(--surface); font-weight: 600; font-size: .92rem; border-radius: 999px; padding: 11px 20px; z-index: 70;
+  box-shadow: 0 12px 30px rgba(61, 50, 44, .25); animation: fade .2s ease-out; max-width: calc(100% - 32px); text-align: center;
+}
+
+/* add/edit form: typeahead + tags */
+.ac-wrap { position: relative; }
+.ac {
+  position: absolute; left: 0; right: 0; top: calc(100% - 18px); z-index: 5;
+  background: white; border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  box-shadow: 0 16px 36px rgba(61, 50, 44, .16); display: grid;
+}
+.ac-item { display: grid; gap: 1px; text-align: left; border: 0; background: white; color: var(--ink); padding: 10px 13px; border-bottom: 1px solid var(--bg-2); }
+.ac-item:last-child { border-bottom: 0; }
+.ac-item:hover, .ac-item.on { background: var(--yellow); }
+.ac-item[disabled] { opacity: .5; cursor: default; background: white; }
+.ac-name { font-weight: 600; overflow-wrap: anywhere; }
+.ac-sub { font-size: .78rem; color: var(--muted); }
+.ac-status { font-size: .8rem; color: var(--muted); margin-top: 6px; min-height: 1.1em; }
+.tag-add { display: flex; gap: 8px; margin-top: 8px; }
+.tag-add input { flex: 1; min-width: 0; border: 1px solid var(--line); border-radius: 12px; padding: 9px 11px; background: white; color: var(--ink); }
+.mini { border: 0; border-radius: 12px; padding: 9px 15px; font-weight: 600; background: var(--ink); color: var(--surface); }
+.lookup { margin-top: 18px; background: var(--blue); border-radius: 16px; padding: 14px; }
+.lookup .lbl { display: block; font-weight: 700; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-ink); margin-bottom: 9px; }
+.lookup .btn.light { background: var(--surface); }
+/* accounts */
+.top-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.acct { position: relative; }
+.acct-btn {
+  display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); border-radius: 999px;
+  padding: 4px 12px 4px 4px; font-weight: 600; font-size: .86rem; box-shadow: 0 1px 2px rgba(61, 50, 44, .04); max-width: 220px;
+}
+.acct-btn:hover { border-color: var(--soft); }
+.acct-btn .av { width: 30px; height: 30px; border-radius: 50%; background: var(--pink); color: var(--pink-ink); display: grid; place-items: center; font-family: var(--display); font-size: 1.05rem; flex-shrink: 0; }
+.acct-btn .av.guest { background: var(--bg-2); color: var(--muted); }
+.acct-btn .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.acct-menu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 40; width: min(270px, calc(100vw - 32px));
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 16px 40px rgba(61, 50, 44, .14);
+  padding: 14px; display: grid; gap: 10px; animation: fade .15s ease-out;
+}
+.acct-menu .who { font-weight: 600; overflow-wrap: anywhere; }
+.acct-menu .mail { font-size: .82rem; color: var(--muted); overflow-wrap: anywhere; }
+.sync { display: inline-flex; align-items: center; gap: 6px; font-size: .8rem; color: var(--muted); }
+.sync::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--soft); }
+.sync[data-state="saved"]::before { background: #7fb59a; }
+.sync[data-state="saving"]::before, .sync[data-state="loading"]::before { background: var(--yellow-2); }
+.sync[data-state="error"]::before { background: var(--pink-2); }
+
+.auth {
+  position: fixed; inset: 0; z-index: 80; overflow-y: auto; display: grid; place-items: center;
+  background:
+    radial-gradient(700px 420px at 15% 10%, rgba(247, 211, 220, .75), transparent 60%),
+    radial-gradient(700px 420px at 90% 90%, rgba(212, 229, 243, .8), transparent 60%),
+    radial-gradient(500px 300px at 85% 10%, rgba(251, 235, 181, .6), transparent 60%),
+    var(--bg);
+  padding: max(24px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+}
+.auth-card {
+  width: min(420px, 100%); background: var(--surface); border: 1px solid var(--line); border-radius: 28px; padding: 34px 28px 26px;
+  box-shadow: 0 30px 80px rgba(61, 50, 44, .14); animation: rise .35s cubic-bezier(.2, .9, .3, 1);
+}
+.auth-card .logo { text-align: center; font-size: clamp(2.6rem, 10vw, 3.2rem); }
+.auth-plate { display: flex; justify-content: center; gap: 6px; margin: 14px 0 6px; }
+.auth-plate span { width: 12px; height: 12px; border-radius: 50%; }
+.auth-sub { text-align: center; color: var(--muted); font-size: .95rem; margin-top: 8px; text-wrap: balance; }
+.auth-tabs { display: grid; grid-template-columns: 1fr 1fr; background: var(--bg-2); border-radius: 999px; padding: 4px; margin-top: 22px; }
+.auth-tabs button { border: 0; background: none; border-radius: 999px; padding: 9px; font-weight: 600; font-size: .9rem; color: var(--muted); }
+.auth-tabs button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(61, 50, 44, .12); }
+.auth-title { font-family: var(--display); font-size: 1.7rem; text-align: center; margin-top: 18px; }
+.auth form .btn { width: 100%; margin-top: 16px; }
+.auth form .btn:disabled { opacity: .6; cursor: wait; }
+.auth-ok { color: var(--blue-ink); font-weight: 600; font-size: .9rem; margin-top: 10px; }
+.auth-ok:empty, .auth .form-error:empty { display: none; }
+.auth-links { display: flex; justify-content: center; margin-top: 10px; }
+.auth-or { display: flex; align-items: center; gap: 12px; color: var(--soft); font-size: .8rem; margin: 18px 0 12px; }
+.auth-or::before, .auth-or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.auth .ghost { width: 100%; padding: 11px; }
+.auth-fine { text-align: center; font-size: .78rem; color: var(--muted); margin-top: 8px; }
+.import-list { list-style: none; display: grid; gap: 4px; margin-top: 12px; text-align: left; background: var(--bg-2); border-radius: 14px; padding: 12px 14px; font-size: .92rem; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1 class="logo">Pick <em>my</em> Plate</h1>
+      <div class="loc" id="loc">
+        <button class="loc-btn" id="loc-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="loc-menu">📍 <span id="city-name">Fort Worth</span><span class="tagline">· change city</span><span class="caret" aria-hidden="true">▾</span></button>
+        <div class="loc-menu" id="loc-menu" hidden></div>
+      </div>
+    </div>
+    <div class="top-right">
+    <nav class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-page="spin" id="tab-spin">Spin</button>
+      <button class="tab" role="tab" aria-selected="false" data-page="passport" id="tab-passport">Passport <span class="count" id="visited-count">0</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-page="foryou" id="tab-foryou">For You</button>
+    </nav>
+    <div class="acct" id="acct" hidden>
+      <button class="acct-btn" id="acct-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="acct-menu">
+        <span class="av" id="acct-av">G</span><span class="nm" id="acct-name">Guest</span>
+      </button>
+      <div class="acct-menu" id="acct-menu" hidden></div>
+    </div>
+    </div>
+  </header>
+
+  <!-- ================= SPIN ================= -->
+  <section id="page-spin">
+    <div class="spin-layout">
+      <div class="wheel-zone">
+        <div class="wheel-box">
+          <svg class="pointer" id="pointer" viewBox="0 0 44 54" aria-hidden="true">
+            <path d="M22 54 L4 16 A20 20 0 1 1 40 16 Z" fill="#3d322c" stroke="#fffcf7" stroke-width="3"/>
+            <circle cx="22" cy="18" r="6" fill="#f7d3dc"/>
+          </svg>
+          <canvas id="wheel" width="440" height="440" aria-label="Prize wheel of food categories"></canvas>
+          <button class="hub" id="spin-btn" type="button">Spin</button>
+        </div>
+        <p class="status" id="status"></p>
+      </div>
+      <aside class="controls">
+        <div class="ctrl">
+          <h2>On the wheel <button type="button" id="clear-cats">Use all</button></h2>
+          <div class="chips" id="cat-chips"></div>
+        </div>
+        <div class="ctrl">
+          <h2>When</h2>
+          <div class="chips" id="meal-chips"></div>
+        </div>
+        <div class="ctrl">
+          <h2>Budget</h2>
+          <div class="chips" id="price-chips"></div>
+        </div>
+        <div class="switch-row">
+          <span>Only places I haven't been</span>
+          <button class="switch" id="new-only" role="switch" aria-checked="false" aria-label="Only places I haven't been"></button>
+        </div>
+        <button class="add-btn" type="button" data-add>＋ Add a spot to the wheel</button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= PASSPORT ================= -->
+  <section id="page-passport" hidden>
+    <div class="passport-head">
+      <div class="ring">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="#efe5d6" stroke-width="10"/>
+          <circle id="ring-fill" cx="50" cy="50" r="42" fill="none" stroke="#e9a9bb" stroke-width="10" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="264"/>
+        </svg>
+        <span class="num" id="ring-num">0%</span>
+      </div>
+      <div>
+        <h2>My <span data-city-short>Fort Worth</span> Food Passport</h2>
+        <p id="pass-stats"></p>
+      </div>
+      <button class="add-btn" type="button" data-add>＋ Add a spot</button>
+    </div>
+    <div class="pass-tools">
+      <input type="search" id="pass-search" placeholder="Search spots or dishes…" aria-label="Search spots">
+      <select id="pass-show" aria-label="Show">
+        <option value="all">All spots</option>
+        <option value="visited">Been there</option>
+        <option value="new">Not yet</option>
+        <option value="mine">Added by me</option>
+      </select>
+      <select id="pass-sort" aria-label="Sort">
+        <option value="name">A–Z</option>
+        <option value="rating">Top rated</option>
+        <option value="recent">Recent</option>
+      </select>
+    </div>
+    <div class="chips pass-cats" id="pass-cats"></div>
+    <div class="stamps" id="stamps"></div>
+    <div class="backup">
+      <span>Your stamps, notes and added spots save in this browser.</span>
+      <div class="btns">
+        <button class="ghost" id="export-btn" type="button">⬇ Back up</button>
+        <label class="ghost" for="import-input" style="cursor:pointer">⬆ Restore</label>
+        <input type="file" id="import-input" accept=".json" hidden>
+      </div>
+      <span id="backup-msg" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <!-- ================= FOR YOU ================= -->
+  <section id="page-foryou" hidden>
+    <div class="foryou-head">
+      <div>
+        <h2>New spots you'd probably like</h2>
+        <p id="foryou-sub"></p>
+      </div>
+      <div class="flavors-box">
+        <div class="flavors-top">
+          <span class="flavors-lbl">YOUR FLAVORS</span>
+          <span class="flavors-hint" id="flavors-hint">Tap to choose what you're in the mood for</span>
+          <button class="linkish-dark" id="flavors-clear" type="button" hidden>Clear</button>
+        </div>
+        <div class="flavors" id="flavors" role="group" aria-label="Filter recommendations by flavor"></div>
+      </div>
+      <div class="foryou-tools">
+        <span class="recs-count" id="recs-count"></span>
+        <button class="ghost" id="reshuffle" type="button">🔀 Shuffle picks</button>
+      </div>
+    </div>
+    <div class="recs" id="recs"></div>
+    <div class="more-wrap"><button class="ghost" id="more-recs" type="button" hidden>Show more</button></div>
+  </section>
+
+  <footer><em>Pick my Plate</em> · made by Gracie · <span id="total"></span> <span id="spots-word">spots</span> in <span data-city-short>Fort Worth</span></footer>
+</div>
+
+<!-- ================= LOGIN ================= -->
+<div class="auth" id="auth" hidden>
+  <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-heading">
+    <h1 class="logo" id="auth-heading">Pick <em>my</em> Plate</h1>
+    <div class="auth-plate" aria-hidden="true"><span style="background:#f2b8c8"></span><span style="background:#b9d4ea"></span><span style="background:#f5d987"></span><span style="background:#dfcbb0"></span></div>
+    <p class="auth-sub">Spin to decide where to eat. Log in to keep your passport, ratings and spots on every device.</p>
+    <div class="auth-tabs" role="tablist" id="auth-tabs">
+      <button type="button" role="tab" data-mode="login" aria-selected="true">Log in</button>
+      <button type="button" role="tab" data-mode="signup" aria-selected="false">Create account</button>
+    </div>
+    <h2 class="auth-title" id="auth-title" hidden></h2>
+    <form id="auth-form" novalidate>
+      <div class="field" id="af-name" hidden>
+        <label for="auth-name">Your first name</label>
+        <input type="text" id="auth-name" autocomplete="given-name" placeholder="e.g. Gracie">
+      </div>
+      <div class="field" id="af-email">
+        <label for="auth-email">Email</label>
+        <input type="text" id="auth-email" inputmode="email" autocomplete="email" placeholder="you@example.com">
+      </div>
+      <div class="field" id="af-pw">
+        <label for="auth-pw">Password</label>
+        <input type="password" id="auth-pw" autocomplete="current-password" placeholder="At least 6 characters">
+      </div>
+      <p class="form-error" id="auth-error" aria-live="polite"></p>
+      <p class="auth-ok" id="auth-ok" aria-live="polite"></p>
+      <button class="btn" type="submit" id="auth-submit">Log in</button>
+    </form>
+    <div class="auth-links">
+      <button class="linkish" type="button" id="auth-forgot">Forgot your password?</button>
+      <button class="linkish" type="button" id="auth-back" hidden>Back to log in</button>
+    </div>
+    <div id="auth-guest-wrap">
+      <div class="auth-or">or</div>
+      <button class="ghost" type="button" id="auth-guest">Just browse without an account</button>
+      <p class="auth-fine">Without an account, your ratings and spots stay on this device only.</p>
+    </div>
+  </div>
+</div>
+
+<div id="overlay-root"></div>
+<div id="toast-root"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js"></script>
+<script>
+/* =============================================================
+   ACCOUNTS (Supabase) — paste your two keys here to turn on logins.
+   Leave them empty and the app runs without accounts, saving to
+   this device only. See SETUP.md for the 10-minute setup.
+   ============================================================= */
+const SUPABASE_URL = "https://azaxzwzghrwaewjskrxt.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_PhaH7X4pXuAWxzC14krGbw_PeOurbZa";
+
+/* =============================================================
+   YOUR RESTAURANT LIST
+   -------------------------------------------------------------
+   cuisine : category (use ["Bars","Stockyards"] for two)
+   price   : 1-4 for $-$$$$, or null if not set
+   meals   : any of "breakfast","lunch","dinner","late night"
+   about   : short description
+   known   : famous menu items
+   area, note, website, menu : optional
+   Tip: spots you add with the "+ Add a spot" button are saved in
+   your browser. Paste them in here to make them permanent.
+   ============================================================= */
+const BAR = ["dinner", "late night"], MORN = ["breakfast", "lunch"], MEAL = ["lunch", "dinner"], COFFEE = ["breakfast", "lunch"];
+
+const restaurants = [
+  // Bars
+  { name: "Broncs Bar", cuisine: ["Bars", "Stockyards"], price: null, meals: BAR, area: "Stockyards" },
+  { name: "The Henry McCarty Irish Pub", cuisine: "Bars", price: null, meals: BAR },
+  { name: "No Vacancy", cuisine: "Bars", price: null, meals: BAR },
+  { name: "Drinks and Such", cuisine: "Bars", price: null, meals: BAR },
+
+  // Breakfast
+  { name: "Keke's", cuisine: "Breakfast", price: null, meals: MORN,
+    about: "Florida-born breakfast and lunch café chain.", known: ["Pancakes", "Waffles", "French toast"] },
+  { name: "Yogi's", cuisine: "Breakfast", price: null, meals: MORN, area: "Hulen",
+    about: "Beloved TCU-area hangout known for fresh bagels, with brunch served every day.", known: ["Fresh bagels", "Stuffed French toast"] },
+  { name: "Press Café", cuisine: "Breakfast", price: null, meals: MORN, area: "Clearfork",
+    about: "Riverside patio spot at Clearfork, right by the Saturday farmers market.", known: ["Egg in a Hole"] },
+  { name: "Ascension", cuisine: "Breakfast", price: null, meals: MORN,
+    about: "Riverside coffee roastery with a red-umbrella patio and a full brunch menu.", known: ["Smoked salmon Benedict", "Specialty coffee"] },
+  { name: "Hotel Drover Brunch", cuisine: "Breakfast", price: null, meals: MORN, area: "Stockyards",
+    about: "Brunch at the upscale Hotel Drover in the Stockyards, which has a backyard with games, a pool and big fireplaces." },
+
+  // Sushi
+  { name: "Nikuya", cuisine: "Sushi", price: null, meals: MEAL, area: "Downtown",
+    about: "Cozy rooftop sushi bar atop The Sinclair hotel, with Hispanic-inspired touches and downtown views.", known: ["Salmon crudo", "Edamame \"guacamole\"", "Japanese whiskey Old Fashioned"] },
+  { name: "Yoichi Omakase & Handroll", cuisine: "Sushi", price: null, meals: MEAL, area: "Magnolia",
+    about: "Relaxed, shotgun-style bar on West Magnolia for handrolls, crudo and a 12-course bento-box omakase.", known: ["Hamachi crudo", "Handrolls", "Omakase"] },
+  { name: "Oishii", cuisine: "Sushi", price: null, meals: MEAL, area: "TCU area",
+    about: "Pan-Asian restaurant with a lavish interior on S. University Dr. and a huge sushi menu.", known: ["Tuna tataki", "Rolls & sashimi"] },
+  { name: "Hatsuyuki Handroll Bar", cuisine: "Sushi", price: null, meals: MEAL, area: "West 7th",
+    about: "Tiny, in-demand counter on Foch St. where each handroll is made right in front of you.", known: ["Bay scallop handroll", "Salmon handroll", "Eel handroll", "Nigiri"] },
+  { name: "Little Lilly Sushi", cuisine: "Sushi", price: null, meals: MEAL, area: "Camp Bowie",
+    about: "Intimate neighborhood sushi bar known for pristine cuts and personalized omakase.", known: ["Hawaiian bigeye tuna", "Hamachi", "Garlic-seared albacore", "Smoked salmon"] },
+  { name: "Tokyo Cafe", cuisine: "Sushi", price: null, meals: MEAL, area: "Camp Bowie",
+    about: "Lantern-lit Camp Bowie favorite serving sushi since 1997, with ticketed omakase nights.", known: ["Tejas Roll", "Truffle Crunch Roll", "Tok fries", "House ramen"] },
+  { name: "Hashi", cuisine: "Sushi", price: null, meals: MEAL, note: "By CorePower" },
+  { name: "Akarii Revolving Sushi", cuisine: "Sushi", price: null, meals: MEAL },
+  { name: "Ashims", cuisine: "Sushi", price: null, meals: MEAL, note: "Good poke bowl", known: ["Poke bowl"] },
+
+  // Asian
+  { name: "Wabi House", cuisine: "Asian", price: null, meals: MEAL,
+    about: "Relaxed, wood-accented izakaya serving bold small plates and ramen.", known: ["Tonkotsu ramen", "Karaage", "Takoyaki", "Crispy pork ears"] },
+  { name: "Teddy Wong's", cuisine: "Asian", price: null, meals: MEAL, area: "W. Rosedale",
+    about: "Family-style Chinese classics with wine pairings suggested by the staff.", known: ["Soup dumplings", "Chili wontons", "Peking duck"] },
+  { name: "Zaap", cuisine: "Asian", price: null, meals: MEAL },
+  { name: "Ko Thai Restaurant", cuisine: "Asian", price: null, meals: MEAL, area: "Magnolia",
+    about: "Stylish Thai street food spot on Magnolia with a patio.", known: ["Crying Tiger (grilled ribeye)", "Red curry"] },
+  { name: "Pho District", cuisine: "Asian", price: null, meals: MEAL },
+  { name: "Ichiro Izakaya", cuisine: "Asian", price: null, meals: MEAL },
+
+  // Mexican
+  { name: "Polanco", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Don Artemio", cuisine: "Mexican", price: 3, meals: MEAL, note: "Nicer", area: "West 7th",
+    about: "Upscale, James Beard Award–finalist restaurant serving Northeast Mexican cuisine in a minimalist space.", known: ["Tacos de lengua"] },
+  { name: "Tacos Cortes", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Tacos Oasis", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Mi Ranchito", cuisine: "Mexican", price: null, meals: MEAL, area: "Crowley Road" },
+  { name: "Juanito's", cuisine: "Mexican", price: null, meals: MEAL, note: "So good", area: "Hemphill St.",
+    about: "Southside local favorite for authentic, homemade-style Mexican food.", known: ["Barbacoa tacos", "Carne asada tacos"] },
+  { name: "El Mil Tacos", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Cafecito", cuisine: "Mexican", price: null, meals: MORN, area: "Magnolia",
+    about: "Family-owned spot that grew out of a food truck, known for handmade pink tortillas.", known: ["Potato & chorizo taco"] },
+  { name: "Gloria's", cuisine: "Mexican", price: null, meals: MEAL, area: "Montgomery Plaza", note: "Very Mexican" },
+  { name: "Los Pastores", cuisine: "Mexican", price: null, meals: MEAL },
+  { name: "Salsa Limón", cuisine: "Mexican", price: null, meals: MEAL,
+    about: "Family-run, Oaxacan-inspired taqueria that started in Fort Worth and spread across Texas.", known: ["Bárbaro taco (barbacoa, cheese, mushrooms, consommé)"] },
+  { name: "Juan Burrito Express", cuisine: "Mexican", price: null, meals: MORN, note: "Breakfast burritos", known: ["Breakfast burritos"] },
+  { name: "Tinie's", cuisine: "Mexican", price: null, meals: MEAL, area: "South Main",
+    about: "Latin spot on South Main with a full cocktail list and plenty of shareable plates.", known: ["Papas y hongos bravas"] },
+
+  // American
+  { name: "Clay Pigeon", cuisine: "American", price: null, meals: MEAL,
+    about: "Chef Marcus Paslay's scratch-made American restaurant." },
+  { name: "Gustos", cuisine: "American", price: null, meals: MEAL },
+  { name: "Bearded Lady", cuisine: "American", price: null, meals: MEAL },
+  { name: "Cook Shack", cuisine: "American", price: null, meals: MEAL },
+  { name: "Tavern", cuisine: "American", price: null, meals: MEAL, area: "Hulen",
+    about: "Neighborhood tavern with Southwestern flair.", known: ["Farmhouse Special (brunch)"] },
+  { name: "Charley's", cuisine: "American", price: null, meals: MEAL, note: "Burgers",
+    about: "Throwback burger bar with grab-and-go or picnic-table seating only.", known: ["The Great Burger (double meat, double cheese, Canadian bacon, bacon, Swiss)"] },
+  { name: "Chumley House", cuisine: "American", price: 3, meals: MEAL, note: "Nicer", area: "Cultural District",
+    about: "European-inspired steakhouse from Duro Hospitality." },
+  { name: "Bricks and Horses", cuisine: "American", price: 3, meals: MEAL, note: "Nicer",
+    about: "Ranch-to-table Texas restaurant inside the Bowie House hotel." },
+  { name: "Chicken Salad Chick", cuisine: "American", price: null, meals: MEAL,
+    about: "Southern chain built around dozens of chicken salad flavors.", known: ["Classic Carol", "Fancy Nancy", "Pimento cheese"] },
+  { name: "Chop Shop", cuisine: "American", price: null, meals: MEAL },
+  { name: "Social House", cuisine: "American", price: null, meals: MEAL },
+  { name: "Hudson House", cuisine: "American", price: null, meals: MEAL, note: "Just Gracie",
+    about: "Neighborhood spot known for cold martinis and East Coast–style seafood.", known: ["Martinis", "Lobster roll", "Oysters"] },
+  { name: "Taverna", cuisine: "American", price: null, meals: MEAL },
+  { name: "Kincaid's", cuisine: "American", price: null, meals: MEAL, note: "Burgers",
+    about: "Legendary burger joint that started inside a former Fort Worth grocery store.", known: ["The Cattleman (cheddar, onion rings, BBQ sauce)"] },
+  { name: "Meatboard", cuisine: "American", price: null, meals: MEAL, area: "Camp Bowie",
+    about: "Butcher shop where you can also grab dinner from the cold case.", known: ["Grilled tenderloin sandwich on a kolache bun"] },
+  { name: "Lucile's", cuisine: "American", price: null, meals: MEAL, area: "Camp Bowie",
+    about: "New England chowder-house-style bistro known for seafood and its yearly lobster celebrations.", known: ["Shrimp and grits", "Lobster"] },
+  { name: "JD's Hamburgers", cuisine: "American", price: null, meals: MEAL,
+    about: "Burger spot whose creation won over crowds at the Fort Worth Food + Wine Festival.", known: ["Preston's Pico and Pig"] },
+  { name: "The Mont", cuisine: "American", price: null, meals: MEAL },
+
+  // BBQ
+  { name: "Terry Black's", cuisine: "BBQ", price: null, meals: MEAL, area: "Cultural District",
+    about: "Central Texas–style smokehouse with busy picnic tables, opened in late 2024.", known: ["Beef ribs", "Pepper-crusted brisket", "House-made sausage", "Peach cobbler"] },
+  { name: "Goldee's", cuisine: "BBQ", price: null, meals: MEAL, note: "Michelin star!", area: "SE Fort Worth",
+    about: "Famous for post oak–smoked meats and long lines, in a once-abandoned building on Dick Price Rd.", known: ["Brisket", "Beef ribs", "Laotian sausage with sticky rice", "Goldee Foldee", "Kennedale Stew"] },
+  { name: "Panther City BBQ", cuisine: "BBQ", price: null, meals: MEAL, note: "Michelin recommended", area: "Near Southside",
+    about: "Former food trailer that mixes Central Texas barbecue with Tex-Mex, with a bar and patio.", known: ["Brisket elote", "Brisket burrito", "Texas Twinkies", "Southside Slammer"] },
+  { name: "Railhead", cuisine: "BBQ", price: null, meals: MEAL, area: "Cultural District",
+    about: "Old-school smokehouse famous for stiff drinks and its Dallas jokes.", known: ["Sliced brisket", "Ribs", "Sausage", "Cheddar peppers"] },
+  { name: "Charleston", cuisine: "BBQ", price: null, meals: MEAL },
+  { name: "Heim", cuisine: "BBQ", price: null, meals: MEAL, area: "White Settlement Rd.",
+    about: "Craft barbecue whose bacon burnt ends made it famous.", known: ["Bacon burnt ends", "Barbecue Snob sandwich", "Banana pudding"] },
+
+  // Mediterranean
+  { name: "Meraki", cuisine: "Mediterranean", price: null, meals: MEAL, note: "Pickleball" },
+
+  // Pizza
+  { name: "One Trick Pony", cuisine: "Pizza", price: null, meals: MEAL, area: "South Main",
+    about: "Chicago tavern-style, thin and square-cut pizzas from the Heim Barbecue founders.", known: ["The Big Hurt (spicy sausage, pecorino, giardiniera)"] },
+  { name: "Pie Tap", cuisine: "Pizza", price: null, meals: MEAL, area: "Magnolia",
+    about: "Pizzeria known for a sourdough crust fermented 72 to 96 hours.", known: ["Classic Margherita", "Seasonal specials"] },
+  { name: "Olivella's", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Felina", cuisine: "Pizza", price: null, meals: MEAL, area: "Near Southside",
+    about: "Thin, crisp Roman-style pies from a wood-fired brick oven on Bryan Ave.", known: ["Margherita", "The Hot Mess (soppressata, whipped ricotta, hot honey)"] },
+  { name: "Mr. O1", cuisine: "Pizza", price: null, meals: MEAL,
+    about: "Artisan pizza made with dough that leavens for at least 72 hours.", known: ["Matteo 2.0", "Federica", "Bella Margherita"] },
+  { name: "Maggie's R&R", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Mama's Pizza", cuisine: "Pizza", price: null, meals: MEAL },
+  { name: "Zoli's", cuisine: "Pizza", price: null, meals: MEAL },
+
+  // Italian
+  { name: "Bocca Osteria Romana", cuisine: "Italian", price: null, meals: MEAL, area: "South Main",
+    about: "Family-run neighborhood restaurant with a Roman-style menu.", known: ["Carbonara (no cream)", "Polpette al sugo", "Daily focaccia"] },
+  { name: "Nonna Tata", cuisine: "Italian", price: null, meals: MEAL, note: "Cash only", area: "Magnolia",
+    about: "Cozy, long-running trattoria with a popular patio.", known: ["Carbonara", "Limone e spinaci pasta", "Bruschetta"] },
+  { name: "Piattello", cuisine: "Italian", price: null, meals: MEAL,
+    about: "Family-friendly Italian kitchen with a wood-fired oven and premium ingredients.", known: ["Saffron linguine", "House ricotta with sourdough", "Bianca pizza"] },
+  { name: "Il Modo", cuisine: "Italian", price: null, meals: MEAL, area: "Downtown",
+    about: "Refined dining room in the Kimpton Harper Hotel, centered on housemade pasta.", known: ["Rigatoni with dry-aged beef", "Focaccia with Boursin butter", "Wood-fired pizzas"] },
+  { name: "Osteria 61", cuisine: "Italian", price: null, meals: MEAL, area: "Downtown",
+    about: "Upscale Italian with a dramatic dining room.", known: ["Rosemary focaccia with nduja", "Tagliatelle Bolognese", "Wild boar pappardelle"] },
+  { name: "Caterina's", cuisine: "Italian", price: null, meals: MEAL, area: "Stockyards",
+    about: "Refined but unpretentious Italian with exposed brick walls.", known: ["Tuna crudo", "Veal cheek agnolotti", "Wagyu New York strip"] },
+  { name: "Margie's Italian Gardens", cuisine: "Italian", price: null, meals: MEAL },
+
+  // Indian
+  { name: "Silver Salt Indian Cuisine", cuisine: "Indian", price: null, meals: MEAL },
+
+  // French
+  { name: "Paris 7th", cuisine: "French", price: null, meals: MEAL, area: "Museum District",
+    about: "French-style restaurant with caviar service and a popular brunch.", known: ["Trout and eggs", "Caviar service", "Belgian waffles"] },
+  { name: "Le Margot", cuisine: "French", price: null, meals: MEAL },
+
+  // Stockyards (Senior Year)
+  { name: "Filthy's", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Basement", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards",
+    about: "Moody underground bar on Exchange Ave. with live music, DJs and dancing.", known: ["Cheap happy hour", "Craft beer"] },
+  { name: "RCKRS", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Boat House", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Second Rodeo", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards",
+    about: "Dog-friendly backyard brewery on Mule Alley in old mule barns, with nightly live music.", known: ["Classic beers", "Drinks on tap"] },
+  { name: "Drover", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards",
+    about: "Upscale Stockyards hotel with the Veranda Bar, a lobby bar and a backyard with games and fireplaces." },
+  { name: "Billy Bob's", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards",
+    about: "The world's largest honky-tonk, with room for 6,000, two stages and big-name country acts.", known: ["Two-stepping", "Live country music", "Mechanical bull"] },
+  { name: "White Elephant", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards",
+    about: "Classic Texas saloon with a ceiling of cowboy hats, live music and dancing.", known: ["Live music", "Dancing"] },
+  { name: "Cowtown Winery", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Tannahill's Tavern", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Rhinestone", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Rodeo Exchange", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards",
+    about: "Dance hall with top live music on weekend nights and dance lessons.", known: ["Dance lessons", "Live music"] },
+  { name: "Booger Red's", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+  { name: "Cattleman's Club", cuisine: "Stockyards", price: null, meals: BAR, area: "Stockyards" },
+
+  // Coffee & Tea
+  { name: "Ivy Coffee Roasters", cuisine: "Coffee", price: null, meals: COFFEE },
+  { name: "Matchpoint", cuisine: "Coffee", price: null, meals: COFFEE },
+  { name: "Avoca", cuisine: "Coffee", price: null, meals: COFFEE,
+    about: "Craft roaster with two locations that roasts its own specialty beans.", known: ["Single-origin pour-overs", "Espresso drinks"] },
+  { name: "At the Oaks", cuisine: "Coffee", price: null, meals: COFFEE },
+  { name: "Crude", cuisine: "Coffee", price: null, meals: COFFEE, area: "Near Southside",
+    about: "Family-owned coffee bar with velvet seating, made for reading or working.", known: ["Strawberry Cream cookie", "Cinna-Snap"] },
+  { name: "Roots Coffee House", cuisine: "Coffee", price: null, meals: COFFEE },
+  { name: "Ostara", cuisine: "Coffee", price: null, meals: COFFEE, area: "South Main",
+    about: "Women-owned coffee shop with a lively community events calendar.", known: ["Cold brew", "House-made syrups", "Matcha", "Tacos"] },
+  { name: "Magnolia Nutrition", cuisine: "Coffee", price: null, meals: COFFEE },
+  { name: "Summer Moon", cuisine: "Coffee", price: null, meals: COFFEE,
+    about: "Texas coffee chain known for wood-fired roasting.", known: ["Moon Milk"] },
+  { name: "Carter's", cuisine: "Coffee", price: null, meals: COFFEE },
+  { name: "Portico", cuisine: "Coffee", price: null, meals: COFFEE, area: "North Side",
+    about: "Relaxed coffee shop in a renovated historic home with gardens, run by a local artist.", known: ["Monthly Art Club"] },
+  { name: "Pax and Beneficia Coffee", cuisine: "Coffee", price: null, meals: COFFEE },
+  { name: "Branch and Bean", cuisine: "Coffee", price: null, meals: COFFEE },
+  { name: "Cafe Momento", cuisine: "Coffee", price: null, meals: COFFEE, area: "Magnolia",
+    about: "Minimalist espresso bar inside the Point of View bookshop.", known: ["Miso caramel hojicha", "Strawberry matcha"] },
+  { name: "Fort Worth Coffee Co", cuisine: "Coffee", price: null, meals: COFFEE }
+];
+
+/* =============================================================
+   NEW SPOTS TO RECOMMEND (shown on the For You tab)
+   ============================================================= */
+const suggestions = [
+  // Sushi
+  { name: "Blue Sushi Sake Grill", cuisine: "Sushi", area: "West 7th", about: "Lively sushi spot with an aquarium centerpiece and sustainably sourced seafood.", known: ["Truffle salmon", "Yellowtail serrano", "Pepper-seared tuna tataki"] },
+  { name: "Pacific Table", cuisine: "Sushi", area: "TCU area", about: "Coastal-style sushi from Chef Felipe Armenta, known for happy hour.", known: ["Lobster ceviche roll", "Crispy rice duo", "Sushi tower"] },
+  { name: "Quince Riverside", cuisine: "Sushi", area: "River District", about: "Polished restaurant along the Trinity River with a broad sushi menu.", known: ["\"Frida\" hamachi", "Surf n' Turf roll", "Torched salmon"] },
+  { name: "Hiro's Kitchen", cuisine: "Sushi", area: "Near Southside", about: "Cozy bar where a chef from a Michelin-starred NYC restaurant makes sushi and small plates by hand.", known: ["Handcrafted sushi", "Sake pairings"] },
+  { name: "Katei Omakase", cuisine: "Sushi", area: "Downtown", about: "Intimate 20-course omakase next to Polanco, with Texas and Mexican touches.", known: ["20-course omakase"] },
+  // Asian
+  { name: "Hoya Korean Kitchen", cuisine: "Asian", area: "Downtown", about: "Korean spot with tableside barbecue.", known: ["Spicy pork bulgogi", "Stone bowl bibimbap", "Seafood pancake"] },
+  { name: "Malai Kitchen", cuisine: "Asian", area: "Clearfork", about: "Polished Thai-Vietnamese restaurant with house-brewed beer.", known: ["Red curry Icelandic cod", "Banh mi French toast (brunch)"] },
+  { name: "Megu", cuisine: "Asian", area: "TCU area", about: "French technique meets Japanese precision, near TCU.", known: ["A5 Wagyu carpaccio", "King crab spring rolls", "Curry puffs"] },
+  // Mexican
+  { name: "Buena Vida Taqueria", cuisine: "Mexican", area: "Near Southside", about: "Latin taqueria with Miami-style decor and a big patio.", known: ["Citrus pastor taco", "Chipotle lime shrimp taco"] },
+  { name: "Paco's Mexican Cuisine", cuisine: "Mexican", area: "Downtown", about: "Elevated Mexican food rooted in Pachuca traditions.", known: ["Chicharrón taco"] },
+  { name: "Maria's Mexican Kitchen", cuisine: "Mexican", area: "TCU area", about: "Chef Felipe Armenta's refined take on family recipes.", known: ["Tacos al carbon (filet mignon)"] },
+  { name: "Taco Heads", cuisine: "Mexican", area: "Cultural District & Stockyards", about: "Colorful taqueria and repeat \"Best Tacos\" winner since 2010.", known: ["Beer-braised carnitas taco", "Breakfast tacos"] },
+  { name: "Los Guapos Tacos", cuisine: "Mexican", area: "West 7th", about: "Casual, seafood-leaning taco spot with West Coast flavors.", known: ["Chicken tinga taco", "Octopus taco", "Shrimp taco"] },
+  { name: "Joe T. Garcia's", cuisine: "Mexican", area: "Northside", about: "Iconic Tex-Mex with huge garden patios and lines that move fast.", known: ["Margaritas", "Fajitas", "Huevos rancheros (brunch)"] },
+  { name: "Paloma Suerte", cuisine: "Mexican", area: "Stockyards", about: "Tim Love's lively Tex-Mex spot on Mule Alley.", known: ["Birria tacos", "Queso", "Margaritas"] },
+  // BBQ
+  { name: "Smoke and Bone BBQ", cuisine: "BBQ", about: "Playful takes on Texas barbecue.", known: ["Dr Pepper–glazed pork belly burnt ends", "Pulled pork tacos"] },
+  { name: "Hurtado Barbecue", cuisine: "BBQ", about: "Mexi-Cue that blends Mexican and Texas barbecue traditions.", known: ["Birria tacos", "Brisket tostadas", "Mexican street corn"] },
+  { name: "Woodshed Smokehouse", cuisine: "BBQ", area: "Trinity River", about: "Tim Love's live-fire spot with a big patio and live music.", known: ["Smoked pork empanadas", "Smoked chicken skins", "Bacon sliders"] },
+  { name: "Angelo's BBQ", cuisine: "BBQ", about: "A Fort Worth institution since 1958.", known: ["Hickory-smoked brisket", "Chopped beef sandwich"] },
+  { name: "Smoke-A-Holics BBQ", cuisine: "BBQ", area: "Southside", about: "\"Tex-Soul\" barbecue and a Texas Monthly Top 50 joint.", known: ["Rib tips", "Cajun cream corn", "Coca-Cola cake"] },
+  { name: "Dayne's Craft Barbecue", cuisine: "BBQ", area: "Aledo", about: "Top 50 pitmaster known for presentation and consistency.", known: ["Sampler platter"] },
+  { name: "Brix Barbecue", cuisine: "BBQ", about: "Barbecue spot with an award-winning smash burger.", known: ["Le Brix Burger"] },
+  // Pizza
+  { name: "Cane Rosso", cuisine: "Pizza", area: "Magnolia", about: "Neapolitan pies with charred crusts and house-made mozzarella.", known: ["Honey Bastard", "Margherita"] },
+  { name: "Gemelle", cuisine: "Pizza", area: "River District", about: "Wood-fired pizzeria with a big garden patio and New York and Detroit-style pies.", known: ["The House (pepperoni, pickled jalapeño, honey)", "T's"] },
+  { name: "Southside Cellar", cuisine: "Pizza", area: "South Main", about: "Craft beer drafthouse with hand-stretched pies.", known: ["Cluckwork Orange", "Str8 Cheesin'"] },
+  { name: "Brooklyn's", cuisine: "Pizza", area: "Near Southside", about: "Cocktail bar with pizzas on house-made naan crust.", known: ["Beef bulgogi pizza", "Meat Lovers"] },
+  // Italian
+  { name: "Buonissimo", cuisine: "Italian", area: "Downtown", about: "Polished, modern Italian for lunch and dinner.", known: ["Burrata", "Chicken Parmesan", "Grilled octopus"] },
+  { name: "The Sicilian Butcher", cuisine: "Italian", area: "North Fort Worth", about: "Sicilian-rooted spot with an in-house bakery.", known: ["Housemade pastas", "Meatballs", "Cannoli"] },
+  { name: "Bella Gente", cuisine: "Italian", area: "Downtown", about: "Casual spot for pizza, focaccia and sandwiches.", known: ["Spaghetti and meatballs", "Focaccia pizzas"] },
+  { name: "Aventino's", cuisine: "Italian", area: "West side", about: "Relaxed family Italian since 1982.", known: ["Ravioli carciofi", "Chicken parmigiana"] },
+  { name: "Piola Restaurant & Garden", cuisine: "Italian", area: "Cultural District", about: "Homey Italian in a restored 1930s cottage with a garden patio.", known: ["Lobster ravioli in vodka sauce", "Watermelon salad"] },
+  // American
+  { name: "Rodeo Goat", cuisine: "American", about: "Creative burgers and a \"Battle of the Burger\" competition.", known: ["The Rip Wheeler", "Herb goat cheese burger"] },
+  { name: "Fred's Texas Cafe", cuisine: "American", about: "No-frills cafe with Black Angus burgers on grilled buns.", known: ["Tamale Burger", "Dr Pepper candied bacon"] },
+  { name: "Dutch's Hamburgers", cuisine: "American", area: "TCU area", about: "Burger and beer cafe known for subtly sweet buns.", known: ["The Dutch", "Vaquero Burger"] },
+  { name: "Chop House Burger", cuisine: "American", area: "Downtown", about: "Burgers for people who care most about the meat.", known: ["Wine Country burger", "Ahi tuna burger"] },
+  { name: "Love Shack", cuisine: "American", area: "Stockyards", about: "Tim Love's two-story burger joint next to White Elephant.", known: ["Dirty Love Burger", "Hand-cut fries"] },
+  { name: "Jon's Grille", cuisine: "American", about: "Chef Jon Bonnell's burgers from cattle his family raises.", known: ["Texas Sunrise burger"] },
+  { name: "Provender Hall", cuisine: "American", area: "Stockyards", about: "Upscale-casual American grill on Exchange Ave.", known: ["Shrimp and grits", "Smoked meats", "Fried okra"] },
+  { name: "Reata", cuisine: "American", area: "Downtown", about: "Downtown mainstay with Texacana decor and cowboy cooking.", known: ["Reata huevos rancheros"] },
+  { name: "Wishbone & Flynt", cuisine: "American", area: "South Main", about: "Big brunch menu with a standout bloody mary.", known: ["Dutch baby", "Bloody mary"] },
+  // Breakfast
+  { name: "Hot Box Biscuit Club", cuisine: "Breakfast", area: "South Main", about: "Casual counter-service biscuit spot.", known: ["The Big Boy biscuit"] },
+  { name: "Fixe Southern Kitchen", cuisine: "Breakfast", area: "Clearfork", about: "Southern kitchen with some of the city's best biscuits.", known: ["Fixe biscuits"] },
+  { name: "Snooze an A.M. Eatery", cuisine: "Breakfast", area: "West 7th", about: "Retro diner focused on breakfast and brunch seven days a week.", known: ["Blueberry Danish pancakes"] },
+  { name: "Spiral Diner & Bakery", cuisine: "Breakfast", area: "Magnolia", about: "Long-running vegan diner serving breakfast all day.", known: ["Gluten-free pancakes"] },
+  // Coffee
+  { name: "Casa Azul Coffee", cuisine: "Coffee", area: "Northside", about: "Bright, Latin-inspired coffee bar that hosts cultural markets.", known: ["Churro latte", "Café de olla", "Matcha-colada"] },
+  { name: "Hogan Alley", cuisine: "Coffee", area: "Downtown", about: "Coffee-and-cocktails spot that's popular for happy hour.", known: ["Draft espresso martini", "Fairmount latte"] },
+  { name: "Sons Coffee", cuisine: "Coffee", area: "Lancaster Ave.", about: "Industrial-style shop for drinkers who want more than a standard latte.", known: ["Draft-style drinks", "Seasonal flavors"] },
+  { name: "Cherry Coffee Shop", cuisine: "Coffee", area: "Magnolia", about: "Cozy shop with porch seating and local beans to take home.", known: ["Very Cherry Latte"] },
+  { name: "HustleBlendz Coffee", cuisine: "Coffee", about: "Community-minded shop known for bold coffee.", known: ["Hola Jefe (horchata caramel cold brew)", "18-hour Kenyan cold brew"] },
+  { name: "Brewed", cuisine: "Coffee", area: "Magnolia", about: "Coffee roastery and brunch spot with firepits on the patio.", known: ["Pulled pork hash", "Chicken and waffles"] },
+  // Stockyards & bars
+  { name: "Ático", cuisine: "Stockyards", area: "Stockyards", about: "Barcelona-inspired rooftop bar with tapas and Stockyards views.", known: ["Craft cocktails", "Tapas"] },
+  { name: "Side Saddle Saloon", cuisine: "Stockyards", area: "Stockyards", about: "Hidden Mule Alley bar with cocktails named after historic cowgirls.", known: ["Cowgirl cocktails", "Happy hour 3–6"] },
+  { name: "Lil' Red's Longhorn Saloon", cuisine: "Stockyards", area: "Stockyards", about: "Bright, busy saloon with regular live music.", known: ["Live music"] },
+  { name: "Whiskey Girl Saloon", cuisine: "Stockyards", area: "Stockyards", about: "Music bar with a big dance floor and live acts most nights.", known: ["Live music", "Dance floor"] },
+  { name: "Thirsty Armadillo", cuisine: "Stockyards", area: "Stockyards", about: "Big beer list and country acts on stage.", known: ["Beer selection", "Live country"] },
+  { name: "Trinity College Irish Pub", cuisine: "Bars", area: "West 7th", about: "Irish pub with a traditional Irish breakfast.", known: ["Scotch eggs", "Irish breakfast"] }
+];
+
+/* =============================================================
+   APP CODE — you shouldn't need to touch anything below
+   ============================================================= */
+const CATS = {
+  "Bars":          { e: "🍸", c: "#f2b8c8" },
+  "Breakfast":     { e: "🥞", c: "#f9e6a6" },
+  "Sushi":         { e: "🍣", c: "#b9d4ea" },
+  "Asian":         { e: "🍜", c: "#eadcc8" },
+  "Mexican":       { e: "🌮", c: "#f5d987" },
+  "American":      { e: "🍔", c: "#cfe2f2" },
+  "BBQ":           { e: "🍖", c: "#f6cbd6" },
+  "Mediterranean": { e: "🥙", c: "#dfcbb0" },
+  "Pizza":         { e: "🍕", c: "#fcefc4" },
+  "Italian":       { e: "🍝", c: "#fadbe3" },
+  "Indian":        { e: "🍛", c: "#f1e7d9" },
+  "French":        { e: "🥐", c: "#dde9f5" },
+  "Stockyards":    { e: "🤠", c: "#e6d3b8" },
+  "Coffee":        { e: "☕", c: "#efe2cf" }
+};
+const EXTRA_COLORS = ["#f6cbd6", "#cfe2f2", "#f9e6a6", "#eadcc8", "#fadbe3", "#dde9f5"];
+const WHEEL = ["#f6cbd6", "#cfe2f2", "#f9e6a6", "#eadcc8", "#f2b8c8", "#b9d4ea", "#f5d987", "#dfcbb0"];
+const MEALS = ["breakfast", "lunch", "dinner", "late night"];
+const MEAL_LABEL = { "breakfast": "🌅 Breakfast", "lunch": "☀️ Lunch", "dinner": "🌙 Dinner", "late night": "🪩 Late night" };
+const PRICES = { 1: "$", 2: "$$", 3: "$$$", 4: "$$$$" };
+const KEY = "fw-picker-visits", KEY_CUSTOM = "pmp-custom", KEY_EDITS = "pmp-edits", KEY_DISMISS = "pmp-dismissed";
+
+const $ = (id) => document.getElementById(id);
+const cats = (r) => [].concat(r.cuisine || []);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+const today = () => new Date().toISOString().slice(0, 10);
+const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, "");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function catInfo(c) {
+  if (CATS[c]) return CATS[c];
+  let h = 0; for (const ch of String(c)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return { e: "🍽️", c: EXTRA_COLORS[h % EXTRA_COLORS.length] };
+}
+const emojiFor = (r) => catInfo(cats(r)[0]).e;
+
+/* ---------- storage ---------- */
+// account state lives up here so storage can tell whose data it is
+const CLOUD = !!(SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase && window.supabase.createClient);
+let sb = null, user = null, applying = false, syncTimer = null, syncBusy = false, syncAgain = false;
+let lastSync = { state: "saved", text: "Saved to your account" };
+const nsKey = (k) => (user ? `u:${user.id}:${k}` : k);
+function load(k, fallback) { try { return JSON.parse(localStorage.getItem(nsKey(k))) ?? fallback; } catch { return fallback; } }
+function save(k, v) { try { localStorage.setItem(nsKey(k), JSON.stringify(v)); } catch {} queueSync(); }
+let visits = load(KEY, {});
+let custom = load(KEY_CUSTOM, []);
+let edits = load(KEY_EDITS, {});
+let dismissed = load(KEY_DISMISS, []);
+if (!Array.isArray(custom)) custom = [];
+if (!Array.isArray(dismissed)) dismissed = [];
+
+// every spot = your list (with your edits layered on) + spots you added in the app
+function all() {
+  return restaurants.map((r) => ({ ...r, ...(edits[r.name] || {}), _key: r.name }))
+    .concat(custom.map((c) => ({ ...c, mine: true, _key: c.name })));
+}
+const findSpot = (name) => all().find((r) => r.name === name);
+
+/* ---------- location ---------- */
+const DEFAULT_CITY = "Fort Worth, TX";
+const KEY_CITY = "pmp-city", KEY_CITIES = "pmp-cities";
+let cities = load(KEY_CITIES, null);
+if (!Array.isArray(cities) || !cities.length) cities = [{ name: DEFAULT_CITY, box: "32.55,-97.55,33.05,-97.03" }];
+if (!cities.some((c) => c.name === DEFAULT_CITY)) cities.unshift({ name: DEFAULT_CITY, box: "32.55,-97.55,33.05,-97.03" });
+let city = load(KEY_CITY, DEFAULT_CITY);
+if (!cities.some((c) => c.name === city)) city = DEFAULT_CITY;
+const cityOf = (r) => r.city || DEFAULT_CITY;
+const cityShort = (c = city) => String(c).split(",")[0].trim();
+const cityBox = () => (cities.find((c) => c.name === city) || {}).box || null;
+// spots in the city you're browsing
+const here = () => all().filter((r) => cityOf(r) === city);
+// every food type you've used anywhere, for the add/edit form
+function knownCats() {
+  const used = new Set(all().flatMap(cats));
+  return Object.keys(CATS).concat([...used].filter((c) => !CATS[c]).sort());
+}
+const getV = (n) => visits[n] || { visited: false, rating: 0, notes: "", date: "" };
+function setV(n, ch) { visits[n] = { ...getV(n), ...ch }; save(KEY, visits); updateCounts(); }
+
+function updateCounts() {
+  const list = here();
+  const n = list.filter((r) => getV(r.name).visited).length;
+  $("visited-count").textContent = n;
+  const pct = list.length ? Math.round((n / list.length) * 100) : 0;
+  $("ring-num").textContent = pct + "%";
+  $("ring-fill").setAttribute("stroke-dashoffset", 264 - (264 * pct) / 100);
+  $("pass-stats").textContent = `${n} of ${list.length} stamps collected. Tap any stamp for details, ratings and notes.`;
+  $("total").textContent = list.length;
+  $("spots-word").textContent = list.length === 1 ? "spot" : "spots";
+  document.querySelectorAll("[data-city-short]").forEach((el) => (el.textContent = cityShort()));
+  $("city-name").textContent = cityShort();
+}
+
+function toast(msg) {
+  const root = $("toast-root");
+  root.innerHTML = `<div class="toast" role="status">${esc(msg)}</div>`;
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => (root.innerHTML = ""), 2200);
+}
+
+/* ---------- filters ---------- */
+const sel = { cats: new Set(), meals: new Set(), prices: new Set(), newOnly: false };
+function allCats() {
+  const used = new Set(here().flatMap(cats));
+  return Object.keys(CATS).filter((c) => used.has(c)).concat([...used].filter((c) => !CATS[c]).sort());
+}
+function matches() {
+  return here().filter((r) =>
+    (sel.cats.size === 0 || cats(r).some((c) => sel.cats.has(c))) &&
+    (sel.meals.size === 0 || (r.meals || []).some((m) => sel.meals.has(m))) &&
+    (sel.prices.size === 0 || sel.prices.has(r.price)) &&
+    (!sel.newOnly || !getV(r.name).visited)
+  );
+}
+function wheelCats() {
+  const m = matches();
+  return allCats().filter((c) => (sel.cats.size === 0 || sel.cats.has(c)) && m.some((r) => cats(r).includes(c)));
+}
+function chip(container, label, pressed, onClick, color) {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "chip"; b.innerHTML = label;
+  b.setAttribute("aria-pressed", pressed);
+  if (color) b.style.setProperty("--chip-color", color);
+  b.addEventListener("click", onClick);
+  container.appendChild(b);
+}
+const toggleIn = (set, v) => (set.has(v) ? set.delete(v) : set.add(v));
+
+function renderControls() {
+  const list = here();
+  const cc = $("cat-chips"); cc.innerHTML = "";
+  allCats().forEach((c) => {
+    const n = list.filter((r) => cats(r).includes(c)).length;
+    chip(cc, `${catInfo(c).e} ${esc(c)}<span class="n">${n}</span>`, sel.cats.has(c), () => { toggleIn(sel.cats, c); refresh(); }, catInfo(c).c);
+  });
+  const mc = $("meal-chips"); mc.innerHTML = "";
+  MEALS.forEach((m) => chip(mc, MEAL_LABEL[m], sel.meals.has(m), () => { toggleIn(sel.meals, m); refresh(); }));
+  const pc = $("price-chips"); pc.innerHTML = "";
+  [1, 2, 3, 4].forEach((p) => chip(pc, PRICES[p], sel.prices.has(p), () => { toggleIn(sel.prices, p); refresh(); }));
+  $("new-only").setAttribute("aria-checked", sel.newOnly);
+}
+function refresh() {
+  renderControls();
+  drawWheel();
+  const m = matches();
+  const unpriced = sel.prices.size ? here().filter((r) => r.price == null).length : 0;
+  $("status").innerHTML = m.length
+    ? `<b>${m.length}</b> spot${m.length === 1 ? "" : "s"} on the wheel${unpriced ? ` · ${unpriced} have no price set yet` : ""}${m.length > PLACE_LIMIT ? `<br><span class="status-hint">Pick a food type or two to see restaurant names on the wheel</span>` : ""}`
+    : here().length ? "No spots match. Turn a filter off." : `No spots in ${cityShort()} yet. Add your first one below.`;
+  $("spin-btn").disabled = m.length === 0 || spinning;
+  updateCounts();
+}
+$("clear-cats").addEventListener("click", () => { sel.cats.clear(); refresh(); });
+$("new-only").addEventListener("click", () => { sel.newOnly = !sel.newOnly; refresh(); });
+
+/* ---------- wheel ---------- */
+const wheel = $("wheel"), wctx = wheel.getContext("2d");
+let rot = 0, spinning = false, slices = [];
+function sizeWheel() {
+  const box = wheel.getBoundingClientRect();
+  if (!box.width) return;
+  const dpr = window.devicePixelRatio || 1;
+  wheel.width = Math.round(box.width * dpr);
+  wheel.height = Math.round(box.height * dpr);
+  drawWheel();
+}
+// With a handful of matches, every restaurant gets its own named slice.
+// With lots of matches, slices are food types (a restaurant is picked inside the winning type).
+const PLACE_LIMIT = 24;
+function wheelSlices() {
+  const m = matches();
+  if (m.length && m.length <= PLACE_LIMIT) {
+    return [...m].sort((a, b) => (cats(a)[0] || "").localeCompare(cats(b)[0] || "") || a.name.localeCompare(b.name))
+      .map((r) => ({ kind: "place", r, label: r.name, e: emojiFor(r) }));
+  }
+  return wheelCats().map((c) => ({ kind: "cat", c, label: c, e: catInfo(c).e }));
+}
+function fitText(ctx, text, maxW) {
+  if (ctx.measureText(text).width <= maxW) return text;
+  let t = text;
+  while (t.length > 1 && ctx.measureText(t + "…").width > maxW) t = t.slice(0, -1);
+  return t.trimEnd() + "…";
+}
+function drawWheel() {
+  slices = wheelSlices();
+  const W = wheel.width, R = W / 2, ctx = wctx, n = slices.length;
+  ctx.clearRect(0, 0, W, W);
+  if (!n) { ctx.fillStyle = "#efe5d6"; ctx.beginPath(); ctx.arc(R, R, R, 0, Math.PI * 2); ctx.fill(); return; }
+  const a = (Math.PI * 2) / n;
+  const hubR = R * 0.3, outer = R * 0.93;
+  slices.forEach((sl, i) => {
+    const start = rot + i * a;
+    let col = WHEEL[i % WHEEL.length];
+    if (i === n - 1 && i > 0 && i % 4 === 0) col = WHEEL[(i + 2) % WHEEL.length];
+    ctx.beginPath();
+    if (n === 1) ctx.arc(R, R, R, 0, Math.PI * 2);
+    else { ctx.moveTo(R, R); ctx.arc(R, R, R, start, start + a); ctx.closePath(); }
+    ctx.fillStyle = col; ctx.fill();
+    if (n > 1) { ctx.lineWidth = W * 0.006; ctx.strokeStyle = "#fffcf7"; ctx.stroke(); }
+
+    if (n === 1) {
+      // one match: write it across the wheel, above the Spin button
+      ctx.save();
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.font = `${Math.round(W * 0.09)}px system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif`;
+      ctx.fillText(sl.e, R, R * 0.3);
+      let fs1 = W * 0.06;
+      ctx.font = `600 ${Math.round(fs1)}px "DM Sans", system-ui, sans-serif`;
+      const w1 = ctx.measureText(sl.label).width, max1 = R * 1.4;
+      if (w1 > max1) { fs1 = Math.max(W * 0.035, fs1 * max1 / w1); ctx.font = `600 ${Math.round(fs1)}px "DM Sans", system-ui, sans-serif`; }
+      ctx.fillStyle = "#3d322c";
+      ctx.fillText(fitText(ctx, sl.label, max1), R, R * 0.55);
+      ctx.restore();
+      return;
+    }
+    // text size: as big as the slice allows, never tiny
+    const room = a * R * 0.62;
+    const fs = Math.max(W * 0.026, Math.min(W * (sl.kind === "place" ? 0.036 : 0.042), room * 0.5));
+    ctx.save(); ctx.translate(R, R);
+    ctx.rotate(n === 1 ? -Math.PI / 2 : start + a / 2);
+    ctx.textAlign = "right"; ctx.textBaseline = "middle";
+    ctx.font = `${Math.round(fs * 1.2)}px system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif`;
+    ctx.fillText(sl.e, outer, 0);
+    const textEnd = outer - fs * 1.7, maxW = textEnd - hubR;
+    let tfs = fs;
+    ctx.font = `600 ${Math.round(tfs)}px "DM Sans", system-ui, sans-serif`;
+    const tw = ctx.measureText(sl.label).width;
+    // shrink long names a bit before cutting them off
+    if (tw > maxW) { tfs = Math.max(W * 0.022, tfs * maxW / tw); ctx.font = `600 ${Math.round(tfs)}px "DM Sans", system-ui, sans-serif`; }
+    ctx.fillStyle = "#3d322c";
+    ctx.fillText(fitText(ctx, sl.label, maxW), textEnd, 0);
+    ctx.restore();
+  });
+  ctx.beginPath(); ctx.arc(R, R, R * 0.995, 0, Math.PI * 2);
+  ctx.lineWidth = W * 0.01; ctx.strokeStyle = "#fffcf7"; ctx.stroke();
+}
+window.addEventListener("resize", sizeWheel);
+
+function spin() {
+  const m = matches();
+  if (!m.length || spinning) return;
+  slices = wheelSlices();
+  const a = (Math.PI * 2) / slices.length;
+  const i = Math.floor(Math.random() * slices.length);
+  let pick, cat;
+  if (slices[i].kind === "place") { pick = slices[i].r; cat = cats(pick)[0]; }
+  else {
+    cat = slices[i].c;
+    const pool = m.filter((r) => cats(r).includes(cat));
+    pick = pool[Math.floor(Math.random() * pool.length)];
+  }
+  const TAU = Math.PI * 2;
+  let target = -Math.PI / 2 - (i + 0.5) * a + (Math.random() - 0.5) * a * 0.7;
+  target = target + TAU * Math.ceil((rot - target) / TAU) + TAU * (reduceMotion ? 1 : 6);
+  spinning = true;
+  $("spin-btn").disabled = true;
+  $("status").innerHTML = "Spinning…";
+  const from = rot, dur = reduceMotion ? 600 : 4200, t0 = performance.now();
+  let lastSlice = -1;
+  const ease = (t) => 1 - Math.pow(1 - t, 4);
+  function frame(now) {
+    const t = Math.min(1, (now - t0) / dur);
+    rot = from + (target - from) * ease(t);
+    drawWheel();
+    const atTop = Math.floor((((-Math.PI / 2 - rot) % TAU) + TAU) % TAU / a);
+    if (atTop !== lastSlice) { lastSlice = atTop; const p = $("pointer"); p.classList.remove("tick"); void p.offsetWidth; p.classList.add("tick"); }
+    if (t < 1) requestAnimationFrame(frame);
+    else { rot = rot % TAU; spinning = false; refresh(); showWinner(pick, cat); }
+  }
+  requestAnimationFrame(frame);
+}
+$("spin-btn").addEventListener("click", spin);
+
+/* ---------- popups ---------- */
+function openOverlay(html, onMount) {
+  $("overlay-root").innerHTML = `<div class="overlay" id="overlay">${html}</div>`;
+  const ov = $("overlay");
+  ov.addEventListener("click", (e) => { if (e.target === ov) closeOverlay(); });
+  ov.querySelectorAll("[data-close]").forEach((b) => b.addEventListener("click", closeOverlay));
+  onMount && onMount(ov);
+  ov.querySelectorAll("[data-edit]").forEach((b) => b.addEventListener("click", () => openSpotForm(findSpot(b.dataset.edit))));
+  const first = ov.querySelector("input[type=text], button, a, textarea");
+  first && first.focus();
+}
+function closeOverlay() {
+  if (!$("overlay-root").innerHTML) return;
+  $("overlay-root").innerHTML = "";
+  rerenderCurrent();
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeOverlay(); });
+
+function linksFor(r) {
+  const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name + " " + (r.area || "") + " " + cityOf(r))}`;
+  let html = `<div class="btn-row"><a class="btn" href="${maps}" target="_blank" rel="noopener">📍 Directions</a><button class="btn light" type="button" data-edit="${esc(r.name)}">✎ Edit</button></div>`;
+  const extra = [];
+  if (r.website) extra.push(`<a class="btn light" href="${esc(r.website)}" target="_blank" rel="noopener">🌐 Website</a>`);
+  if (r.menu) extra.push(`<a class="btn light" href="${esc(r.menu)}" target="_blank" rel="noopener">📋 Menu</a>`);
+  if (extra.length) html += `<div class="btn-row">${extra.join("")}</div>`;
+  return html;
+}
+function infoBlock(r) {
+  const known = (r.known || []).filter(Boolean);
+  if (!r.about && !known.length) return `<p class="no-info">No description yet. Tap ✎ Edit to look it up or add your own.</p>`;
+  return `${r.about ? `<p class="about">${esc(r.about)}</p>` : ""}
+    ${known.length ? `<div class="known"><span class="lbl">Famous for</span><ul>${known.map((k) => `<li>${esc(k)}</li>`).join("")}</ul></div>` : ""}`;
+}
+
+function showWinner(r, cat) {
+  const v = getV(r.name);
+  const tags = [...cats(r), PRICES[r.price], r.area].filter(Boolean).map((t) => `<span class="tag">${esc(t)}</span>`).join("");
+  const been = v.visited
+    ? `You've been here${v.rating ? " · " + "★".repeat(v.rating) : ""}${v.notes ? `<br>“${esc(v.notes.length > 80 ? v.notes.slice(0, 80) + "…" : v.notes)}”` : ""}`
+    : "🆕 You haven't been here yet";
+  openOverlay(`
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="win-name">
+      <button class="close" data-close aria-label="Close">×</button>
+      <span class="win-badge">Tonight's pick</span>
+      <div class="win-emoji">${emojiFor(r)}</div>
+      <h3 id="win-name">${esc(r.name)}</h3>
+      <div class="tags">${tags}</div>
+      ${r.note ? `<div class="note">📌 ${esc(r.note)}</div>` : ""}
+      ${infoBlock(r)}
+      <p class="been">${been}</p>
+      <div class="actions">
+        ${linksFor(r)}
+        <div class="btn-row">
+          <button class="btn pink" id="again" type="button">🎡 Spin again</button>
+          <button class="btn light" id="stamp-it" type="button">🛂 ${v.visited ? "My notes" : "We went!"}</button>
+        </div>
+      </div>
+    </div>`, (ov) => {
+      ov.querySelector("#again").addEventListener("click", () => { closeOverlay(); spin(); });
+      ov.querySelector("#stamp-it").addEventListener("click", () => {
+        if (!getV(r.name).visited) setV(r.name, { visited: true, date: today() });
+        openSheet(r.name);
+      });
+    });
+  confetti(catInfo(cat).c);
+}
+
+/* one place: details, been-here, rating, notes */
+function openSheet(name) {
+  const r = findSpot(name);
+  if (!r) return;
+  const v = getV(r.name);
+  openOverlay(`
+    <div class="modal sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-name">
+      <button class="close" data-close aria-label="Close">×</button>
+      <div class="head">
+        <span class="e">${emojiFor(r)}</span>
+        <div>
+          <h3 id="sheet-name">${esc(r.name)}</h3>
+          <div class="sub">${esc([...cats(r), PRICES[r.price], r.area].filter(Boolean).join(" · "))}</div>
+        </div>
+      </div>
+      ${r.note ? `<div class="note">📌 ${esc(r.note)}</div>` : ""}
+      ${infoBlock(r)}
+      <div class="actions">${linksFor(r)}</div>
+      <div class="section-gap">
+        <div class="field">
+          <button class="been-toggle" id="been" type="button" aria-pressed="${v.visited}">${v.visited ? "✅ Been here" : "Tap to stamp: I've been here"}</button>
+        </div>
+        <div id="details" ${v.visited ? "" : "hidden"}>
+          <div class="field">
+            <span class="lbl">My rating</span>
+            <div class="stars" id="stars" role="group" aria-label="Rating"></div>
+          </div>
+          <div class="field">
+            <label for="visit-date">Last visit</label>
+            <input type="date" id="visit-date" value="${esc(v.date)}">
+          </div>
+          <div class="field">
+            <label for="visit-notes">My notes</label>
+            <textarea id="visit-notes" placeholder="What did you order? Who'd you go with? Going back?">${esc(v.notes)}</textarea>
+          </div>
+        </div>
+        <p class="saved" id="saved" aria-live="polite"></p>
+      </div>
+    </div>`, (ov) => {
+      const flash = (t = "Saved ✓") => { const s = ov.querySelector("#saved"); s.textContent = t; clearTimeout(s._t); s._t = setTimeout(() => (s.textContent = ""), 1400); };
+      const beenBtn = ov.querySelector("#been");
+      beenBtn.addEventListener("click", () => {
+        const now = !getV(r.name).visited;
+        setV(r.name, now ? { visited: true, date: getV(r.name).date || today() } : { visited: false });
+        beenBtn.setAttribute("aria-pressed", now);
+        beenBtn.textContent = now ? "✅ Been here" : "Tap to stamp: I've been here";
+        ov.querySelector("#details").hidden = !now;
+        ov.querySelector("#visit-date").value = getV(r.name).date;
+        if (now) confetti("#9fc0dc", 60);
+        flash();
+      });
+      const starsBox = ov.querySelector("#stars");
+      const drawStars = () => starsBox.querySelectorAll(".star").forEach((s, i) => s.classList.toggle("on", i < getV(r.name).rating));
+      for (let i = 1; i <= 5; i++) {
+        const s = document.createElement("button");
+        s.type = "button"; s.className = "star"; s.textContent = "★";
+        s.setAttribute("aria-label", `${i} star${i > 1 ? "s" : ""}`);
+        s.addEventListener("click", () => { setV(r.name, { rating: getV(r.name).rating === i ? 0 : i }); drawStars(); flash(); });
+        starsBox.appendChild(s);
+      }
+      drawStars();
+      ov.querySelector("#visit-date").addEventListener("change", (e) => { setV(r.name, { date: e.target.value }); flash(); });
+      let t;
+      ov.querySelector("#visit-notes").addEventListener("input", (e) => {
+        clearTimeout(t); t = setTimeout(() => { setV(r.name, { notes: e.target.value }); flash(); }, 350);
+      });
+    });
+}
+
+/* ---------- looking places up while you type ---------- */
+// 1) instant: Fort Worth spots already researched (your list + recommendations)
+function localMatches(q, skipKey) {
+  const n = norm(q);
+  if (n.length < 2) return [];
+  const onList = here().filter((r) => r._key !== skipKey);
+  const out = [];
+  suggestions.filter((s) => cityOf(s) === city).forEach((s) => {
+    if (norm(s.name).includes(n)) out.push({ ...s, src: "guide", already: onList.some((r) => norm(r.name) === norm(s.name)) });
+  });
+  onList.forEach((r) => {
+    if (norm(r.name).includes(n) && !out.some((x) => norm(x.name) === norm(r.name))) out.push({ ...r, src: "list", already: true });
+  });
+  return out.slice(0, 5);
+}
+// 2) live: OpenStreetMap (free, public map data) — restaurants, cafes and bars inside the current city
+const OSM_FOOD = {
+  bbq: "BBQ", barbecue: "BBQ", mexican: "Mexican", "tex-mex": "Mexican", tex_mex: "Mexican", tacos: "Mexican", taco: "Mexican", latin_american: "Mexican",
+  sushi: "Sushi", japanese: "Asian", poke: "Sushi", pizza: "Pizza", italian: "Italian", burger: "American", american: "American", chicken: "American",
+  steak_house: "American", sandwich: "American", diner: "American", seafood: "American", coffee_shop: "Coffee", tea: "Coffee", bubble_tea: "Coffee",
+  chinese: "Asian", thai: "Asian", vietnamese: "Asian", korean: "Asian", ramen: "Asian", asian: "Asian", noodle: "Asian", dumpling: "Asian",
+  indian: "Indian", french: "French", crepe: "French", greek: "Mediterranean", mediterranean: "Mediterranean", lebanese: "Mediterranean",
+  middle_eastern: "Mediterranean", breakfast: "Breakfast", brunch: "Breakfast", pancake: "Breakfast", donut: "Breakfast", bagel: "Breakfast"
+};
+function osmToSpot(t) {
+  const foods = String(t.cuisine || "").split(/[;,]/).map((x) => x.trim().toLowerCase()).filter(Boolean);
+  const tags = new Set();
+  foods.forEach((f) => OSM_FOOD[f] && tags.add(OSM_FOOD[f]));
+  if (t.amenity === "cafe" && !tags.size) tags.add("Coffee");
+  if (["bar", "pub", "biergarten", "nightclub"].includes(t.amenity)) tags.add("Bars");
+  const street = [t["addr:housenumber"], t["addr:street"]].filter(Boolean).join(" ");
+  const meals = ["bar", "pub", "biergarten", "nightclub"].includes(t.amenity) ? BAR : (t.amenity === "cafe" || tags.has("Breakfast")) ? MORN : MEAL;
+  return {
+    name: t.name, cuisine: [...tags], meals, src: "osm",
+    area: street || undefined,
+    website: t.website || t["contact:website"] || undefined,
+    menu: t["website:menu"] || undefined,
+    about: t.description || undefined,
+    foodText: foods.map((f) => f.replace(/_/g, " ")).join(", ")
+  };
+}
+async function osmSearch(q, signal) {
+  const pat = q.replace(/["\\]/g, "").replace(/[.*+?^${}()|[\]]/g, (m) => "\\\\" + m).trim();
+  const box = cityBox();
+  if (pat.length < 3 || !box) return [];
+  const ql = `[out:json][timeout:8];nwr["amenity"~"^(restaurant|cafe|bar|pub|fast_food|biergarten|ice_cream|food_court|nightclub)$"]["name"~"${pat}",i](${box});out tags 8;`;
+  const res = await fetch("https://overpass-api.de/api/interpreter", {
+    method: "POST", signal,
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: "data=" + encodeURIComponent(ql)
+  });
+  if (!res.ok) throw new Error("lookup failed");
+  const data = await res.json();
+  const seen = new Set();
+  return (data.elements || []).map((e) => osmToSpot(e.tags || {})).filter((x) => x.name && !seen.has(norm(x.name)) && seen.add(norm(x.name)));
+}
+const googleUrl = (q) => `https://www.google.com/search?q=${encodeURIComponent(q)}`;
+
+/* ---------- add or edit a spot ---------- */
+function openSpotForm(existing) {
+  const editing = !!existing;
+  const f = existing || {};
+  const tags = new Set(editing ? cats(f) : []);
+  const meals = new Set(f.meals || ["lunch", "dinner"]);
+  let price = f.price ?? null;
+
+  openOverlay(`
+    <form class="modal sheet" id="spot-form" role="dialog" aria-modal="true" aria-labelledby="form-title" novalidate>
+      <button class="close" type="button" data-close aria-label="Close">×</button>
+      <div class="head"><span class="e">${editing ? "✎" : "＋"}</span><div>
+        <h3 id="form-title">${editing ? "Edit spot" : "Add a spot"}</h3>
+        <div class="sub">${editing ? "Fix anything that's off, then save." : `Adding to ${esc(cityShort())}. Start typing and I'll look it up.`}</div>
+      </div></div>
+
+      <div class="field ac-wrap">
+        <label for="f-name">Name</label>
+        <input type="text" id="f-name" value="${esc(f.name || "")}" placeholder="e.g. Joe T. Garcia's" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="ac-list" aria-autocomplete="list">
+        <div class="ac" id="ac-list" role="listbox" hidden></div>
+        <p class="ac-status" id="ac-status" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <span class="lbl">Type of food (pick as many as you like)</span>
+        <div class="pick-row" id="f-tags"></div>
+        <div class="tag-add">
+          <input type="text" id="f-newtag" placeholder="New type, e.g. Ramen" aria-label="New food type">
+          <button type="button" class="mini" id="f-addtag">Add</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="lbl">Budget</span>
+        <div class="pick-row" id="f-price">${[1, 2, 3, 4].map((p) => `<button type="button" data-p="${p}" aria-pressed="${price === p}">${PRICES[p]}</button>`).join("")}</div>
+      </div>
+      <div class="field">
+        <span class="lbl">Good for</span>
+        <div class="pick-row" id="f-meals">${MEALS.map((m) => `<button type="button" data-m="${m}" aria-pressed="${meals.has(m)}">${MEAL_LABEL[m]}</button>`).join("")}</div>
+      </div>
+      <div class="field">
+        <label for="f-area">Neighborhood or address</label>
+        <input type="text" id="f-area" value="${esc(f.area || "")}" placeholder="e.g. Magnolia">
+      </div>
+
+      <div class="lookup">
+        <span class="lbl">Need a description or menu?</span>
+        <div class="btn-row">
+          <a class="btn light small" id="look-about" target="_blank" rel="noopener" href="#">🔎 Search the web</a>
+          <a class="btn light small" id="look-menu" target="_blank" rel="noopener" href="#">📋 Find the menu</a>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-about">Description</label>
+        <textarea id="f-about" placeholder="What's it like?">${esc(f.about || "")}</textarea>
+      </div>
+      <div class="field">
+        <label for="f-known">Famous menu items</label>
+        <input type="text" id="f-known" value="${esc((f.known || []).join(", "))}" placeholder="Separate with commas">
+      </div>
+      <div class="field">
+        <label for="f-website">Website (optional)</label>
+        <input type="text" id="f-website" value="${esc(f.website || "")}" placeholder="https://…" inputmode="url">
+      </div>
+      <div class="field">
+        <label for="f-menu">Menu link (optional)</label>
+        <input type="text" id="f-menu" value="${esc(f.menu || "")}" placeholder="https://…" inputmode="url">
+      </div>
+      <div class="field">
+        <label for="f-note">My note (optional)</label>
+        <input type="text" id="f-note" value="${esc(f.note || "")}" placeholder="e.g. Cash only, great patio">
+      </div>
+      <p class="form-error" id="f-error" aria-live="polite"></p>
+      <div class="actions"><button class="btn pink" type="submit">${editing ? "Save changes" : "Add to my list"}</button></div>
+      ${editing && f.mine ? `<div style="text-align:center;margin-top:10px"><button class="linkish danger" id="f-delete" type="button">Remove this spot from my list</button></div>` : ""}
+      ${editing && !f.mine && edits[f._key] ? `<div style="text-align:center;margin-top:10px"><button class="linkish" id="f-reset" type="button">Undo my edits to this spot</button></div>` : ""}
+    </form>`, (ov) => {
+      const q = (sel) => ov.querySelector(sel);
+      const form = q("#spot-form"), nameIn = q("#f-name"), err = q("#f-error");
+      form.addEventListener("input", () => (err.textContent = ""));
+
+      // food type chips
+      const drawTags = () => {
+        const box = q("#f-tags");
+        const options = [...new Set(knownCats().concat([...tags]))];
+        box.innerHTML = options.map((c) => `<button type="button" data-t="${esc(c)}" aria-pressed="${tags.has(c)}">${catInfo(c).e} ${esc(c)}</button>`).join("");
+        box.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { toggleIn(tags, b.dataset.t); drawTags(); err.textContent = ""; }));
+      };
+      drawTags();
+      const addTag = () => {
+        const v = q("#f-newtag").value.trim();
+        if (!v) return;
+        const match = knownCats().find((c) => c.toLowerCase() === v.toLowerCase());
+        tags.add(match || v.replace(/\b\w/g, (ch) => ch.toUpperCase()));
+        q("#f-newtag").value = ""; drawTags();
+      };
+      q("#f-addtag").addEventListener("click", addTag);
+      q("#f-newtag").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); addTag(); } });
+
+      // price + meals
+      const drawPrice = () => ov.querySelectorAll("#f-price button").forEach((x) => x.setAttribute("aria-pressed", +x.dataset.p === price));
+      ov.querySelectorAll("#f-price button").forEach((b) => b.addEventListener("click", () => { const p = +b.dataset.p; price = price === p ? null : p; drawPrice(); }));
+      const drawMeals = () => ov.querySelectorAll("#f-meals button").forEach((x) => x.setAttribute("aria-pressed", meals.has(x.dataset.m)));
+      ov.querySelectorAll("#f-meals button").forEach((b) => b.addEventListener("click", () => { toggleIn(meals, b.dataset.m); drawMeals(); }));
+
+      // search-the-web buttons follow the name
+      const updateLinks = () => {
+        const n = nameIn.value.trim() || "restaurant";
+        q("#look-about").href = googleUrl(`${n} ${city}`);
+        q("#look-menu").href = googleUrl(`${n} ${city} menu`);
+      };
+      updateLinks();
+
+      // fill empty fields from a lookup result (never overwrites what you typed)
+      const fillFrom = (s) => {
+        nameIn.value = s.name;
+        cats(s).forEach((c) => tags.add(c)); drawTags();
+        if (s.price && price == null) { price = s.price; drawPrice(); }
+        if (s.meals && s.meals.length) { meals.clear(); s.meals.forEach((m) => meals.add(m)); drawMeals(); }
+        const setIfEmpty = (sel, val) => { const el = q(sel); if (val && !el.value.trim()) el.value = val; };
+        setIfEmpty("#f-area", s.area);
+        setIfEmpty("#f-about", s.about);
+        setIfEmpty("#f-known", (s.known || []).join(", "));
+        setIfEmpty("#f-website", s.website);
+        setIfEmpty("#f-menu", s.menu);
+        updateLinks();
+      };
+
+      // typeahead
+      const list = q("#ac-list"), status = q("#ac-status");
+      let results = [], active = -1, timer, ctrl, liveWorks = true;
+      const close = () => { list.hidden = true; nameIn.setAttribute("aria-expanded", "false"); active = -1; };
+      const draw = () => {
+        if (!results.length) { close(); return; }
+        list.innerHTML = results.map((s, i) => {
+          const sub = s.already ? "Already on your list"
+            : s.src === "guide" ? `Fort Worth food guides · ${esc(cats(s).join(", "))} · has description`
+            : `Live web lookup · ${esc([s.foodText || cats(s).join(", "), s.area].filter(Boolean).join(" · ") || cityShort())}`;
+          return `<button type="button" role="option" class="ac-item ${i === active ? "on" : ""}" data-i="${i}" ${s.already ? "disabled" : ""}>
+            <span class="ac-name">${s.src === "osm" ? "🌐" : catInfo(cats(s)[0]).e} ${esc(s.name)}</span><span class="ac-sub">${sub}</span></button>`;
+        }).join("");
+        list.hidden = false; nameIn.setAttribute("aria-expanded", "true");
+        list.querySelectorAll(".ac-item:not([disabled])").forEach((b) => b.addEventListener("mousedown", (e) => {
+          e.preventDefault(); pick(results[+b.dataset.i]);
+        }));
+      };
+      const pick = (s) => {
+        fillFrom(s); close();
+        status.textContent = s.src === "guide"
+          ? "Filled in from Fort Worth food guides. Check it over, then add."
+          : "Filled in what the web had. Add a description and dishes, or tap Search the web.";
+        if (s.src === "guide") return;
+      };
+      nameIn.addEventListener("input", () => {
+        updateLinks();
+        const val = nameIn.value.trim();
+        results = localMatches(val, f._key); active = -1; draw();
+        status.textContent = "";
+        clearTimeout(timer); ctrl && ctrl.abort();
+        if (val.length < 3 || !liveWorks) return;
+        timer = setTimeout(async () => {
+          ctrl = new AbortController();
+          status.textContent = "Searching the web…";
+          try {
+            const live = await osmSearch(val, ctrl.signal);
+            const have = new Set(results.map((x) => norm(x.name)));
+            const onList = new Set(here().filter((r) => r._key !== f._key).map((r) => norm(r.name)));
+            live.forEach((s) => { if (!have.has(norm(s.name))) results.push({ ...s, already: onList.has(norm(s.name)) }); });
+            results = results.slice(0, 7);
+            status.textContent = live.length ? "" : (results.length ? "" : "No matches on the web. You can still add it by hand.");
+            draw();
+          } catch (e) {
+            if (e.name === "AbortError") return;
+            liveWorks = false;
+            status.textContent = "Live web search isn't available here. It works once the site is published. Use Search the web below.";
+          }
+        }, 550);
+      });
+      nameIn.addEventListener("keydown", (e) => {
+        if (list.hidden) return;
+        const pickable = results.map((s, i) => (s.already ? -1 : i)).filter((i) => i >= 0);
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+          e.preventDefault();
+          const pos = pickable.indexOf(active);
+          active = pickable[(pos + (e.key === "ArrowDown" ? 1 : -1) + pickable.length) % pickable.length] ?? -1;
+          draw();
+        } else if (e.key === "Enter" && active >= 0) { e.preventDefault(); pick(results[active]); }
+        else if (e.key === "Escape") { e.stopPropagation(); close(); }
+      });
+      nameIn.addEventListener("blur", () => setTimeout(close, 120));
+
+      // save
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = nameIn.value.trim();
+        if (!name) { err.textContent = "Give the spot a name."; nameIn.focus(); return; }
+        const clash = here().find((r) => norm(r.name) === norm(name) && r._key !== f._key);
+        if (clash) { err.textContent = `${clash.name} is already on your list.`; return; }
+        if (!tags.size) { err.textContent = "Pick at least one type of food."; return; }
+        if (!meals.size) { err.textContent = "Pick at least one meal time."; return; }
+        const url = (v) => { v = v.trim(); return v && !/^https?:\/\//i.test(v) ? "https://" + v : v || undefined; };
+        const tagList = [...tags];
+        const spot = {
+          name, cuisine: tagList.length === 1 ? tagList[0] : tagList, price,
+          city: editing ? f.city : (city === DEFAULT_CITY ? undefined : city),
+          meals: MEALS.filter((m) => meals.has(m)),
+          area: q("#f-area").value.trim() || undefined,
+          about: q("#f-about").value.trim() || undefined,
+          known: q("#f-known").value.split(",").map((x) => x.trim()).filter(Boolean),
+          website: url(q("#f-website").value),
+          menu: url(q("#f-menu").value),
+          note: q("#f-note").value.trim() || undefined
+        };
+        if (editing) {
+          if (f.mine) {
+            custom = custom.map((c) => (c.name === f._key ? { ...spot, added: c.added } : c));
+            save(KEY_CUSTOM, custom);
+          } else {
+            edits[f._key] = spot; save(KEY_EDITS, edits);
+          }
+          if (f.name !== name && visits[f.name]) { visits[name] = visits[f.name]; delete visits[f.name]; save(KEY, visits); }
+          refresh();
+          openSheet(name);
+          toast("Changes saved");
+        } else {
+          custom.push({ ...spot, added: today() }); save(KEY_CUSTOM, custom);
+          closeOverlay(); refresh();
+          toast(`${name} is on the wheel!`);
+          confetti(catInfo(tagList[0]).c, 80);
+        }
+      });
+
+      const del = q("#f-delete");
+      if (del) {
+        let armed = false;
+        del.addEventListener("click", () => {
+          if (!armed) { armed = true; del.textContent = "Tap again to remove it for good"; return; }
+          custom = custom.filter((c) => c.name !== f._key); save(KEY_CUSTOM, custom);
+          delete visits[f.name]; save(KEY, visits);
+          closeOverlay(); refresh(); toast(`Removed ${f.name}`);
+        });
+      }
+      const reset = q("#f-reset");
+      if (reset) reset.addEventListener("click", () => {
+        const orig = restaurants.find((r) => r.name === f._key);
+        if (f.name !== orig.name && visits[f.name]) { visits[orig.name] = visits[f.name]; delete visits[f.name]; save(KEY, visits); }
+        delete edits[f._key]; save(KEY_EDITS, edits);
+        refresh(); openSheet(orig.name); toast("Back to the original");
+      });
+    });
+}
+document.querySelectorAll("[data-add]").forEach((b) => b.addEventListener("click", () => openSpotForm()));
+
+
+/* ---------- passport ---------- */
+const passSel = new Set();
+function renderPassport() {
+  const pc = $("pass-cats"); pc.innerHTML = "";
+  allCats().forEach((c) => chip(pc, `${catInfo(c).e} ${esc(c)}`, passSel.has(c), () => { toggleIn(passSel, c); renderPassport(); }, catInfo(c).c));
+  const q = $("pass-search").value.trim().toLowerCase();
+  const show = $("pass-show").value, sort = $("pass-sort").value;
+  let list = here().filter((r) => {
+    const v = getV(r.name);
+    if (show === "visited" && !v.visited) return false;
+    if (show === "new" && v.visited) return false;
+    if (show === "mine" && !r.mine) return false;
+    if (passSel.size && !cats(r).some((c) => passSel.has(c))) return false;
+    if (q && !`${r.name} ${cats(r).join(" ")} ${r.area || ""} ${r.note || ""} ${r.about || ""} ${(r.known || []).join(" ")}`.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  list.sort((a, b) => {
+    const va = getV(a.name), vb = getV(b.name);
+    if (sort === "rating") return (vb.rating || 0) - (va.rating || 0) || a.name.localeCompare(b.name);
+    if (sort === "recent") return (vb.date || "").localeCompare(va.date || "") || a.name.localeCompare(b.name);
+    return a.name.localeCompare(b.name);
+  });
+  const box = $("stamps");
+  if (!list.length) { box.innerHTML = `<p class="empty">${here().length ? "No spots match." : `No spots in ${esc(cityShort())} yet. Tap “Add a spot” to start your list.`}</p>`; return; }
+  box.innerHTML = list.map((r) => {
+    const v = getV(r.name);
+    return `<button class="stamp ${v.visited ? "visited" : ""}" data-name="${esc(r.name)}" type="button" style="--stamp:${catInfo(cats(r)[0]).c}">
+      <span class="e">${emojiFor(r)}</span>
+      ${r.mine ? `<span class="mine">Added by me</span>` : ""}
+      <span class="nm">${esc(r.name)}</span>
+      <span class="ct">${esc(cats(r).join(" · "))}</span>
+      <span class="st">${v.rating ? "★".repeat(v.rating) : ""}</span>
+    </button>`;
+  }).join("");
+  box.querySelectorAll(".stamp").forEach((b) => b.addEventListener("click", () => openSheet(b.dataset.name)));
+}
+["pass-search", "pass-show", "pass-sort"].forEach((id) => $(id).addEventListener("input", renderPassport));
+
+/* ---------- for you (recommendations) ---------- */
+// Taste score per category: ratings count most, then places you've been, then what's on your list.
+function tasteProfile() {
+  const score = {}, why = {};
+  const list = all();
+  allCats().concat(Object.keys(CATS)).forEach((c) => (score[c] = 0));
+  const listed = {};
+  list.forEach((r) => cats(r).forEach((c) => (listed[c] = (listed[c] || 0) + 1)));
+  Object.entries(listed).forEach(([c, n]) => { score[c] += n * 0.15; why[c] = `You have ${n} ${c} spot${n === 1 ? "" : "s"} on your list`; });
+  const best = {};
+  list.forEach((r) => {
+    const v = getV(r.name);
+    if (!v.visited) return;
+    cats(r).forEach((c) => {
+      score[c] += v.rating ? (v.rating - 2.5) * 1.6 : 0.8;
+      if (v.rating && (!best[c] || v.rating > best[c].rating)) best[c] = { name: r.name, rating: v.rating };
+      else if (!best[c]) best[c] = { name: r.name, rating: 0 };
+    });
+  });
+  Object.entries(best).forEach(([c, b]) => {
+    why[c] = b.rating ? `Because you gave ${b.name} ${"★".repeat(b.rating)}` : `Because you've been to ${b.name}`;
+  });
+  return { score, why, rated: Object.values(visits).some((v) => v.visited && v.rating) };
+}
+let recSeed = Math.random(), recLimit = 9;
+const KEY_FLAVORS = "pmp-flavors";
+const recSel = new Set(load(KEY_FLAVORS, []));
+const saveFlavors = () => save(KEY_FLAVORS, [...recSel]);
+function seeded(name) { let h = Math.floor(recSeed * 1e9); for (const ch of name) h = (h * 33 + ch.charCodeAt(0)) >>> 0; return (h % 1000) / 1000; }
+function renderForYou() {
+  const { score, why, rated } = tasteProfile();
+  const onList = new Set(all().map((r) => norm(r.name)));
+  const available = suggestions.filter((s) => cityOf(s) === city && !onList.has(norm(s.name)) && !dismissed.includes(s.name));
+  const noGuide = !suggestions.some((s) => cityOf(s) === city);
+  document.querySelector(".foryou-head .flavors-box").hidden = noGuide;
+  document.querySelector(".foryou-head .foryou-tools").hidden = noGuide;
+  const left = {}; available.forEach((s) => (left[s.cuisine] = (left[s.cuisine] || 0) + 1));
+  // every flavor that still has new spots to suggest, strongest taste first
+  const flavorList = Object.keys(left).sort((a, b) => (score[b] || 0) - (score[a] || 0) || a.localeCompare(b));
+  [...recSel].forEach((c) => { if (!left[c]) recSel.delete(c); });
+  const max = Math.max(0.01, ...flavorList.map((c) => score[c] || 0));
+  $("foryou-sub").textContent = rated
+    ? "Based on how you've rated places so far. Rate more spots in your passport to sharpen these."
+    : "Based on what's on your list. Rate places in your passport and these get smarter.";
+  const fl = $("flavors");
+  fl.innerHTML = flavorList.map((c) => {
+    const sc = score[c] || 0, on = recSel.has(c);
+    const bar = sc > 0 ? `<span class="bar" style="width:${Math.max(8, Math.round((sc / max) * 40))}px" aria-hidden="true"></span>` : "";
+    return `<button type="button" class="flavor" data-fl="${esc(c)}" aria-pressed="${on}" style="--fl:${catInfo(c).c}">
+      <span class="chk" aria-hidden="true">${on ? "✓" : catInfo(c).e}</span>${esc(c)}${bar}<span class="n">${left[c]}</span></button>`;
+  }).join("");
+  fl.querySelectorAll(".flavor").forEach((b) => b.addEventListener("click", () => {
+    toggleIn(recSel, b.dataset.fl); saveFlavors(); recLimit = 9; renderForYou();
+  }));
+  $("flavors-clear").hidden = recSel.size === 0;
+  $("flavors-hint").textContent = recSel.size
+    ? `Showing ${[...recSel].join(", ")} only`
+    : "Tap to choose what you're in the mood for. Longer bars = you like it more.";
+
+  const pool = available
+    .filter((s) => !recSel.size || recSel.has(s.cuisine))
+    .map((s) => ({ s, rank: (score[s.cuisine] || 0) + seeded(s.name) * 1.2 }))
+    .sort((a, b) => b.rank - a.rank);
+  // keep it varied: at most 3 per category before repeating
+  const perCat = {}, first = [], later = [];
+  pool.forEach((x) => { const c = x.s.cuisine; perCat[c] = (perCat[c] || 0) + 1; (perCat[c] <= 3 ? first : later).push(x); });
+  pool.length = 0; pool.push(...first, ...later);
+
+  $("recs-count").textContent = pool.length ? `${pool.length} new spot${pool.length === 1 ? "" : "s"} to try` : "";
+  const box = $("recs");
+  if (noGuide) {
+    $("foryou-sub").textContent = `Recommendations are only researched for Fort Worth so far.`;
+    box.innerHTML = `<p class="empty">No recommendations for ${esc(cityShort())} yet. Add the spots you love and they'll go straight on the wheel.</p>`;
+    $("more-recs").hidden = true; return;
+  }
+  if (!pool.length && recSel.size) {
+    box.innerHTML = `<p class="empty">No new picks left for ${esc([...recSel].join(", "))}. Tap another flavor.</p>`;
+    $("more-recs").hidden = true; return;
+  }
+  if (!pool.length) {
+    box.innerHTML = `<p class="empty">You've added or skipped every suggestion here. Nice work, explorer.</p>`;
+    $("more-recs").hidden = true; return;
+  }
+  box.innerHTML = pool.slice(0, recLimit).map(({ s }) => `
+    <article class="rec" style="--rec:${catInfo(s.cuisine).c}">
+      <div class="row1"><span class="e">${catInfo(s.cuisine).e}</span><div><h3>${esc(s.name)}</h3><div class="cat">${esc([s.cuisine, s.area].filter(Boolean).join(" · "))}</div></div></div>
+      <div class="why">${esc(why[s.cuisine] || "Something new to try")}</div>
+      ${s.about ? `<p>${esc(s.about)}</p>` : ""}
+      ${(s.known || []).length ? `<ul>${s.known.map((k) => `<li>${esc(k)}</li>`).join("")}</ul>` : ""}
+      <div class="rec-actions">
+        <button class="btn pink" type="button" data-add-rec="${esc(s.name)}">＋ Add to my list</button>
+        <button class="ghost" type="button" data-skip="${esc(s.name)}" aria-label="Not for me: ${esc(s.name)}">Not for me</button>
+      </div>
+    </article>`).join("");
+  $("more-recs").hidden = pool.length <= recLimit;
+  box.querySelectorAll("[data-add-rec]").forEach((b) => b.addEventListener("click", () => {
+    const s = suggestions.find((x) => x.name === b.dataset.addRec);
+    custom.push({ name: s.name, cuisine: s.cuisine, price: null, meals: s.cuisine === "Stockyards" || s.cuisine === "Bars" ? BAR : s.cuisine === "Breakfast" || s.cuisine === "Coffee" ? MORN : MEAL, area: s.area, about: s.about, known: s.known, added: today() });
+    save(KEY_CUSTOM, custom);
+    toast(`${s.name} is on the wheel!`);
+    confetti(catInfo(s.cuisine).c, 70);
+    refresh(); renderForYou();
+  }));
+  box.querySelectorAll("[data-skip]").forEach((b) => b.addEventListener("click", () => {
+    dismissed.push(b.dataset.skip); save(KEY_DISMISS, dismissed); renderForYou();
+  }));
+}
+$("flavors-clear").addEventListener("click", () => { recSel.clear(); saveFlavors(); recLimit = 9; renderForYou(); });
+$("reshuffle").addEventListener("click", () => { recSeed = Math.random(); renderForYou(); });
+$("more-recs").addEventListener("click", () => { recLimit += 9; renderForYou(); });
+
+/* ---------- backup (everything) ---------- */
+$("export-btn").addEventListener("click", () => {
+  const data = { version: 2, visits, custom, edits, dismissed, cities };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `pick-my-plate-backup-${today()}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  $("backup-msg").textContent = "Backup saved to your downloads.";
+});
+$("import-input").addEventListener("change", (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  const rd = new FileReader();
+  rd.onload = () => {
+    try {
+      const d = JSON.parse(rd.result);
+      if (typeof d !== "object" || d === null || Array.isArray(d)) throw 0;
+      if (d.version === 2) {
+        visits = { ...visits, ...(d.visits || {}) };
+        const have = new Set(custom.map((c) => norm(c.name)));
+        custom = custom.concat((d.custom || []).filter((c) => c && c.name && !have.has(norm(c.name))));
+        edits = { ...edits, ...(d.edits || {}) };
+        dismissed = [...new Set(dismissed.concat(d.dismissed || []))];
+        (d.cities || []).forEach((c) => { if (c && c.name && !cities.some((x) => x.name === c.name)) cities.push(c); });
+        save(KEY_CITIES, cities);
+      } else {
+        visits = { ...visits, ...d }; // older backups only had visits
+      }
+      save(KEY, visits); save(KEY_CUSTOM, custom); save(KEY_EDITS, edits); save(KEY_DISMISS, dismissed);
+      refresh(); renderPassport();
+      $("backup-msg").textContent = "Restored ✓";
+    } catch { $("backup-msg").textContent = "That file isn't a Pick My Plate backup."; }
+  };
+  rd.readAsText(f);
+  e.target.value = "";
+});
+
+/* ---------- location dropdown ---------- */
+const locBtn = $("loc-btn"), locMenu = $("loc-menu");
+const titleCase = (t) => t.replace(/\s+/g, " ").trim().replace(/\b([a-z])/g, (m) => m.toUpperCase()).replace(/\b(Tx|Ca|Ny|Fl|Co|Il|Az|Ga|Nc|Tn|Wa|Or|Ma|Dc)\b/g, (m) => m.toUpperCase());
+function renderLocMenu(msg = "") {
+  const counts = {};
+  all().forEach((r) => (counts[cityOf(r)] = (counts[cityOf(r)] || 0) + 1));
+  locMenu.innerHTML = cities.map((c) => `
+    <div class="loc-item" role="menuitemradio" aria-checked="${c.name === city}" tabindex="-1" data-city="${esc(c.name)}">
+      <span class="ck">${c.name === city ? "✓" : ""}</span>${esc(c.name)}
+      <span class="ct">${counts[c.name] || 0} spot${counts[c.name] === 1 ? "" : "s"}</span>
+      ${c.name !== DEFAULT_CITY && !counts[c.name] ? `<button class="rm" type="button" data-rm="${esc(c.name)}" aria-label="Remove ${esc(c.name)}">×</button>` : ""}
+    </div>`).join("") + `
+    <div class="loc-sep"></div>
+    <form class="loc-add" id="loc-add">
+      <input type="text" id="loc-input" placeholder="Add a city, e.g. Dallas, TX" aria-label="Add a city" autocomplete="off">
+      <button class="mini" type="submit">Add</button>
+    </form>
+    <p class="loc-msg" id="loc-msg" aria-live="polite">${esc(msg)}</p>`;
+  locMenu.querySelectorAll(".loc-item").forEach((el) => el.addEventListener("click", (e) => {
+    if (e.target.closest("[data-rm]")) return;
+    switchCity(el.dataset.city);
+  }));
+  locMenu.querySelectorAll("[data-rm]").forEach((b) => b.addEventListener("click", () => {
+    cities = cities.filter((c) => c.name !== b.dataset.rm); save(KEY_CITIES, cities);
+    if (city === b.dataset.rm) switchCity(DEFAULT_CITY, true);
+    renderLocMenu();
+  }));
+  $("loc-add").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const raw = $("loc-input").value.trim();
+    if (!raw) { $("loc-msg").textContent = "Type a city name first."; return; }
+    const name = titleCase(raw);
+    const existing = cities.find((c) => norm(c.name) === norm(name) || norm(cityShort(c.name)) === norm(name));
+    if (existing) { switchCity(existing.name); return; }
+    $("loc-msg").textContent = "Finding it on the map…";
+    let box = null;
+    try {
+      const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(name)}`, { headers: { "Accept-Language": "en" } });
+      const hit = (await res.json())[0];
+      if (hit && hit.boundingbox) { const [south, north, west, east] = hit.boundingbox; box = `${south},${west},${north},${east}`; }
+    } catch {}
+    cities.push({ name, box }); save(KEY_CITIES, cities);
+    switchCity(name);
+    if (!box) toast(`Added ${cityShort(name)}. Live web lookup turns on once the site is published.`);
+  });
+}
+function openLoc() { renderLocMenu(); locMenu.hidden = false; locBtn.setAttribute("aria-expanded", "true"); }
+function closeLoc() { locMenu.hidden = true; locBtn.setAttribute("aria-expanded", "false"); }
+function switchCity(name, quiet) {
+  city = name; save(KEY_CITY, city);
+  sel.cats.clear(); passSel.clear();
+  closeLoc(); rerenderCurrent(); drawWheel(); updateCounts();
+  if (!quiet) toast(`Now picking in ${cityShort()}`);
+}
+locBtn.addEventListener("click", () => (locMenu.hidden ? openLoc() : closeLoc()));
+document.addEventListener("click", (e) => { if (!locMenu.hidden && !e.target.closest("#loc")) closeLoc(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !locMenu.hidden) { closeLoc(); locBtn.focus(); } });
+
+/* ---------- tabs ---------- */
+let page = "spin";
+function showPage(p) {
+  page = p;
+  ["spin", "passport", "foryou"].forEach((x) => {
+    $("page-" + x).hidden = x !== p;
+    $("tab-" + x).setAttribute("aria-selected", x === p);
+  });
+  rerenderCurrent();
+  if (p === "spin") sizeWheel();
+}
+function rerenderCurrent() {
+  if (page === "passport") renderPassport();
+  else if (page === "foryou") renderForYou();
+  else refresh();
+}
+document.querySelectorAll(".tab").forEach((t) => t.addEventListener("click", () => showPage(t.dataset.page)));
+
+/* ---------- confetti ---------- */
+const cv = $("confetti"), cx = cv.getContext("2d");
+let bits = [], raf = null;
+function confetti(main, count = 140) {
+  if (reduceMotion) return;
+  cv.width = innerWidth; cv.height = innerHeight;
+  const colors = [main, "#f2b8c8", "#b9d4ea", "#f5d987", "#dfcbb0", "#e9a9bb", "#9fc0dc"];
+  for (let i = 0; i < count; i++) {
+    bits.push({ x: innerWidth / 2 + (Math.random() - 0.5) * 120, y: innerHeight * 0.45, vx: (Math.random() - 0.5) * 16, vy: -Math.random() * 16 - 6,
+      s: 6 + Math.random() * 7, r: Math.random() * 6, vr: (Math.random() - 0.5) * 0.4, c: colors[i % colors.length], life: 0 });
+  }
+  if (!raf) raf = requestAnimationFrame(tickConfetti);
+}
+function tickConfetti() {
+  cx.clearRect(0, 0, cv.width, cv.height);
+  bits.forEach((b) => {
+    b.vy += 0.45; b.vx *= 0.99; b.x += b.vx; b.y += b.vy; b.r += b.vr; b.life++;
+    cx.save(); cx.translate(b.x, b.y); cx.rotate(b.r); cx.fillStyle = b.c; cx.fillRect(-b.s / 2, -b.s / 4, b.s, b.s / 2); cx.restore();
+  });
+  bits = bits.filter((b) => b.y < cv.height + 40 && b.life < 300);
+  raf = bits.length ? requestAnimationFrame(tickConfetti) : (cx.clearRect(0, 0, cv.width, cv.height), null);
+}
+
+/* =============================================================
+   ACCOUNTS + SYNC
+   One row per person in the "pmp_user_data" table holds their whole
+   passport as JSON. Row-level security means people can only ever
+   read or write their own row.
+   ============================================================= */
+const TABLE = "pmp_user_data";
+const KEY_GUEST_OK = "pmp-guest-ok";
+const STATE_KEYS = [KEY, KEY_CUSTOM, KEY_EDITS, KEY_DISMISS, KEY_CITIES, KEY_CITY, KEY_FLAVORS];
+
+function readState() {
+  visits = load(KEY, {}); if (!visits || typeof visits !== "object" || Array.isArray(visits)) visits = {};
+  custom = load(KEY_CUSTOM, []); if (!Array.isArray(custom)) custom = [];
+  edits = load(KEY_EDITS, {}); if (!edits || typeof edits !== "object") edits = {};
+  dismissed = load(KEY_DISMISS, []); if (!Array.isArray(dismissed)) dismissed = [];
+  cities = load(KEY_CITIES, null);
+  if (!Array.isArray(cities) || !cities.length) cities = [{ name: DEFAULT_CITY, box: "32.55,-97.55,33.05,-97.03" }];
+  if (!cities.some((c) => c.name === DEFAULT_CITY)) cities.unshift({ name: DEFAULT_CITY, box: "32.55,-97.55,33.05,-97.03" });
+  city = load(KEY_CITY, DEFAULT_CITY); if (!cities.some((c) => c.name === city)) city = DEFAULT_CITY;
+  recSel.clear(); (load(KEY_FLAVORS, []) || []).forEach((f) => recSel.add(f));
+}
+const blobOf = () => ({ v: 3, visits, custom, edits, dismissed, cities, city, flavors: [...recSel] });
+function readGuestBlob() {
+  const g = (k, f) => { try { return JSON.parse(localStorage.getItem(k)) ?? f; } catch { return f; } };
+  return { visits: g(KEY, {}), custom: g(KEY_CUSTOM, []), edits: g(KEY_EDITS, {}), dismissed: g(KEY_DISMISS, []), cities: g(KEY_CITIES, null), city: g(KEY_CITY, DEFAULT_CITY), flavors: g(KEY_FLAVORS, []) };
+}
+function writeBlob(b) {
+  applying = true;
+  const put = (k, v) => { try { localStorage.setItem(nsKey(k), JSON.stringify(v)); } catch {} };
+  put(KEY, b.visits || {}); put(KEY_CUSTOM, b.custom || []); put(KEY_EDITS, b.edits || {}); put(KEY_DISMISS, b.dismissed || []);
+  put(KEY_CITIES, b.cities || null); put(KEY_CITY, b.city || DEFAULT_CITY); put(KEY_FLAVORS, b.flavors || []);
+  readState();
+  applying = false;
+}
+const blobSize = (b) => Object.values(b.visits || {}).filter((v) => v && v.visited).length + (b.custom || []).length + Object.keys(b.edits || {}).length;
+
+function setSync(state, text) {
+  lastSync = { state, text };
+  const el = $("sync");
+  if (!el) return;
+  el.dataset.state = state;
+  el.textContent = text;
+}
+function queueSync() {
+  if (!CLOUD || !user || applying) return;
+  setSync("saving", "Saving…");
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(pushNow, 700);
+}
+async function pushNow() {
+  if (!user) return;
+  if (syncBusy) { syncAgain = true; return; }
+  syncBusy = true;
+  const { error } = await sb.from(TABLE).upsert({ user_id: user.id, data: blobOf(), updated_at: new Date().toISOString() });
+  syncBusy = false;
+  if (error) { setSync("error", "Couldn't save. Retrying…"); clearTimeout(syncTimer); syncTimer = setTimeout(pushNow, 5000); return; }
+  setSync("saved", "Saved to your account");
+  if (syncAgain) { syncAgain = false; pushNow(); }
+}
+async function pullNow() {
+  const { data, error } = await sb.from(TABLE).select("data").eq("user_id", user.id).maybeSingle();
+  if (error) throw error;
+  return data ? data.data : null;
+}
+
+function rerenderAll() {
+  updateCounts(); refresh(); rerenderCurrent(); sizeWheel();
+}
+const displayName = (u) => (u && u.user_metadata && u.user_metadata.name) || (u && u.email ? u.email.split("@")[0] : "Guest");
+
+function renderAcct() {
+  if (!CLOUD) return;
+  $("acct").hidden = false;
+  const nm = user ? displayName(user) : "Guest";
+  $("acct-name").textContent = user ? nm : "Guest · Log in";
+  $("acct-av").textContent = user ? nm.trim().charAt(0).toUpperCase() : "?";
+  $("acct-av").classList.toggle("guest", !user);
+}
+function openAcctMenu() {
+  const m = $("acct-menu");
+  m.innerHTML = user ? `
+      <div><div class="who">${esc(displayName(user))}</div><div class="mail">${esc(user.email || "")}</div></div>
+      <span class="sync" id="sync" data-state="${lastSync.state}">${esc(lastSync.text)}</span>
+      <button class="btn light small" type="button" id="acct-logout">Log out</button>`
+    : `<div><div class="who">You're browsing as a guest</div><div class="mail">Ratings and spots stay on this device. Log in to keep them everywhere.</div></div>
+      <button class="btn small" type="button" id="acct-login">Log in or create account</button>`;
+  m.hidden = false; $("acct-btn").setAttribute("aria-expanded", "true");
+  const out = $("acct-logout"); if (out) out.addEventListener("click", logOut);
+  const inn = $("acct-login"); if (inn) inn.addEventListener("click", () => { closeAcctMenu(); showAuth("login"); });
+}
+function closeAcctMenu() { $("acct-menu").hidden = true; $("acct-btn").setAttribute("aria-expanded", "false"); }
+$("acct-btn").addEventListener("click", () => ($("acct-menu").hidden ? openAcctMenu() : closeAcctMenu()));
+document.addEventListener("click", (e) => { if (!$("acct-menu").hidden && !e.target.closest("#acct")) closeAcctMenu(); });
+
+/* ---------- login screen ---------- */
+let authMode = "login";
+function showAuth(mode = "login") {
+  setAuthMode(mode);
+  $("auth").hidden = false;
+  document.body.style.overflow = "hidden";
+  setTimeout(() => (mode === "reset" ? $("auth-pw") : $("auth-email")).focus(), 50);
+}
+function hideAuth() { $("auth").hidden = true; document.body.style.overflow = ""; }
+function setAuthMode(mode) {
+  authMode = mode;
+  const tabsOn = mode === "login" || mode === "signup";
+  $("auth-tabs").hidden = !tabsOn;
+  $("auth-tabs").querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b.dataset.mode === mode));
+  $("auth-title").hidden = tabsOn;
+  $("auth-title").textContent = mode === "forgot" ? "Reset your password" : mode === "reset" ? "Choose a new password" : "";
+  $("af-name").hidden = mode !== "signup";
+  $("af-email").hidden = mode === "reset";
+  $("af-pw").hidden = mode === "forgot";
+  $("auth-pw").autocomplete = mode === "login" ? "current-password" : "new-password";
+  $("auth-pw").placeholder = mode === "login" ? "Your password" : "At least 6 characters";
+  $("auth-submit").textContent = { login: "Log in", signup: "Create my account", forgot: "Email me a reset link", reset: "Save new password" }[mode];
+  $("auth-forgot").hidden = mode !== "login";
+  $("auth-back").hidden = !(mode === "forgot");
+  $("auth-guest-wrap").hidden = mode === "reset";
+  $("auth-error").textContent = ""; $("auth-ok").textContent = "";
+}
+$("auth-tabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => setAuthMode(b.dataset.mode)));
+$("auth-forgot").addEventListener("click", () => setAuthMode("forgot"));
+$("auth-back").addEventListener("click", () => setAuthMode("login"));
+$("auth-form").addEventListener("input", () => ($("auth-error").textContent = ""));
+$("auth-guest").addEventListener("click", () => {
+  try { localStorage.setItem(KEY_GUEST_OK, "1"); } catch {}
+  hideAuth(); renderAcct(); rerenderAll();
+});
+
+function friendlyAuthError(err) {
+  const m = String((err && err.message) || err || "").toLowerCase();
+  if (m.includes("invalid login")) return "That email and password don't match. Try again or reset your password.";
+  if (m.includes("not confirmed")) return "Confirm your email first. Check your inbox for the link we sent.";
+  if (m.includes("already registered") || m.includes("already exists")) return "There's already an account with that email. Log in instead.";
+  if (m.includes("rate limit") || m.includes("too many")) return "Too many tries. Wait a minute and try again.";
+  if (m.includes("password")) return "Passwords need at least 6 characters.";
+  if (m.includes("fetch") || m.includes("network")) return "Can't reach the login service. Check your internet connection.";
+  return "Something went wrong. Try again in a moment.";
+}
+const redirectUrl = () => location.origin + location.pathname;
+
+$("auth-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const err = $("auth-error"), ok = $("auth-ok"), btn = $("auth-submit");
+  err.textContent = ""; ok.textContent = "";
+  const email = $("auth-email").value.trim(), pw = $("auth-pw").value, name = $("auth-name").value.trim();
+  if (authMode !== "reset" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "Enter a real email address."; $("auth-email").focus(); return; }
+  if ((authMode === "login" || authMode === "signup" || authMode === "reset") && pw.length < 6) { err.textContent = "Passwords need at least 6 characters."; $("auth-pw").focus(); return; }
+  if (authMode === "signup" && !name) { err.textContent = "Add your first name so the app can greet you."; $("auth-name").focus(); return; }
+  btn.disabled = true;
+  try {
+    if (authMode === "login") {
+      const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+      if (error) throw error;
+    } else if (authMode === "signup") {
+      const { data, error } = await sb.auth.signUp({ email, password: pw, options: { data: { name }, emailRedirectTo: redirectUrl() } });
+      if (error) throw error;
+      if (!data.session) {
+        setAuthMode("login");
+        $("auth-email").value = email;
+        $("auth-ok").textContent = `Almost done. We sent a confirmation link to ${email}. Click it, then log in here.`;
+      }
+    } else if (authMode === "forgot") {
+      const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: redirectUrl() });
+      if (error) throw error;
+      ok.textContent = `If there's an account for ${email}, a reset link is on its way.`;
+    } else if (authMode === "reset") {
+      const { error } = await sb.auth.updateUser({ password: pw });
+      if (error) throw error;
+      hideAuth(); toast("Password updated. You're logged in.");
+    }
+  } catch (ex) {
+    err.textContent = friendlyAuthError(ex);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+/* ---------- signing in and out ---------- */
+async function signedIn(u) {
+  if (user && user.id === u.id) return;
+  user = u;
+  hideAuth(); closeLoc(); closeOverlay();
+  readState();                  // this person's copy cached on this device (if any)
+  renderAcct(); rerenderAll();
+  setSync("loading", "Loading your passport…");
+  try {
+    const cloud = await pullNow();
+    if (cloud) {
+      writeBlob(cloud); rerenderAll();
+      setSync("saved", "Saved to your account");
+      toast(`Welcome back, ${displayName(u)}`);
+    } else {
+      const guest = readGuestBlob();
+      if (blobSize(guest) > 0) offerImport(guest);
+      else { pushNow(); toast(`Welcome, ${displayName(u)}!`); }
+    }
+  } catch {
+    setSync("error", "Offline. Changes save on this device for now.");
+  }
+}
+function offerImport(guest) {
+  const been = Object.values(guest.visits || {}).filter((v) => v && v.visited).length;
+  const rated = Object.values(guest.visits || {}).filter((v) => v && v.rating).length;
+  const added = (guest.custom || []).length;
+  openOverlay(`
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="imp-title">
+      <span class="win-badge">Welcome, ${esc(displayName(user))}</span>
+      <h3 id="imp-title" style="margin-top:14px">Bring over what's on this device?</h3>
+      <ul class="import-list">
+        <li>✓ ${been} place${been === 1 ? "" : "s"} stamped in your passport</li>
+        <li>✓ ${rated} rating${rated === 1 ? "" : "s"} and your notes</li>
+        <li>✓ ${added} spot${added === 1 ? "" : "s"} you added</li>
+      </ul>
+      <div class="actions">
+        <button class="btn" type="button" id="imp-yes">Yes, add it to my account</button>
+        <button class="btn light" type="button" id="imp-no">Start fresh</button>
+      </div>
+    </div>`, (ov) => {
+      ov.querySelector("#imp-yes").addEventListener("click", () => {
+        writeBlob({ ...guest, cities: guest.cities || null }); closeOverlay(); rerenderAll(); pushNow();
+        toast("All set. Your passport is saved to your account.");
+      });
+      ov.querySelector("#imp-no").addEventListener("click", () => { closeOverlay(); pushNow(); toast(`Welcome, ${displayName(user)}!`); });
+    });
+}
+async function logOut() {
+  closeAcctMenu();
+  clearTimeout(syncTimer);
+  if (user) await pushNow();
+  const leaving = user;
+  // clear this person's copy from the device, so the next person can't see it
+  if (leaving) STATE_KEYS.forEach((k) => { try { localStorage.removeItem(`u:${leaving.id}:${k}`); } catch {} });
+  user = null;
+  try { await sb.auth.signOut(); } catch {}
+  readState(); renderAcct(); rerenderAll();
+  showAuth("login");
+}
+function signedOutElsewhere() {
+  if (!user) return;
+  user = null; readState(); renderAcct(); rerenderAll(); showAuth("login");
+}
+
+// pick up changes made on your other devices when you come back to this tab
+document.addEventListener("visibilitychange", async () => {
+  if (document.visibilityState !== "visible" || !user || syncBusy || lastSync.state === "saving") return;
+  try { const cloud = await pullNow(); if (cloud) { writeBlob(cloud); rerenderAll(); } } catch {}
+});
+
+/* ---------- start ---------- */
+refresh();
+sizeWheel();
+document.fonts && document.fonts.ready.then(drawWheel);
+
+if (CLOUD) {
+  sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  renderAcct();
+  let resolved = false;
+  sb.auth.onAuthStateChange((event, session) => {
+    // run outside the callback, as Supabase recommends
+    setTimeout(() => {
+      resolved = true;
+      if (event === "PASSWORD_RECOVERY") { if (session) signedIn(session.user); showAuth("reset"); return; }
+      if (session && session.user) { signedIn(session.user); if (location.hash.includes("access_token")) history.replaceState(null, "", location.pathname); }
+      else if (event === "SIGNED_OUT") signedOutElsewhere();
+      else if (event === "INITIAL_SESSION") { let ok = false; try { ok = localStorage.getItem(KEY_GUEST_OK) === "1"; } catch {} if (!ok) showAuth("login"); }
+    }, 0);
+  });
+  // older library versions don't send INITIAL_SESSION
+  setTimeout(async () => {
+    if (resolved) return;
+    const { data } = await sb.auth.getSession();
+    if (data && data.session) signedIn(data.session.user);
+    else { let ok = false; try { ok = localStorage.getItem(KEY_GUEST_OK) === "1"; } catch {} if (!ok) showAuth("login"); }
+  }, 1500);
+}
+</script>
+</body>
+</html>
