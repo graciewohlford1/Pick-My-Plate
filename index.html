@@ -1457,20 +1457,52 @@ function osmToSpot(t) {
     foodText: foods.map((f) => f.replace(/_/g, " ")).join(", ")
   };
 }
-async function osmSearch(q, signal) {
-  const pat = q.replace(/["\\]/g, "").replace(/[.*+?^${}()|[\]]/g, (m) => "\\\\" + m).trim();
-  const box = cityBox();
-  if (pat.length < 3 || !box) return [];
-  const ql = `[out:json][timeout:8];nwr["amenity"~"^(restaurant|cafe|bar|pub|fast_food|biergarten|ice_cream|food_court|nightclub)$"]["name"~"${pat}",i](${box});out tags 8;`;
-  const res = await fetch("https://overpass-api.de/api/interpreter", {
-    method: "POST", signal,
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: "data=" + encodeURIComponent(ql)
-  });
+/* Map lookups use two free OpenStreetMap services:
+   - Photon (photon.komoot.io) for search-as-you-type in the add form
+   - Nominatim (nominatim.openstreetmap.org) for addresses, place details and
+     "spots near an address". Its rules allow about 1 request per second, so
+     every call goes through nomFetch, which spaces them out. */
+const FOOD_AMENITIES = ["restaurant", "cafe", "bar", "pub", "fast_food", "biergarten", "ice_cream", "food_court", "nightclub"];
+let nomLast = 0;
+async function nomFetch(path) {
+  const wait = nomLast + 1100 - Date.now();
+  if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+  nomLast = Date.now();
+  const res = await fetch("https://nominatim.openstreetmap.org" + path, { headers: { "Accept-Language": "en" } });
+  if (!res.ok) throw new Error("nominatim " + res.status);
+  return res.json();
+}
+// a Nominatim result, as OpenStreetMap-style tags
+function nomTags(x) {
+  const e = x.extratags || {}, a = x.address || {};
+  return {
+    name: x.name || "", amenity: x.type, cuisine: e.cuisine, brand: e.brand, description: e.description,
+    website: e.website || e["contact:website"], "website:menu": e["website:menu"],
+    "addr:housenumber": a.house_number, "addr:street": a.road
+  };
+}
+async function photonSearch(q, signal) {
+  if (q.length < 3) return [];
+  let url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=12&lang=en`;
+  const box = cityBox(); // "south,west,north,east"
+  if (box) { const [so, we, no, ea] = box.split(",").map(Number); url += `&bbox=${we},${so},${ea},${no}&lat=${(so + no) / 2}&lon=${(we + ea) / 2}`; }
+  const res = await fetch(url, { signal });
   if (!res.ok) throw new Error("lookup failed");
   const data = await res.json();
   const seen = new Set();
-  return (data.elements || []).map((e) => osmToSpot(e.tags || {})).filter((x) => x.name && !seen.has(norm(x.name)) && seen.add(norm(x.name)));
+  return (data.features || []).map((f) => f.properties || {})
+    .filter((p) => p.osm_key === "amenity" && FOOD_AMENITIES.includes(p.osm_value) && p.name)
+    .map((p) => {
+      const sp = osmToSpot({ name: p.name, amenity: p.osm_value, "addr:housenumber": p.housenumber, "addr:street": p.street });
+      sp.osmId = (p.osm_type || "N").charAt(0).toUpperCase() + p.osm_id;
+      return sp;
+    })
+    .filter((x) => !seen.has(norm(x.name)) && seen.add(norm(x.name)));
+}
+// food type, website and menu for one place (Photon only knows the name and street)
+async function placeDetails(osmId) {
+  const j = await nomFetch(`/lookup?format=jsonv2&extratags=1&addressdetails=1&osm_ids=${encodeURIComponent(osmId)}`);
+  return j[0] ? osmToSpot(nomTags(j[0])) : null;
 }
 const googleUrl = (q) => `https://www.google.com/search?q=${encodeURIComponent(q)}`;
 
@@ -1620,12 +1652,15 @@ function openSpotForm(existing) {
           e.preventDefault(); pick(results[+b.dataset.i]);
         }));
       };
-      const pick = (s) => {
+      const pick = async (s) => {
         fillFrom(s); close();
-        status.textContent = s.src === "guide"
-          ? "Filled in from Fort Worth food guides. Check it over, then add."
-          : "Filled in what the web had. Add a description and dishes, or tap Search the web.";
-        if (s.src === "guide") return;
+        if (s.src === "guide") { status.textContent = "Filled in from Fort Worth food guides. Check it over, then add."; return; }
+        status.textContent = "Getting details…";
+        try {
+          const more = s.osmId ? await placeDetails(s.osmId) : null;
+          if (more) fillFrom({ ...more, name: nameIn.value || s.name });
+        } catch {}
+        status.textContent = "Filled in what the map had. Add a description and dishes, or tap Search the web.";
       };
       nameIn.addEventListener("input", () => {
         updateLinks();
@@ -1638,7 +1673,7 @@ function openSpotForm(existing) {
           ctrl = new AbortController();
           status.textContent = "Searching the web…";
           try {
-            const live = await osmSearch(val, ctrl.signal);
+            const live = await photonSearch(val, ctrl.signal);
             const have = new Set(results.map((x) => norm(x.name)));
             const onList = new Set(here().filter((r) => r._key !== f._key).map((r) => norm(r.name)));
             live.forEach((s) => { if (!have.has(norm(s.name))) results.push({ ...s, already: onList.has(norm(s.name)) }); });
@@ -1648,7 +1683,7 @@ function openSpotForm(existing) {
           } catch (e) {
             if (e.name === "AbortError") return;
             liveWorks = false;
-            status.textContent = "Live web search isn't available here. It works once the site is published. Use Search the web below.";
+            status.textContent = "Live map search isn't reachable right now. Use Search the web below, or type the details in.";
           }
         }, 550);
       });
@@ -2591,16 +2626,25 @@ const milesBetween = (a, b, c, d) => {
   return 2 * R * Math.asin(Math.sqrt(h));
 };
 async function geocode(q) {
-  const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&addressdetails=0&q=${encodeURIComponent(q)}`, { headers: { "Accept-Language": "en" } });
-  if (!res.ok) throw new Error("geocode");
-  const hit = (await res.json())[0];
+  const hit = (await nomFetch(`/search?format=json&limit=1&addressdetails=0&q=${encodeURIComponent(q)}`))[0];
   return hit ? { lat: +hit.lat, lon: +hit.lon, label: hit.display_name, bbox: hit.boundingbox } : null;
 }
-async function overpassAround(lat, lon, meters) {
-  const ql = `[out:json][timeout:25];nwr(around:${Math.round(meters)},${lat},${lon})["amenity"~"^(restaurant|cafe|bar|pub|fast_food|biergarten|ice_cream|nightclub)$"]["name"];out tags center 400;`;
-  const res = await fetch("https://overpass-api.de/api/interpreter", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: "data=" + encodeURIComponent(ql) });
-  if (!res.ok) throw new Error("overpass");
-  return (await res.json()).elements || [];
+// restaurants, cafés and bars inside a box around a point (d = half the box height, in degrees)
+const NEARBY_PLAN = [["restaurant", 3, "restaurants"], ["fast_food", 1, "quick bites"], ["cafe", 1, "cafés"], ["bar", 1, "bars"], ["pub", 1, "pubs"], ["ice_cream", 1, "dessert spots"]];
+async function placesAround(lat, lon, d, onStep) {
+  const w = d / Math.cos(lat * Math.PI / 180); // keep the box roughly square on the ground
+  const vb = [lon - w, lat + d, lon + w, lat - d].map((n) => n.toFixed(5)).join(",");
+  const out = [];
+  for (const [amenity, pages, label] of NEARBY_PLAN) {
+    const skip = [];
+    for (let p = 0; p < pages; p++) {
+      onStep && onStep(label);
+      const j = await nomFetch(`/search?format=jsonv2&amenity=${amenity}&viewbox=${vb}&bounded=1&limit=40&extratags=1&addressdetails=1${skip.length ? `&exclude_place_ids=${skip.join(",")}` : ""}`);
+      j.forEach((x) => { skip.push(x.place_id); out.push({ type: x.osm_type, id: x.osm_id, lat: +x.lat, lon: +x.lon, tags: nomTags(x) }); });
+      if (j.length < 40) break;
+    }
+  }
+  return out;
 }
 function nearbyToSpot(el, lat, lon) {
   const t = el.tags || {};
@@ -2612,7 +2656,7 @@ function nearbyToSpot(el, lat, lon) {
   const plat = el.lat ?? (el.center && el.center.lat), plon = el.lon ?? (el.center && el.center.lon);
   s.dist = plat != null ? milesBetween(lat, lon, plat, plon) : 99;
   s.fast = t.amenity === "fast_food" || !!t.brand;
-  s.id = `${el.type}/${el.id}`;
+  s.id = `${el.type}/${el.id}/${norm(s.name)}`;
   return s;
 }
 // a varied pick: take turns across food types, closest independent places first
@@ -2722,9 +2766,8 @@ function openNearby(opts = {}) {
           if (c && !c.box) { c.box = `${(pt.lat - .25).toFixed(3)},${(pt.lon - .3).toFixed(3)},${(pt.lat + .25).toFixed(3)},${(pt.lon + .3).toFixed(3)}`; save(KEY_CITIES, cities); }
           const onList = new Set(all().filter((r) => cityOf(r) === forCity).map((r) => norm(r.name)));
           let results = [], skipped = 0;
-          for (const m of [1600, 3200, 6400, 12800]) {
-            status(`Searching within ${(m / 1609).toFixed(m < 3000 ? 1 : 0)} miles…`);
-            const els = await overpassAround(pt.lat, pt.lon, m);
+          for (const [d, miles] of [[0.02, "1.5"], [0.045, "3"]]) {
+            const els = await placesAround(pt.lat, pt.lon, d, (label) => status(`Searching for ${label} within ${miles} miles…`));
             const seen = new Set();
             const all_ = els.map((el) => nearbyToSpot(el, pt.lat, pt.lon)).filter((s) => s.name && !seen.has(norm(s.name)) && seen.add(norm(s.name)));
             results = all_.filter((s) => !onList.has(norm(s.name)));
@@ -2743,7 +2786,7 @@ function openNearby(opts = {}) {
           q("#nb-results").hidden = false;
           draw();
         } catch {
-          status("Map search isn't reachable right now. Check your connection, or try again in a minute. (It won't work in Claude's preview, only on your live site.)");
+          status("The map search didn't answer. Check your connection and try again in a minute.");
         } finally {
           busy(false);
         }
